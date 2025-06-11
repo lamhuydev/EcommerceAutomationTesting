@@ -1,0 +1,298 @@
+[INFO] 10-06-2025 17:08:59 [main] LogUtils - ⚙\uFE0F Thời gian chạy toàn bộ test:Tue Jun 10 17:08:58 ICT 2025
+[INFO] 10-06-2025 17:09:01 [TestNG-test=User Login Test-2] LogUtils - Login Data from Excel: [[Ljava.lang.Object;@12b1a09
+[INFO] 10-06-2025 17:09:01 [TestNG-test=User Login Test-1] LogUtils - Login Data from Excel: [[Ljava.lang.Object;@41857ddc
+[INFO] 10-06-2025 17:09:04 [TestNG-test=User Login Test-2] LogUtils - Run with Chrome browser
+[INFO] 10-06-2025 17:09:04 [TestNG-test=User Login Test-1] LogUtils - Run with Chrome browser
+[INFO] 10-06-2025 17:09:05 [TestNG-test=User Login Test-1] LogUtils - Bắt đầu chạy test: testUserLoginPageSuccess
+[INFO] 10-06-2025 17:09:05 [TestNG-test=User Login Test-2] LogUtils - Bắt đầu chạy test: testUserLoginPageFailWithInvalidEmail
+[INFO] 10-06-2025 17:09:06 [TestNG-test=User Login Test-2] LogUtils - 🌐 Open URL: https://cms.anhtester.com/
+[INFO] 10-06-2025 17:09:07 [TestNG-test=User Login Test-1] LogUtils - 🌐 Open URL: https://cms.anhtester.com/
+[INFO] 10-06-2025 17:09:08 [TestNG-test=User Login Test-2] LogUtils - Click on element By.xpath: //b[normalize-space()='Website Demo']/following::button[@data-value='removed']
+[INFO] 10-06-2025 17:09:08 [TestNG-test=User Login Test-1] LogUtils - Click on element By.xpath: //b[normalize-space()='Website Demo']/following::button[@data-value='removed']
+[INFO] 10-06-2025 17:09:09 [TestNG-test=User Login Test-2] LogUtils - Click on element By.xpath: (//a[normalize-space()='Login'])[1]
+[INFO] 10-06-2025 17:09:09 [TestNG-test=User Login Test-1] LogUtils - Click on element By.xpath: (//a[normalize-space()='Login'])[1]
+[INFO] 10-06-2025 17:09:09 [TestNG-test=User Login Test-2] LogUtils - Clear text on element By.xpath: //input[@id='email']
+[INFO] 10-06-2025 17:09:09 [TestNG-test=User Login Test-1] LogUtils - Clear text on element By.xpath: //input[@id='email']
+[INFO] 10-06-2025 17:09:09 [TestNG-test=User Login Test-1] LogUtils - Set text [customer@example.com] on element: By.xpath: //input[@id='email']
+[INFO] 10-06-2025 17:09:09 [TestNG-test=User Login Test-2] LogUtils - Set text [customer123@example.com] on element: By.xpath: //input[@id='email']
+[INFO] 10-06-2025 17:09:09 [TestNG-test=User Login Test-1] LogUtils - Clear text on element By.xpath: //input[@id='password']
+[INFO] 10-06-2025 17:09:09 [TestNG-test=User Login Test-2] LogUtils - Clear text on element By.xpath: //input[@id='password']
+[INFO] 10-06-2025 17:09:09 [TestNG-test=User Login Test-1] LogUtils - Set text [123456] on element: By.xpath: //input[@id='password']
+[INFO] 10-06-2025 17:09:09 [TestNG-test=User Login Test-2] LogUtils - Set text [123456] on element: By.xpath: //input[@id='password']
+[INFO] 10-06-2025 17:09:10 [TestNG-test=User Login Test-2] LogUtils - Click on element By.xpath: //button[normalize-space()='Login']
+[INFO] 10-06-2025 17:09:11 [TestNG-test=User Login Test-1] LogUtils - Click on element By.xpath: //button[normalize-space()='Login']
+[ERROR] 10-06-2025 17:09:13 [TestNG-test=User Login Test-2] LogUtils - ❌ Đây là Test case chạy thất bại: testUserLoginPageFailWithInvalidEmail
+[ERROR] 10-06-2025 17:09:13 [TestNG-test=User Login Test-2] LogUtils - java.lang.AssertionError: verifyLoginSuccess: login fail, still in login page expected [false] but found [true]
+[INFO] 10-06-2025 17:09:13 [TestNG-test=User Login Test-1] LogUtils - ✅ Đây là Test case chạy thành công: testUserLoginPageSuccess
+[INFO] 10-06-2025 17:09:13 [TestNG-test=User Login Test-2] LogUtils - Screenshot taken: testUserLoginPageFailWithInvalidEmail
+[INFO] 10-06-2025 17:09:13 [TestNG-test=User Login Test-2] LogUtils - Screenshot taken current URL: https://cms.anhtester.com/users/login
+[INFO] 10-06-2025 17:09:14 [TestNG-test=User Login Test-1] LogUtils - Login Data from Excel: [[Ljava.lang.Object;@302e02d1
+[INFO] 10-06-2025 17:09:15 [TestNG-test=User Login Test-1] LogUtils - Run with Chrome browser
+[INFO] 10-06-2025 17:09:15 [TestNG-test=User Login Test-1] LogUtils - Bắt đầu chạy test: testUserLoginPageFailWithInvalidPassword
+[INFO] 10-06-2025 17:09:17 [TestNG-test=User Login Test-1] LogUtils - 🌐 Open URL: https://cms.anhtester.com/
+[INFO] 10-06-2025 17:09:17 [TestNG-test=User Login Test-1] LogUtils - Click on element By.xpath: //b[normalize-space()='Website Demo']/following::button[@data-value='removed']
+[INFO] 10-06-2025 17:09:18 [TestNG-test=User Login Test-1] LogUtils - Click on element By.xpath: (//a[normalize-space()='Login'])[1]
+[INFO] 10-06-2025 17:09:18 [TestNG-test=User Login Test-1] LogUtils - Clear text on element By.xpath: //input[@id='email']
+[INFO] 10-06-2025 17:09:18 [TestNG-test=User Login Test-1] LogUtils - Set text [customer@example.com] on element: By.xpath: //input[@id='email']
+[INFO] 10-06-2025 17:09:18 [TestNG-test=User Login Test-1] LogUtils - Clear text on element By.xpath: //input[@id='password']
+[INFO] 10-06-2025 17:09:19 [TestNG-test=User Login Test-1] LogUtils - Set text [123] on element: By.xpath: //input[@id='password']
+[INFO] 10-06-2025 17:09:19 [TestNG-test=User Login Test-1] LogUtils - Click on element By.xpath: //button[normalize-space()='Login']
+[ERROR] 10-06-2025 17:09:21 [TestNG-test=User Login Test-1] LogUtils - ❌ Đây là Test case chạy thất bại: testUserLoginPageFailWithInvalidPassword
+[ERROR] 10-06-2025 17:09:21 [TestNG-test=User Login Test-1] LogUtils - java.lang.AssertionError: verifyLoginSuccess: login fail, still in login page expected [false] but found [true]
+[INFO] 10-06-2025 17:09:21 [TestNG-test=User Login Test-1] LogUtils - Screenshot taken: testUserLoginPageFailWithInvalidPassword
+[INFO] 10-06-2025 17:09:21 [TestNG-test=User Login Test-1] LogUtils - Screenshot taken current URL: https://cms.anhtester.com/users/login
+[INFO] 10-06-2025 17:09:22 [main] LogUtils - ⭐\uFE0F Total test:3
+[INFO] 10-06-2025 17:09:22 [main] LogUtils - ⭐\uFE0F Total test passed:1
+[INFO] 10-06-2025 17:09:22 [main] LogUtils - ⭐\uFE0F Total test failed:2
+[INFO] 10-06-2025 17:09:22 [main] LogUtils - ⭐\uFE0F Total test skipped:0
+[INFO] 10-06-2025 17:13:46 [main] LogUtils - ⚙\uFE0F Thời gian chạy toàn bộ test:Tue Jun 10 17:13:45 ICT 2025
+[INFO] 10-06-2025 17:14:02 [main] LogUtils - ⚙\uFE0F Thời gian chạy toàn bộ test:Tue Jun 10 17:14:01 ICT 2025
+[INFO] 10-06-2025 17:14:04 [main] LogUtils - Login Data from Excel: [[Ljava.lang.Object;@1b60d324
+[INFO] 10-06-2025 17:14:06 [main] LogUtils - Run with Chrome browser
+[INFO] 10-06-2025 17:14:06 [main] LogUtils - Bắt đầu chạy test: testUserLoginPageSuccess
+[INFO] 10-06-2025 17:14:08 [main] LogUtils - 🌐 Open URL: https://cms.anhtester.com/
+[INFO] 10-06-2025 17:14:09 [main] LogUtils - Click on element By.xpath: //b[normalize-space()='Website Demo']/following::button[@data-value='removed']
+[INFO] 10-06-2025 17:14:10 [main] LogUtils - Click on element By.xpath: (//a[normalize-space()='Login'])[1]
+[INFO] 10-06-2025 17:14:10 [main] LogUtils - Clear text on element By.xpath: //input[@id='email']
+[INFO] 10-06-2025 17:14:10 [main] LogUtils - Set text [customer@example.com] on element: By.xpath: //input[@id='email']
+[INFO] 10-06-2025 17:14:10 [main] LogUtils - Clear text on element By.xpath: //input[@id='password']
+[INFO] 10-06-2025 17:14:10 [main] LogUtils - Set text [123456] on element: By.xpath: //input[@id='password']
+[INFO] 10-06-2025 17:14:11 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Login']
+[INFO] 10-06-2025 17:14:13 [main] LogUtils - ✅ Đây là Test case chạy thành công: testUserLoginPageSuccess
+[INFO] 10-06-2025 17:14:14 [main] LogUtils - ⭐\uFE0F Total test:1
+[INFO] 10-06-2025 17:14:14 [main] LogUtils - ⭐\uFE0F Total test passed:1
+[INFO] 10-06-2025 17:14:14 [main] LogUtils - ⭐\uFE0F Total test failed:0
+[INFO] 10-06-2025 17:14:14 [main] LogUtils - ⭐\uFE0F Total test skipped:0
+[INFO] 10-06-2025 17:14:27 [main] LogUtils - ⚙\uFE0F Thời gian chạy toàn bộ test:Tue Jun 10 17:14:26 ICT 2025
+[INFO] 10-06-2025 17:14:29 [main] LogUtils - Login Data from Excel: [[Ljava.lang.Object;@7b598d05
+[INFO] 10-06-2025 17:14:31 [main] LogUtils - Run with Chrome browser
+[INFO] 10-06-2025 17:14:31 [main] LogUtils - Bắt đầu chạy test: testUserLoginPageFailWithInvalidEmail
+[INFO] 10-06-2025 17:14:34 [main] LogUtils - 🌐 Open URL: https://cms.anhtester.com/
+[INFO] 10-06-2025 17:14:34 [main] LogUtils - Click on element By.xpath: //b[normalize-space()='Website Demo']/following::button[@data-value='removed']
+[INFO] 10-06-2025 17:14:35 [main] LogUtils - Click on element By.xpath: (//a[normalize-space()='Login'])[1]
+[INFO] 10-06-2025 17:14:36 [main] LogUtils - Clear text on element By.xpath: //input[@id='email']
+[INFO] 10-06-2025 17:14:36 [main] LogUtils - Set text [customer123@example.com] on element: By.xpath: //input[@id='email']
+[INFO] 10-06-2025 17:14:36 [main] LogUtils - Clear text on element By.xpath: //input[@id='password']
+[INFO] 10-06-2025 17:14:36 [main] LogUtils - Set text [123456] on element: By.xpath: //input[@id='password']
+[INFO] 10-06-2025 17:14:37 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Login']
+[ERROR] 10-06-2025 17:14:49 [main] LogUtils - Timeout waiting for the element Visible. By.xpath: //span[contains(normalize-space(), 'invalid login')]
+[ERROR] 10-06-2025 17:14:49 [main] LogUtils - ❌ Đây là Test case chạy thất bại: testUserLoginPageFailWithInvalidEmail
+[ERROR] 10-06-2025 17:14:49 [main] LogUtils - java.lang.AssertionError: Timeout waiting for the element Visible. By.xpath: //span[contains(normalize-space(), 'invalid login')]
+[INFO] 10-06-2025 17:14:49 [main] LogUtils - Screenshot taken: testUserLoginPageFailWithInvalidEmail
+[INFO] 10-06-2025 17:14:49 [main] LogUtils - Screenshot taken current URL: https://cms.anhtester.com/users/login
+[INFO] 10-06-2025 17:14:50 [main] LogUtils - ⭐\uFE0F Total test:1
+[INFO] 10-06-2025 17:14:50 [main] LogUtils - ⭐\uFE0F Total test passed:0
+[INFO] 10-06-2025 17:14:50 [main] LogUtils - ⭐\uFE0F Total test failed:1
+[INFO] 10-06-2025 17:14:50 [main] LogUtils - ⭐\uFE0F Total test skipped:0
+[INFO] 10-06-2025 17:21:09 [main] LogUtils - ⚙\uFE0F Thời gian chạy toàn bộ test:Tue Jun 10 17:21:08 ICT 2025
+[INFO] 10-06-2025 17:21:11 [main] LogUtils - Login Data from Excel: [[Ljava.lang.Object;@17d816b3
+[INFO] 10-06-2025 17:21:13 [main] LogUtils - Run with Chrome browser
+[INFO] 10-06-2025 17:21:13 [main] LogUtils - Bắt đầu chạy test: testUserLoginPageSuccess
+[INFO] 10-06-2025 17:21:15 [main] LogUtils - 🌐 Open URL: https://cms.anhtester.com/
+[INFO] 10-06-2025 17:21:16 [main] LogUtils - Click on element By.xpath: //b[normalize-space()='Website Demo']/following::button[@data-value='removed']
+[INFO] 10-06-2025 17:21:17 [main] LogUtils - Click on element By.xpath: (//a[normalize-space()='Login'])[1]
+[INFO] 10-06-2025 17:21:17 [main] LogUtils - Clear text on element By.xpath: //input[@id='email']
+[INFO] 10-06-2025 17:21:17 [main] LogUtils - Set text [customer@example.com] on element: By.xpath: //input[@id='email']
+[INFO] 10-06-2025 17:21:17 [main] LogUtils - Clear text on element By.xpath: //input[@id='password']
+[INFO] 10-06-2025 17:21:17 [main] LogUtils - Set text [123456] on element: By.xpath: //input[@id='password']
+[INFO] 10-06-2025 17:21:19 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Login']
+[INFO] 10-06-2025 17:21:21 [main] LogUtils - ✅ Đây là Test case chạy thành công: testUserLoginPageSuccess
+[INFO] 10-06-2025 17:21:22 [main] LogUtils - Login Data from Excel: [[Ljava.lang.Object;@5c65fa69
+[INFO] 10-06-2025 17:21:23 [main] LogUtils - Run with Chrome browser
+[INFO] 10-06-2025 17:21:23 [main] LogUtils - Bắt đầu chạy test: testUserLoginPageFailWithInvalidEmail
+[INFO] 10-06-2025 17:21:25 [main] LogUtils - 🌐 Open URL: https://cms.anhtester.com/
+[INFO] 10-06-2025 17:21:25 [main] LogUtils - Click on element By.xpath: //b[normalize-space()='Website Demo']/following::button[@data-value='removed']
+[INFO] 10-06-2025 17:21:26 [main] LogUtils - Click on element By.xpath: (//a[normalize-space()='Login'])[1]
+[INFO] 10-06-2025 17:21:26 [main] LogUtils - Clear text on element By.xpath: //input[@id='email']
+[INFO] 10-06-2025 17:21:26 [main] LogUtils - Set text [customer123@example.com] on element: By.xpath: //input[@id='email']
+[INFO] 10-06-2025 17:21:26 [main] LogUtils - Clear text on element By.xpath: //input[@id='password']
+[INFO] 10-06-2025 17:21:26 [main] LogUtils - Set text [123456] on element: By.xpath: //input[@id='password']
+[INFO] 10-06-2025 17:21:26 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Login']
+[INFO] 10-06-2025 17:21:28 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Ok. I Understood']
+[ERROR] 10-06-2025 17:21:39 [main] LogUtils - Timeout waiting for the element Visible. By.xpath: //span[contains(normalize-space(), 'invalid login')]
+[ERROR] 10-06-2025 17:21:39 [main] LogUtils - ❌ Đây là Test case chạy thất bại: testUserLoginPageFailWithInvalidEmail
+[ERROR] 10-06-2025 17:21:39 [main] LogUtils - java.lang.AssertionError: Timeout waiting for the element Visible. By.xpath: //span[contains(normalize-space(), 'invalid login')]
+[INFO] 10-06-2025 17:21:39 [main] LogUtils - Screenshot taken: testUserLoginPageFailWithInvalidEmail
+[INFO] 10-06-2025 17:21:39 [main] LogUtils - Screenshot taken current URL: https://cms.anhtester.com/users/login
+[INFO] 10-06-2025 17:21:40 [main] LogUtils - Login Data from Excel: [[Ljava.lang.Object;@2165d4ab
+[INFO] 10-06-2025 17:21:41 [main] LogUtils - Run with Chrome browser
+[INFO] 10-06-2025 17:21:41 [main] LogUtils - Bắt đầu chạy test: testUserLoginPageFailWithInvalidPassword
+[INFO] 10-06-2025 17:21:43 [main] LogUtils - 🌐 Open URL: https://cms.anhtester.com/
+[INFO] 10-06-2025 17:21:44 [main] LogUtils - Click on element By.xpath: //b[normalize-space()='Website Demo']/following::button[@data-value='removed']
+[INFO] 10-06-2025 17:21:44 [main] LogUtils - Click on element By.xpath: (//a[normalize-space()='Login'])[1]
+[INFO] 10-06-2025 17:21:45 [main] LogUtils - Clear text on element By.xpath: //input[@id='email']
+[INFO] 10-06-2025 17:21:45 [main] LogUtils - Set text [customer@example.com] on element: By.xpath: //input[@id='email']
+[INFO] 10-06-2025 17:21:45 [main] LogUtils - Clear text on element By.xpath: //input[@id='password']
+[INFO] 10-06-2025 17:21:45 [main] LogUtils - Set text [123] on element: By.xpath: //input[@id='password']
+[INFO] 10-06-2025 17:21:46 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Login']
+[INFO] 10-06-2025 17:21:48 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Ok. I Understood']
+[ERROR] 10-06-2025 17:21:58 [main] LogUtils - Timeout waiting for the element Visible. By.xpath: //span[contains(normalize-space(), 'invalid login')]
+[ERROR] 10-06-2025 17:21:58 [main] LogUtils - ❌ Đây là Test case chạy thất bại: testUserLoginPageFailWithInvalidPassword
+[ERROR] 10-06-2025 17:21:58 [main] LogUtils - java.lang.AssertionError: Timeout waiting for the element Visible. By.xpath: //span[contains(normalize-space(), 'invalid login')]
+[INFO] 10-06-2025 17:21:59 [main] LogUtils - Screenshot taken: testUserLoginPageFailWithInvalidPassword
+[INFO] 10-06-2025 17:21:59 [main] LogUtils - Screenshot taken current URL: https://cms.anhtester.com/users/login
+[INFO] 10-06-2025 17:21:59 [main] LogUtils - ⭐\uFE0F Total test:3
+[INFO] 10-06-2025 17:21:59 [main] LogUtils - ⭐\uFE0F Total test passed:1
+[INFO] 10-06-2025 17:21:59 [main] LogUtils - ⭐\uFE0F Total test failed:2
+[INFO] 10-06-2025 17:21:59 [main] LogUtils - ⭐\uFE0F Total test skipped:0
+[INFO] 10-06-2025 17:22:55 [main] LogUtils - ⚙\uFE0F Thời gian chạy toàn bộ test:Tue Jun 10 17:22:54 ICT 2025
+[INFO] 10-06-2025 17:22:56 [main] LogUtils - Login Data from Excel: [[Ljava.lang.Object;@177ddd24
+[INFO] 10-06-2025 17:22:59 [main] LogUtils - Run with Chrome browser
+[INFO] 10-06-2025 17:22:59 [main] LogUtils - Bắt đầu chạy test: testUserLoginPageSuccess
+[INFO] 10-06-2025 17:23:02 [main] LogUtils - 🌐 Open URL: https://cms.anhtester.com/
+[INFO] 10-06-2025 17:23:02 [main] LogUtils - Click on element By.xpath: //b[normalize-space()='Website Demo']/following::button[@data-value='removed']
+[INFO] 10-06-2025 17:23:03 [main] LogUtils - Click on element By.xpath: (//a[normalize-space()='Login'])[1]
+[INFO] 10-06-2025 17:23:03 [main] LogUtils - Clear text on element By.xpath: //input[@id='email']
+[INFO] 10-06-2025 17:23:03 [main] LogUtils - Set text [customer@example.com] on element: By.xpath: //input[@id='email']
+[INFO] 10-06-2025 17:23:03 [main] LogUtils - Clear text on element By.xpath: //input[@id='password']
+[INFO] 10-06-2025 17:23:03 [main] LogUtils - Set text [123456] on element: By.xpath: //input[@id='password']
+[INFO] 10-06-2025 17:23:04 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Login']
+[INFO] 10-06-2025 17:23:06 [main] LogUtils - ✅ Đây là Test case chạy thành công: testUserLoginPageSuccess
+[INFO] 10-06-2025 17:23:07 [main] LogUtils - Login Data from Excel: [[Ljava.lang.Object;@24558113
+[INFO] 10-06-2025 17:23:08 [main] LogUtils - Run with Chrome browser
+[INFO] 10-06-2025 17:23:08 [main] LogUtils - Bắt đầu chạy test: testUserLoginPageFailWithInvalidEmail
+[INFO] 10-06-2025 17:23:11 [main] LogUtils - 🌐 Open URL: https://cms.anhtester.com/
+[INFO] 10-06-2025 17:23:11 [main] LogUtils - Click on element By.xpath: //b[normalize-space()='Website Demo']/following::button[@data-value='removed']
+[INFO] 10-06-2025 17:23:12 [main] LogUtils - Click on element By.xpath: (//a[normalize-space()='Login'])[1]
+[INFO] 10-06-2025 17:23:12 [main] LogUtils - Clear text on element By.xpath: //input[@id='email']
+[INFO] 10-06-2025 17:23:12 [main] LogUtils - Set text [customer123@example.com] on element: By.xpath: //input[@id='email']
+[INFO] 10-06-2025 17:23:12 [main] LogUtils - Clear text on element By.xpath: //input[@id='password']
+[INFO] 10-06-2025 17:23:12 [main] LogUtils - Set text [123456] on element: By.xpath: //input[@id='password']
+[INFO] 10-06-2025 17:23:12 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Login']
+[INFO] 10-06-2025 17:23:15 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Ok. I Understood']
+[INFO] 10-06-2025 17:23:15 [main] LogUtils - ✅ Đây là Test case chạy thành công: testUserLoginPageFailWithInvalidEmail
+[INFO] 10-06-2025 17:23:15 [main] LogUtils - Login Data from Excel: [[Ljava.lang.Object;@551725e4
+[INFO] 10-06-2025 17:23:17 [main] LogUtils - Run with Chrome browser
+[INFO] 10-06-2025 17:23:17 [main] LogUtils - Bắt đầu chạy test: testUserLoginPageFailWithInvalidPassword
+[INFO] 10-06-2025 17:23:19 [main] LogUtils - 🌐 Open URL: https://cms.anhtester.com/
+[INFO] 10-06-2025 17:23:19 [main] LogUtils - Click on element By.xpath: //b[normalize-space()='Website Demo']/following::button[@data-value='removed']
+[INFO] 10-06-2025 17:23:20 [main] LogUtils - Click on element By.xpath: (//a[normalize-space()='Login'])[1]
+[INFO] 10-06-2025 17:23:20 [main] LogUtils - Clear text on element By.xpath: //input[@id='email']
+[INFO] 10-06-2025 17:23:20 [main] LogUtils - Set text [customer@example.com] on element: By.xpath: //input[@id='email']
+[INFO] 10-06-2025 17:23:20 [main] LogUtils - Clear text on element By.xpath: //input[@id='password']
+[INFO] 10-06-2025 17:23:20 [main] LogUtils - Set text [123] on element: By.xpath: //input[@id='password']
+[INFO] 10-06-2025 17:23:21 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Login']
+[INFO] 10-06-2025 17:23:23 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Ok. I Understood']
+[INFO] 10-06-2025 17:23:23 [main] LogUtils - ✅ Đây là Test case chạy thành công: testUserLoginPageFailWithInvalidPassword
+[INFO] 10-06-2025 17:23:24 [main] LogUtils - ⭐\uFE0F Total test:3
+[INFO] 10-06-2025 17:23:24 [main] LogUtils - ⭐\uFE0F Total test passed:3
+[INFO] 10-06-2025 17:23:24 [main] LogUtils - ⭐\uFE0F Total test failed:0
+[INFO] 10-06-2025 17:23:24 [main] LogUtils - ⭐\uFE0F Total test skipped:0
+[INFO] 10-06-2025 17:23:59 [main] LogUtils - ⚙\uFE0F Thời gian chạy toàn bộ test:Tue Jun 10 17:23:58 ICT 2025
+[INFO] 10-06-2025 17:24:01 [TestNG-test=User Login Test-1] LogUtils - Login Data from Excel: [[Ljava.lang.Object;@335262b8
+[INFO] 10-06-2025 17:24:01 [TestNG-test=User Login Test-2] LogUtils - Login Data from Excel: [[Ljava.lang.Object;@637e5b8e
+[INFO] 10-06-2025 17:24:02 [TestNG-test=User Login Test-2] LogUtils - Bắt đầu chạy test: testUserLoginPageFailWithInvalidEmail
+[WARN] 10-06-2025 17:24:02 [TestNG-test=User Login Test-2] LogUtils - 🔥 Đây là Test case bị bỏ qua: testUserLoginPageFailWithInvalidEmail
+[INFO] 10-06-2025 17:24:02 [TestNG-test=User Login Test-2] LogUtils - Login Data from Excel: [[Ljava.lang.Object;@5601eda0
+[INFO] 10-06-2025 17:24:02 [TestNG-test=User Login Test-2] LogUtils - Bắt đầu chạy test: testUserLoginPageFailWithInvalidPassword
+[WARN] 10-06-2025 17:24:02 [TestNG-test=User Login Test-2] LogUtils - 🔥 Đây là Test case bị bỏ qua: testUserLoginPageFailWithInvalidPassword
+[INFO] 10-06-2025 17:24:04 [TestNG-test=User Login Test-1] LogUtils - Run with Chrome browser
+[INFO] 10-06-2025 17:24:04 [TestNG-test=User Login Test-1] LogUtils - Bắt đầu chạy test: testUserLoginPageSuccess
+[WARN] 10-06-2025 17:24:04 [TestNG-test=User Login Test-1] LogUtils - 🔥 Đây là Test case bị bỏ qua: testUserLoginPageSuccess
+[INFO] 10-06-2025 17:24:04 [main] LogUtils - ⭐\uFE0F Total test:3
+[INFO] 10-06-2025 17:24:04 [main] LogUtils - ⭐\uFE0F Total test passed:0
+[INFO] 10-06-2025 17:24:04 [main] LogUtils - ⭐\uFE0F Total test failed:0
+[INFO] 10-06-2025 17:24:04 [main] LogUtils - ⭐\uFE0F Total test skipped:3
+[INFO] 10-06-2025 17:25:02 [main] LogUtils - ⚙\uFE0F Thời gian chạy toàn bộ test:Tue Jun 10 17:25:01 ICT 2025
+[INFO] 10-06-2025 17:25:03 [main] LogUtils - Login Data from Excel: [[Ljava.lang.Object;@574ebdaf
+[INFO] 10-06-2025 17:25:06 [main] LogUtils - Run with Chrome browser
+[INFO] 10-06-2025 17:25:06 [main] LogUtils - Bắt đầu chạy test: testUserLoginPageSuccess
+[INFO] 10-06-2025 17:25:08 [main] LogUtils - 🌐 Open URL: https://cms.anhtester.com/
+[INFO] 10-06-2025 17:25:08 [main] LogUtils - Click on element By.xpath: //b[normalize-space()='Website Demo']/following::button[@data-value='removed']
+[INFO] 10-06-2025 17:25:09 [main] LogUtils - Click on element By.xpath: (//a[normalize-space()='Login'])[1]
+[INFO] 10-06-2025 17:25:09 [main] LogUtils - Clear text on element By.xpath: //input[@id='email']
+[INFO] 10-06-2025 17:25:10 [main] LogUtils - Set text [customer@example.com] on element: By.xpath: //input[@id='email']
+[INFO] 10-06-2025 17:25:10 [main] LogUtils - Clear text on element By.xpath: //input[@id='password']
+[INFO] 10-06-2025 17:25:10 [main] LogUtils - Set text [123456] on element: By.xpath: //input[@id='password']
+[INFO] 10-06-2025 17:25:11 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Login']
+[INFO] 10-06-2025 17:25:13 [main] LogUtils - ✅ Đây là Test case chạy thành công: testUserLoginPageSuccess
+[INFO] 10-06-2025 17:25:15 [main] LogUtils - Login Data from Excel: [[Ljava.lang.Object;@1a0b4955
+[INFO] 10-06-2025 17:25:16 [main] LogUtils - Run with Chrome browser
+[INFO] 10-06-2025 17:25:16 [main] LogUtils - Bắt đầu chạy test: testUserLoginPageFailWithInvalidEmail
+[INFO] 10-06-2025 17:25:18 [main] LogUtils - 🌐 Open URL: https://cms.anhtester.com/
+[INFO] 10-06-2025 17:25:19 [main] LogUtils - Click on element By.xpath: //b[normalize-space()='Website Demo']/following::button[@data-value='removed']
+[INFO] 10-06-2025 17:25:19 [main] LogUtils - Click on element By.xpath: (//a[normalize-space()='Login'])[1]
+[INFO] 10-06-2025 17:25:20 [main] LogUtils - Clear text on element By.xpath: //input[@id='email']
+[INFO] 10-06-2025 17:25:20 [main] LogUtils - Set text [customer123@example.com] on element: By.xpath: //input[@id='email']
+[INFO] 10-06-2025 17:25:20 [main] LogUtils - Clear text on element By.xpath: //input[@id='password']
+[INFO] 10-06-2025 17:25:20 [main] LogUtils - Set text [123456] on element: By.xpath: //input[@id='password']
+[INFO] 10-06-2025 17:25:20 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Login']
+[INFO] 10-06-2025 17:25:22 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Ok. I Understood']
+[INFO] 10-06-2025 17:25:22 [main] LogUtils - ✅ Đây là Test case chạy thành công: testUserLoginPageFailWithInvalidEmail
+[INFO] 10-06-2025 17:25:23 [main] LogUtils - Login Data from Excel: [[Ljava.lang.Object;@14d6ede3
+[INFO] 10-06-2025 17:25:24 [main] LogUtils - Run with Chrome browser
+[INFO] 10-06-2025 17:25:24 [main] LogUtils - Bắt đầu chạy test: testUserLoginPageFailWithInvalidPassword
+[INFO] 10-06-2025 17:25:27 [main] LogUtils - 🌐 Open URL: https://cms.anhtester.com/
+[INFO] 10-06-2025 17:25:28 [main] LogUtils - Click on element By.xpath: //b[normalize-space()='Website Demo']/following::button[@data-value='removed']
+[INFO] 10-06-2025 17:25:29 [main] LogUtils - Click on element By.xpath: (//a[normalize-space()='Login'])[1]
+[INFO] 10-06-2025 17:25:29 [main] LogUtils - Clear text on element By.xpath: //input[@id='email']
+[INFO] 10-06-2025 17:25:29 [main] LogUtils - Set text [customer@example.com] on element: By.xpath: //input[@id='email']
+[INFO] 10-06-2025 17:25:29 [main] LogUtils - Clear text on element By.xpath: //input[@id='password']
+[INFO] 10-06-2025 17:25:29 [main] LogUtils - Set text [123] on element: By.xpath: //input[@id='password']
+[INFO] 10-06-2025 17:25:29 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Login']
+[INFO] 10-06-2025 17:25:31 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Ok. I Understood']
+[INFO] 10-06-2025 17:25:31 [main] LogUtils - ✅ Đây là Test case chạy thành công: testUserLoginPageFailWithInvalidPassword
+[INFO] 10-06-2025 17:25:32 [main] LogUtils - ⭐\uFE0F Total test:3
+[INFO] 10-06-2025 17:25:32 [main] LogUtils - ⭐\uFE0F Total test passed:3
+[INFO] 10-06-2025 17:25:32 [main] LogUtils - ⭐\uFE0F Total test failed:0
+[INFO] 10-06-2025 17:25:32 [main] LogUtils - ⭐\uFE0F Total test skipped:0
+[INFO] 10-06-2025 17:26:16 [main] LogUtils - ⚙\uFE0F Thời gian chạy toàn bộ test:Tue Jun 10 17:26:15 ICT 2025
+[INFO] 10-06-2025 17:26:19 [TestNG-test=User Login Test-2] LogUtils - Login Data from Excel: [[Ljava.lang.Object;@4eda6662
+[INFO] 10-06-2025 17:26:19 [TestNG-test=User Login Test-1] LogUtils - Login Data from Excel: [[Ljava.lang.Object;@3c08799f
+[INFO] 10-06-2025 17:26:21 [TestNG-test=User Login Test-1] LogUtils - Run with Chrome browser
+[INFO] 10-06-2025 17:26:21 [TestNG-test=User Login Test-2] LogUtils - Run with Chrome browser
+[INFO] 10-06-2025 17:26:22 [TestNG-test=User Login Test-2] LogUtils - Bắt đầu chạy test: testUserLoginPageFailWithInvalidEmail
+[INFO] 10-06-2025 17:26:22 [TestNG-test=User Login Test-1] LogUtils - Bắt đầu chạy test: testUserLoginPageSuccess
+[INFO] 10-06-2025 17:26:24 [TestNG-test=User Login Test-2] LogUtils - 🌐 Open URL: https://cms.anhtester.com/
+[INFO] 10-06-2025 17:26:24 [TestNG-test=User Login Test-1] LogUtils - 🌐 Open URL: https://cms.anhtester.com/
+[INFO] 10-06-2025 17:26:24 [TestNG-test=User Login Test-2] LogUtils - Click on element By.xpath: //b[normalize-space()='Website Demo']/following::button[@data-value='removed']
+[INFO] 10-06-2025 17:26:24 [TestNG-test=User Login Test-1] LogUtils - Click on element By.xpath: //b[normalize-space()='Website Demo']/following::button[@data-value='removed']
+[INFO] 10-06-2025 17:26:25 [TestNG-test=User Login Test-2] LogUtils - Click on element By.xpath: (//a[normalize-space()='Login'])[1]
+[INFO] 10-06-2025 17:26:25 [TestNG-test=User Login Test-2] LogUtils - Clear text on element By.xpath: //input[@id='email']
+[INFO] 10-06-2025 17:26:25 [TestNG-test=User Login Test-1] LogUtils - Click on element By.xpath: (//a[normalize-space()='Login'])[1]
+[INFO] 10-06-2025 17:26:25 [TestNG-test=User Login Test-2] LogUtils - Set text [customer123@example.com] on element: By.xpath: //input[@id='email']
+[INFO] 10-06-2025 17:26:26 [TestNG-test=User Login Test-2] LogUtils - Clear text on element By.xpath: //input[@id='password']
+[INFO] 10-06-2025 17:26:26 [TestNG-test=User Login Test-2] LogUtils - Set text [123456] on element: By.xpath: //input[@id='password']
+[INFO] 10-06-2025 17:26:26 [TestNG-test=User Login Test-1] LogUtils - Clear text on element By.xpath: //input[@id='email']
+[INFO] 10-06-2025 17:26:26 [TestNG-test=User Login Test-1] LogUtils - Set text [customer@example.com] on element: By.xpath: //input[@id='email']
+[INFO] 10-06-2025 17:26:26 [TestNG-test=User Login Test-1] LogUtils - Clear text on element By.xpath: //input[@id='password']
+[INFO] 10-06-2025 17:26:26 [TestNG-test=User Login Test-1] LogUtils - Set text [123456] on element: By.xpath: //input[@id='password']
+[INFO] 10-06-2025 17:26:27 [TestNG-test=User Login Test-2] LogUtils - Click on element By.xpath: //button[normalize-space()='Login']
+[INFO] 10-06-2025 17:26:28 [TestNG-test=User Login Test-1] LogUtils - Click on element By.xpath: //button[normalize-space()='Login']
+[INFO] 10-06-2025 17:26:29 [TestNG-test=User Login Test-2] LogUtils - Click on element By.xpath: //button[normalize-space()='Ok. I Understood']
+[INFO] 10-06-2025 17:26:29 [TestNG-test=User Login Test-2] LogUtils - ✅ Đây là Test case chạy thành công: testUserLoginPageFailWithInvalidEmail
+[INFO] 10-06-2025 17:26:30 [TestNG-test=User Login Test-2] LogUtils - Login Data from Excel: [[Ljava.lang.Object;@69d7d304
+[INFO] 10-06-2025 17:26:30 [TestNG-test=User Login Test-1] LogUtils - ✅ Đây là Test case chạy thành công: testUserLoginPageSuccess
+[INFO] 10-06-2025 17:26:31 [TestNG-test=User Login Test-2] LogUtils - Run with Chrome browser
+[INFO] 10-06-2025 17:26:31 [TestNG-test=User Login Test-2] LogUtils - Bắt đầu chạy test: testUserLoginPageFailWithInvalidPassword
+[INFO] 10-06-2025 17:26:33 [TestNG-test=User Login Test-2] LogUtils - 🌐 Open URL: https://cms.anhtester.com/
+[INFO] 10-06-2025 17:26:33 [TestNG-test=User Login Test-2] LogUtils - Click on element By.xpath: //b[normalize-space()='Website Demo']/following::button[@data-value='removed']
+[INFO] 10-06-2025 17:26:34 [TestNG-test=User Login Test-2] LogUtils - Click on element By.xpath: (//a[normalize-space()='Login'])[1]
+[INFO] 10-06-2025 17:26:34 [TestNG-test=User Login Test-2] LogUtils - Clear text on element By.xpath: //input[@id='email']
+[INFO] 10-06-2025 17:26:34 [TestNG-test=User Login Test-2] LogUtils - Set text [customer@example.com] on element: By.xpath: //input[@id='email']
+[INFO] 10-06-2025 17:26:35 [TestNG-test=User Login Test-2] LogUtils - Clear text on element By.xpath: //input[@id='password']
+[INFO] 10-06-2025 17:26:35 [TestNG-test=User Login Test-2] LogUtils - Set text [123] on element: By.xpath: //input[@id='password']
+[INFO] 10-06-2025 17:26:35 [TestNG-test=User Login Test-2] LogUtils - Click on element By.xpath: //button[normalize-space()='Login']
+[INFO] 10-06-2025 17:26:37 [TestNG-test=User Login Test-2] LogUtils - Click on element By.xpath: //button[normalize-space()='Ok. I Understood']
+[INFO] 10-06-2025 17:26:37 [TestNG-test=User Login Test-2] LogUtils - ✅ Đây là Test case chạy thành công: testUserLoginPageFailWithInvalidPassword
+[INFO] 10-06-2025 17:26:38 [main] LogUtils - ⭐\uFE0F Total test:3
+[INFO] 10-06-2025 17:26:38 [main] LogUtils - ⭐\uFE0F Total test passed:3
+[INFO] 10-06-2025 17:26:38 [main] LogUtils - ⭐\uFE0F Total test failed:0
+[INFO] 10-06-2025 17:26:38 [main] LogUtils - ⭐\uFE0F Total test skipped:0
+[INFO] 11-06-2025 20:55:35 [main] LogUtils - ⚙\uFE0F Thời gian chạy toàn bộ test:Wed Jun 11 20:55:34 ICT 2025
+[INFO] 11-06-2025 20:55:37 [main] LogUtils - Login Data from Excel: [[Ljava.lang.Object;@646e6d07
+[INFO] 11-06-2025 20:55:44 [main] LogUtils - Run with Chrome browser
+[INFO] 11-06-2025 20:55:45 [main] LogUtils - Bắt đầu chạy test: testUserLoginPageSuccess
+[INFO] 11-06-2025 20:55:47 [main] LogUtils - 🌐 Open URL: https://cms.anhtester.com/
+[INFO] 11-06-2025 20:55:47 [main] LogUtils - Click on element By.xpath: //b[normalize-space()='Website Demo']/following::button[@data-value='removed']
+[INFO] 11-06-2025 20:55:48 [main] LogUtils - Click on element By.xpath: (//a[normalize-space()='Login'])[1]
+[INFO] 11-06-2025 20:55:48 [main] LogUtils - Clear text on element By.xpath: //input[@id='email']
+[INFO] 11-06-2025 20:55:49 [main] LogUtils - Set text [customer@example.com] on element: By.xpath: //input[@id='email']
+[INFO] 11-06-2025 20:55:49 [main] LogUtils - Clear text on element By.xpath: //input[@id='password']
+[INFO] 11-06-2025 20:55:49 [main] LogUtils - Set text [123456] on element: By.xpath: //input[@id='password']
+[INFO] 11-06-2025 20:55:50 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Login']
+[INFO] 11-06-2025 20:55:52 [main] LogUtils - ✅ Đây là Test case chạy thành công: testUserLoginPageSuccess
+[INFO] 11-06-2025 20:55:53 [main] LogUtils - ⭐\uFE0F Total test:1
+[INFO] 11-06-2025 20:55:53 [main] LogUtils - ⭐\uFE0F Total test passed:1
+[INFO] 11-06-2025 20:55:53 [main] LogUtils - ⭐\uFE0F Total test failed:0
+[INFO] 11-06-2025 20:55:53 [main] LogUtils - ⭐\uFE0F Total test skipped:0
