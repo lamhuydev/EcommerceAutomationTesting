@@ -2,6 +2,7 @@ package keywords;
 
 import com.aventstack.extentreports.Status;
 import io.qameta.allure.Step;
+import org.apache.poi.xslf.usermodel.XSLFTableCell;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -19,7 +20,7 @@ import java.util.List;
 public class WebUI {
 
     private static int TIMEOUT = 10;
-    private static double STEP_TIME = 0;
+    private static double STEP_TIME = 0.5;
     private static int PAGE_LOAD_TIMEOUT = 20;
 
 
@@ -32,6 +33,23 @@ public class WebUI {
     }
 
 
+//    public static void acceptAlert() {
+//        if (isAlertPresent()) {
+//            DriverManager.getDriver().switchTo().alert().accept();
+//        }
+//    }
+//
+//    // Hàm kiểm tra sự tồn tại của alert
+//    public static boolean isAlertPresent() {
+//        try {
+//            WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(TIMEOUT));
+//            wait.until(ExpectedConditions.alertIsPresent());
+//            return true;
+//        } catch (TimeoutException e) {
+//            return false;
+//        }
+//    }
+
     @Step("Open URL: {0}")
     public static void openURL(String url) {
         DriverManager.getDriver().get(url);
@@ -41,7 +59,21 @@ public class WebUI {
 
     }
 
-    public static void titleIs(){
+    @Step("Get current URL")
+    public static String getCurrentURL() {
+        waitForPageLoaded();
+        String currentURL = DriverManager.getDriver().getCurrentUrl();
+        LogUtils.info("Get current url: " + currentURL);
+        AllureManager.saveTextLog("==> Current URL " + currentURL);
+        return currentURL;
+    }
+
+    public static WebElement findElement(By by) {
+        waitForElementVisible(by);
+        return DriverManager.getDriver().findElement(by);
+    }
+
+    public static void titleIs() {
 
     }
 
@@ -412,7 +444,6 @@ public class WebUI {
             return false;
         }
     }
-
 
 
     public static void logConsole(Object message) {

@@ -33,6 +33,23 @@ public class UserLoginPage {
     }
 
 
+    // login Ecommerce with email and password correct for another page
+    public void loginEcommercePage(){
+//        PropertiesHelper.loadAllFiles();
+        String url = PropertiesHelper.getValue("url_cms_anhtester");
+        WebUI.openURL(url);
+
+        UserBasePage userBasePage = new UserBasePage();
+        userBasePage.clickClosePopup();
+        userBasePage.clickButtonLoginHomePage();
+
+        verifyLoginPage();
+
+        setTextEmail("customer@example.com");
+        setTextPassword("123456");
+        clickLoginButton();
+    }
+
     public void loginEcommercePage(String email, String password){
 //        PropertiesHelper.loadAllFiles();
         String url = PropertiesHelper.getValue("url_cms_anhtester");
