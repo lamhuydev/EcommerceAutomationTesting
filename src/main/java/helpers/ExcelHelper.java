@@ -7,10 +7,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Hashtable;
+import java.util.List;
 import java.util.Map;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import utils.LogUtils;
 
 public class ExcelHelper {
 
@@ -264,6 +266,86 @@ public class ExcelHelper {
         }
 
         return data;
+    }
+
+
+
+    public static void writeDataToExcel(List<String> data, String filePath) {
+        try {
+            File file = new File(filePath);
+            Workbook workbook;
+            Sheet sheet;
+
+            // Kiểm tra nếu file tồn tại
+            if (file.exists()) {
+                FileInputStream fis = new FileInputStream(file);
+                workbook = new XSSFWorkbook(fis);
+                sheet = workbook.getSheetAt(0);
+                fis.close();
+            } else {
+                workbook = new XSSFWorkbook();
+                sheet = workbook.createSheet("Product Data");
+            }
+
+            // Ghi dữ liệu vào dòng mới
+            int lastRowNum = sheet.getLastRowNum();
+            Row row = sheet.createRow(lastRowNum + 1);
+
+            // Ghi từng phần tử của danh sách vào từng ô
+            for (int i = 0; i < data.size(); i++) {
+                row.createCell(i).setCellValue(data.get(i));
+            }
+
+            // Lưu lại file
+            FileOutputStream fos = new FileOutputStream(filePath);
+            workbook.write(fos);
+            fos.close();
+            workbook.close();
+
+//            System.out.println("Data written successfully to Excel!");
+            LogUtils.info("Data written successfully to Excel!");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    // function will return data in last column
+    public static Map<String, String> lastProductEntry(String filePath) {
+        Map<String, String> productData = new HashMap<>();
+
+        try {
+            File file = new File(filePath);
+            if (!file.exists()) {
+                throw new Exception("File Excel chưa tồn tại!");
+            }
+
+            FileInputStream fis = new FileInputStream(file);
+            Workbook workbook = new XSSFWorkbook(fis);
+            Sheet sheet = workbook.getSheetAt(0);
+            int lastRowNum = sheet.getLastRowNum(); // Lấy dòng cuối cùng
+
+            if (lastRowNum < 1) {
+                throw new Exception("Không có dữ liệu sản phẩm!");
+            }
+
+            Row row = sheet.getRow(lastRowNum);
+            Row headerRow = sheet.getRow(0);
+
+            for (Cell headerCell : headerRow) {
+                String columnName = headerCell.getStringCellValue();
+                String value = row.getCell(headerCell.getColumnIndex()).getStringCellValue();
+                productData.put(columnName, value);
+            }
+
+            fis.close();
+            workbook.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return productData;
+
     }
 
 }

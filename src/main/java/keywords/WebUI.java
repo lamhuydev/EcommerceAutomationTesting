@@ -73,6 +73,12 @@ public class WebUI {
         return DriverManager.getDriver().findElement(by);
     }
 
+    public static List<WebElement> findElements(By by) {
+        waitForElementVisible(by);
+        return DriverManager.getDriver().findElements(by);
+    }
+
+
     public static void titleIs() {
 
     }
@@ -322,13 +328,14 @@ public class WebUI {
 
     public static boolean isDisplayed(By by) {
         try {
-            waitForElementVisible(by);
-            WebElement element = DriverManager.getDriver().findElement(by);
-            return element.isDisplayed();
+            if (checkElementExist(by)) { // Kiểm tra nếu phần tử tồn tại trước
+                WebElement element = DriverManager.getDriver().findElement(by);
+                return element.isDisplayed();
+            }
         } catch (Exception e) {
             //ExtentTestManager.logMessage(Status.FAIL ,"Phần tử không hiển thị");
-            return false;
         }
+        return false;
     }
 
 
