@@ -278,6 +278,7 @@ public class WebUI {
 
 
     public static Boolean checkElementExist(By by) {
+        waitForElementVisible(by);
         List<WebElement> listElement = getWebElements(by);
 
         if (listElement.size() > 0) {
@@ -328,6 +329,7 @@ public class WebUI {
 
     public static boolean isDisplayed(By by) {
         try {
+            waitForElementVisible(by);
             if (checkElementExist(by)) { // Kiểm tra nếu phần tử tồn tại trước
                 WebElement element = DriverManager.getDriver().findElement(by);
                 return element.isDisplayed();
@@ -407,6 +409,7 @@ public class WebUI {
         }
     }
 
+    @Step("Hover to element: {0}")
     public static boolean mouseHover(By by) {
         try {
             Actions action = new Actions(DriverManager.getDriver());

@@ -1,0 +1,108 @@
+[INFO] 15-06-2025 23:07:13 [main] LogUtils - ⚙\uFE0F Thời gian chạy toàn bộ test:Sun Jun 15 23:07:12 ICT 2025
+[INFO] 15-06-2025 23:07:17 [main] LogUtils - Run with Edge browser
+[INFO] 15-06-2025 23:07:18 [main] LogUtils - Bắt đầu chạy test: testAddCart
+[INFO] 15-06-2025 23:07:20 [main] LogUtils - 🌐 Open URL: https://cms.anhtester.com/
+[INFO] 15-06-2025 23:07:21 [main] LogUtils - checkElementExist: true --- By.xpath: //b[normalize-space()='Website Demo']
+[INFO] 15-06-2025 23:07:21 [main] LogUtils - Click on element By.xpath: //b[normalize-space()='Website Demo']/following::button[@data-value='removed']
+[INFO] 15-06-2025 23:07:22 [main] LogUtils - Click on element By.xpath: (//a[normalize-space()='Login'])[1]
+[INFO] 15-06-2025 23:07:22 [main] LogUtils - checkElementExist: true --- By.xpath: //a[contains(normalize-space(), 'Forgot password')]
+[INFO] 15-06-2025 23:07:23 [main] LogUtils - Clear text on element By.xpath: //input[@id='email']
+[INFO] 15-06-2025 23:07:24 [main] LogUtils - Set text [customer@example.com] on element: By.xpath: //input[@id='email']
+[INFO] 15-06-2025 23:07:24 [main] LogUtils - Clear text on element By.xpath: //input[@id='password']
+[INFO] 15-06-2025 23:07:25 [main] LogUtils - Set text [123456] on element: By.xpath: //input[@id='password']
+[INFO] 15-06-2025 23:07:27 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Login']
+[INFO] 15-06-2025 23:07:27 [main] LogUtils - Clear text on element By.xpath: //input[@id='search' and @name='keyword']
+[INFO] 15-06-2025 23:07:28 [main] LogUtils - Set text [laptop lenovo] on element: By.xpath: //input[@id='search' and @name='keyword']
+[INFO] 15-06-2025 23:07:29 [main] LogUtils - Click on element By.xpath: //input[@id='search' and @name='keyword']/following-sibling::div/button[@type='submit']
+[INFO] 15-06-2025 23:07:31 [main] LogUtils - Get current url: https://cms.anhtester.com/search?keyword=laptop+lenovo
+[INFO] 15-06-2025 23:07:31 [main] LogUtils - verifyUserProductListPage: Passed - This Is Product List Page
+[INFO] 15-06-2025 23:07:32 [main] LogUtils - Click on element By.xpath: ((//form[@id='search-form']/descendant::div[@class='col'])[1]/descendant::a[@data-title='Add to cart'])[1]
+[INFO] 15-06-2025 23:07:32 [main] LogUtils - Get text of element: By.xpath: (//form[@id='search-form']/descendant::div[@class='col'])[1]/descendant::div[contains(@class, 'rating')]/following-sibling::h3/a || ==> Text Return: Laptop pro game B
+[INFO] 15-06-2025 23:07:32 [main] LogUtils - Get text of element: By.xpath: (//form[@id='search-form']/descendant::div[@class='col'])[2]/descendant::div[contains(@class, 'rating')]/following-sibling::h3/a || ==> Text Return: Laptop pro game 20
+[INFO] 15-06-2025 23:07:32 [main] LogUtils - Get text of element: By.xpath: //div[@id='addToCart-modal-body']//h2 || ==> Text Return: Laptop pro game B
+[INFO] 15-06-2025 23:07:32 [main] LogUtils - ✅ verifyPopupAddCart: verify success !
+[INFO] 15-06-2025 23:07:33 [main] LogUtils - Click on element By.xpath: //span[normalize-space()='Add to cart']
+[INFO] 15-06-2025 23:07:34 [main] LogUtils - checkElementExist: true --- By.xpath: //h3[normalize-space()='Item added to your cart!']
+[INFO] 15-06-2025 23:07:34 [main] LogUtils - checkElementExist: true --- By.xpath: //span[normalize-space()='Frequently Bought Together']
+[INFO] 15-06-2025 23:07:34 [main] LogUtils - checkElementExist: true --- By.xpath: //h3[normalize-space()='Item added to your cart!']
+[INFO] 15-06-2025 23:07:34 [main] LogUtils - checkElementExist: true --- By.xpath: //span[normalize-space()='Frequently Bought Together']
+[INFO] 15-06-2025 23:07:34 [main] LogUtils - Get text of element: By.xpath: //div[@id='cart_items']//span[contains(@class, 'badge') and contains(@class, 'cart-count')] || ==> Text Return: 1
+[INFO] 15-06-2025 23:07:34 [main] LogUtils - verifyAddCartSuccess countProductCart: 1
+[INFO] 15-06-2025 23:07:34 [main] LogUtils - verifyAddCartSuccess getCartCount: 1
+[INFO] 15-06-2025 23:07:34 [main] LogUtils - verifyAddCartSuccess: add cart success!
+[INFO] 15-06-2025 23:07:35 [main] LogUtils - Click on element By.xpath: //div[@id='addToCart']/descendant::button[contains(@class, 'close') and @aria-label='Close']
+[INFO] 15-06-2025 23:07:37 [main] LogUtils - Click on element By.xpath: ((//form[@id='search-form']/descendant::div[@class='col'])[2]/descendant::a[@data-title='Add to cart'])[1]
+[INFO] 15-06-2025 23:07:37 [main] LogUtils - Get text of element: By.xpath: (//form[@id='search-form']/descendant::div[@class='col'])[1]/descendant::div[contains(@class, 'rating')]/following-sibling::h3/a || ==> Text Return: Laptop pro game B
+[INFO] 15-06-2025 23:07:38 [main] LogUtils - Get text of element: By.xpath: (//form[@id='search-form']/descendant::div[@class='col'])[2]/descendant::div[contains(@class, 'rating')]/following-sibling::h3/a || ==> Text Return: Laptop pro game 20
+[INFO] 15-06-2025 23:07:38 [main] LogUtils - Get text of element: By.xpath: //div[@id='addToCart-modal-body']//h2 || ==> Text Return: Laptop pro game 20
+[INFO] 15-06-2025 23:07:38 [main] LogUtils - ✅ verifyPopupAddCart: verify success !
+[INFO] 15-06-2025 23:07:39 [main] LogUtils - Click on element By.xpath: //span[normalize-space()='Add to cart']
+[INFO] 15-06-2025 23:07:39 [main] LogUtils - checkElementExist: true --- By.xpath: //h3[normalize-space()='Item added to your cart!']
+[INFO] 15-06-2025 23:07:40 [main] LogUtils - checkElementExist: true --- By.xpath: //span[normalize-space()='Frequently Bought Together']
+[INFO] 15-06-2025 23:07:40 [main] LogUtils - checkElementExist: true --- By.xpath: //h3[normalize-space()='Item added to your cart!']
+[INFO] 15-06-2025 23:07:40 [main] LogUtils - checkElementExist: true --- By.xpath: //span[normalize-space()='Frequently Bought Together']
+[INFO] 15-06-2025 23:07:40 [main] LogUtils - Get text of element: By.xpath: //div[@id='cart_items']//span[contains(@class, 'badge') and contains(@class, 'cart-count')] || ==> Text Return: 2
+[INFO] 15-06-2025 23:07:40 [main] LogUtils - verifyAddCartSuccess countProductCart: 1
+[INFO] 15-06-2025 23:07:40 [main] LogUtils - verifyAddCartSuccess getCartCount: 2
+[ERROR] 15-06-2025 23:07:40 [main] LogUtils - ❌ Đây là Test case chạy thất bại: testAddCart
+[ERROR] 15-06-2025 23:07:40 [main] LogUtils - java.lang.AssertionError: verifyAddCartSuccess: count add not match expected [2] but found [1]
+[INFO] 15-06-2025 23:07:40 [main] LogUtils - Screenshot taken: testAddCart
+[INFO] 15-06-2025 23:07:40 [main] LogUtils - Screenshot taken current URL: https://cms.anhtester.com/search?keyword=laptop+lenovo
+[INFO] 15-06-2025 23:07:42 [main] LogUtils - ⭐\uFE0F Total test:1
+[INFO] 15-06-2025 23:07:42 [main] LogUtils - ⭐\uFE0F Total test passed:0
+[INFO] 15-06-2025 23:07:42 [main] LogUtils - ⭐\uFE0F Total test failed:1
+[INFO] 15-06-2025 23:07:42 [main] LogUtils - ⭐\uFE0F Total test skipped:0
+[INFO] 15-06-2025 23:11:58 [main] LogUtils - ⚙\uFE0F Thời gian chạy toàn bộ test:Sun Jun 15 23:11:57 ICT 2025
+[INFO] 15-06-2025 23:12:03 [main] LogUtils - Run with Edge browser
+[INFO] 15-06-2025 23:12:03 [main] LogUtils - Bắt đầu chạy test: testAddCart
+[INFO] 15-06-2025 23:12:06 [main] LogUtils - 🌐 Open URL: https://cms.anhtester.com/
+[INFO] 15-06-2025 23:12:06 [main] LogUtils - checkElementExist: true --- By.xpath: //b[normalize-space()='Website Demo']
+[INFO] 15-06-2025 23:12:07 [main] LogUtils - Click on element By.xpath: //b[normalize-space()='Website Demo']/following::button[@data-value='removed']
+[INFO] 15-06-2025 23:12:08 [main] LogUtils - Click on element By.xpath: (//a[normalize-space()='Login'])[1]
+[INFO] 15-06-2025 23:12:08 [main] LogUtils - checkElementExist: true --- By.xpath: //a[contains(normalize-space(), 'Forgot password')]
+[INFO] 15-06-2025 23:12:08 [main] LogUtils - Clear text on element By.xpath: //input[@id='email']
+[INFO] 15-06-2025 23:12:09 [main] LogUtils - Set text [customer@example.com] on element: By.xpath: //input[@id='email']
+[INFO] 15-06-2025 23:12:10 [main] LogUtils - Clear text on element By.xpath: //input[@id='password']
+[INFO] 15-06-2025 23:12:10 [main] LogUtils - Set text [123456] on element: By.xpath: //input[@id='password']
+[INFO] 15-06-2025 23:12:12 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Login']
+[INFO] 15-06-2025 23:12:12 [main] LogUtils - Clear text on element By.xpath: //input[@id='search' and @name='keyword']
+[INFO] 15-06-2025 23:12:13 [main] LogUtils - Set text [laptop lenovo] on element: By.xpath: //input[@id='search' and @name='keyword']
+[INFO] 15-06-2025 23:12:15 [main] LogUtils - Click on element By.xpath: //input[@id='search' and @name='keyword']/following-sibling::div/button[@type='submit']
+[INFO] 15-06-2025 23:12:16 [main] LogUtils - Get current url: https://cms.anhtester.com/search?keyword=laptop+lenovo
+[INFO] 15-06-2025 23:12:16 [main] LogUtils - verifyUserProductListPage: Passed - This Is Product List Page
+[INFO] 15-06-2025 23:12:17 [main] LogUtils - Click on element By.xpath: ((//form[@id='search-form']/descendant::div[@class='col'])[1]/descendant::a[@data-title='Add to cart'])[1]
+[INFO] 15-06-2025 23:12:17 [main] LogUtils - Get text of element: By.xpath: (//form[@id='search-form']/descendant::div[@class='col'])[1]/descendant::div[contains(@class, 'rating')]/following-sibling::h3/a || ==> Text Return: Laptop pro game B
+[INFO] 15-06-2025 23:12:17 [main] LogUtils - Get text of element: By.xpath: (//form[@id='search-form']/descendant::div[@class='col'])[2]/descendant::div[contains(@class, 'rating')]/following-sibling::h3/a || ==> Text Return: Laptop pro game 20
+[INFO] 15-06-2025 23:12:18 [main] LogUtils - Get text of element: By.xpath: //div[@id='addToCart-modal-body']//h2 || ==> Text Return: Laptop pro game B
+[INFO] 15-06-2025 23:12:18 [main] LogUtils - ✅ verifyPopupAddCart: verify success !
+[INFO] 15-06-2025 23:12:18 [main] LogUtils - Click on element By.xpath: //span[normalize-space()='Add to cart']
+[INFO] 15-06-2025 23:12:19 [main] LogUtils - checkElementExist: true --- By.xpath: //h3[normalize-space()='Item added to your cart!']
+[INFO] 15-06-2025 23:12:19 [main] LogUtils - checkElementExist: true --- By.xpath: //span[normalize-space()='Frequently Bought Together']
+[INFO] 15-06-2025 23:12:19 [main] LogUtils - checkElementExist: true --- By.xpath: //h3[normalize-space()='Item added to your cart!']
+[INFO] 15-06-2025 23:12:19 [main] LogUtils - checkElementExist: true --- By.xpath: //span[normalize-space()='Frequently Bought Together']
+[INFO] 15-06-2025 23:12:19 [main] LogUtils - Get text of element: By.xpath: //div[@id='cart_items']//span[contains(@class, 'badge') and contains(@class, 'cart-count')] || ==> Text Return: 1
+[INFO] 15-06-2025 23:12:19 [main] LogUtils - verifyAddCartSuccess countProductCart: 1
+[INFO] 15-06-2025 23:12:19 [main] LogUtils - verifyAddCartSuccess getCartCount: 1
+[INFO] 15-06-2025 23:12:19 [main] LogUtils - verifyAddCartSuccess: add cart success!
+[INFO] 15-06-2025 23:12:20 [main] LogUtils - Click on element By.xpath: //div[@id='addToCart']/descendant::button[contains(@class, 'close') and @aria-label='Close']
+[INFO] 15-06-2025 23:12:23 [main] LogUtils - Click on element By.xpath: ((//form[@id='search-form']/descendant::div[@class='col'])[2]/descendant::a[@data-title='Add to cart'])[1]
+[INFO] 15-06-2025 23:12:23 [main] LogUtils - Get text of element: By.xpath: (//form[@id='search-form']/descendant::div[@class='col'])[1]/descendant::div[contains(@class, 'rating')]/following-sibling::h3/a || ==> Text Return: Laptop pro game B
+[INFO] 15-06-2025 23:12:23 [main] LogUtils - Get text of element: By.xpath: (//form[@id='search-form']/descendant::div[@class='col'])[2]/descendant::div[contains(@class, 'rating')]/following-sibling::h3/a || ==> Text Return: Laptop pro game 20
+[INFO] 15-06-2025 23:12:23 [main] LogUtils - Get text of element: By.xpath: //div[@id='addToCart-modal-body']//h2 || ==> Text Return: Laptop pro game 20
+[INFO] 15-06-2025 23:12:23 [main] LogUtils - ✅ verifyPopupAddCart: verify success !
+[INFO] 15-06-2025 23:12:24 [main] LogUtils - Click on element By.xpath: //span[normalize-space()='Add to cart']
+[INFO] 15-06-2025 23:12:25 [main] LogUtils - checkElementExist: true --- By.xpath: //h3[normalize-space()='Item added to your cart!']
+[INFO] 15-06-2025 23:12:25 [main] LogUtils - checkElementExist: true --- By.xpath: //span[normalize-space()='Frequently Bought Together']
+[INFO] 15-06-2025 23:12:25 [main] LogUtils - checkElementExist: true --- By.xpath: //h3[normalize-space()='Item added to your cart!']
+[INFO] 15-06-2025 23:12:25 [main] LogUtils - checkElementExist: true --- By.xpath: //span[normalize-space()='Frequently Bought Together']
+[INFO] 15-06-2025 23:12:25 [main] LogUtils - Get text of element: By.xpath: //div[@id='cart_items']//span[contains(@class, 'badge') and contains(@class, 'cart-count')] || ==> Text Return: 2
+[INFO] 15-06-2025 23:12:25 [main] LogUtils - verifyAddCartSuccess countProductCart: 2
+[INFO] 15-06-2025 23:12:25 [main] LogUtils - verifyAddCartSuccess getCartCount: 2
+[INFO] 15-06-2025 23:12:25 [main] LogUtils - verifyAddCartSuccess: add cart success!
+[INFO] 15-06-2025 23:12:26 [main] LogUtils - Click on element By.xpath: //div[@id='addToCart']/descendant::button[contains(@class, 'close') and @aria-label='Close']
+[INFO] 15-06-2025 23:12:26 [main] LogUtils - addProductToCart: success
+[INFO] 15-06-2025 23:12:32 [main] LogUtils - ✅ Đây là Test case chạy thành công: testAddCart
+[INFO] 15-06-2025 23:12:33 [main] LogUtils - ⭐\uFE0F Total test:1
+[INFO] 15-06-2025 23:12:33 [main] LogUtils - ⭐\uFE0F Total test passed:1
+[INFO] 15-06-2025 23:12:33 [main] LogUtils - ⭐\uFE0F Total test failed:0
+[INFO] 15-06-2025 23:12:33 [main] LogUtils - ⭐\uFE0F Total test skipped:0

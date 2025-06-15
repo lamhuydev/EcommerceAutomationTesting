@@ -1,0 +1,66 @@
+package main sẽ chứa code để làm web/app như thêm sửa xóa,...
+package test dùng để chứa code test
+
+
+code sẽ nằm trong package java
+
+
+**************************************************************************
+
+sử dụng Xpath khi không có các element như id, name, class
+
+**************************************************************************
+
+Xpath tương đối
+=>> xác định bằng thuộc tính bằng @
+    cú pháp: //tagname[@attributeName = 'value']
+    //div[@id='name']
+
+=>> xác định bằng text với hàm text()
+    - hàm text() sẽ lấy đúng khoảng trắng. Tức muốn tìm đúng text mà có khoảng trắng phải đảm bảo trong cú pháp có đủ khoảng trắng
+    - có thể sử dụng normalize-space(). Hàm này chấp nhận bỏ khoảng trắng
+    - cú pháp: //tagname[text() = 'giá trị text'] ** có thể thay hàm text() bằng normalize-space()
+    VD: //button[text() = '     login     ']
+    VD: //button[normalize-space() = 'login']
+
+=>> xác định với hàm chứa contains()
+    - cú pháp: //tagname[contains(@attribute, 'giá trị text')] hoặc //tagname[contains(text(), 'giá trị text')]
+
+=>> xác định với hàm stars-with()
+    - cú pháp tương tự như contains() chỉ thay contains() bằng start-with()
+
+=>> xác định với and và or
+    - cú pháp:    //button[normalize-space() = 'login' and @id='login']
+
+=>> xác định với Ancestor (xác định tổ tiên)
+    - Chọn 1 thẻ con làm mốc xác định, khi đó sẽ tìm đến các thẻ cha ở bên ngoài
+    - Phải đặt /ancestor như trong ví dụ
+    VD: //span[normalize-space() = 'Invoices Awaiting Payment']/ancestor::div[@class='row'][1]
+
+=>> xác định với descendant (xác định con cháu)
+    - Chọn 1 thẻ cha làm mốc xác định, khi đó sẽ tìm các thẻ con bên trong
+    - Cú pháp giống ancestor, chỉ thay ancestor bằng descendant
+    //div[@id='widget-top_stats'] là mốc cha
+    VD: //div[@id='widget-top_stats']/descendant::span[1]
+
+=>> xác định qua preceding và following (xác định trên dưới)
+    - Đối với following (ở dưới) thì các đối tượng sẽ ở cùng cấp, sẽ có nhiều đối tượng ở phía dưới, khác với
+      following-sibling chỉ tính các đối tượng phía dưới CÙNG CẤP
+    - Đối với preceding (ở trên) thì các đối tượng có thể cùng cấp hoặc không, miễn ở trên mốc xác định là được
+    - Cú pháp preceding tương tự như following
+    VD: //li[@class='menu-item-dashboard active']/following::li[normalize-space()='Sales']
+
+=>> xác định anh chị em với following-sibling và preceding-sibling
+    - following-sibling sẽ chỉ xác định đối tượng phía dưới cùng cấp, rút gọn, ngắn gọn hơn following
+    - Tương tự đối với preceing, sẽ chỉ xác định đối tượng nằm trên cùng cấp
+    VD: //label[@for='company']/following-sibling::input
+
+=>> xác định với parent và child
+    VD:
+    <div class="name">
+        <label for="name">Name</label>
+    </div>
+    - parent là xác định thẻ cha liền kề. Trong ví dụ, để xác định thẻ cha liền kề của label
+    =>> //lable[normalize-space()='Name']/parent::div
+
+    - Tương tự đối với child (thẻ con liền kề)

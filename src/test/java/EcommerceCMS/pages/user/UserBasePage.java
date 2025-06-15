@@ -5,13 +5,13 @@ import org.openqa.selenium.By;
 import utils.LogUtils;
 
 public class UserBasePage {
-    private By loginButtonHomePage = By.xpath("(//a[normalize-space()='Login'])[1]");
-    private By headerPopup = By.xpath("//b[normalize-space()='Website Demo']");
-    private By buttonClosePopup = By.xpath("//b[normalize-space()='Website Demo']/following::button[@data-value='removed']");
-    private By buttonOK = By.xpath("//button[normalize-space()='Ok. I Understood']");
+    private static By loginButtonHomePage = By.xpath("(//a[normalize-space()='Login'])[1]");
+    private static By headerPopup = By.xpath("//b[normalize-space()='Website Demo']");
+    private static By buttonClosePopup = By.xpath("//b[normalize-space()='Website Demo']/following::button[@data-value='removed']");
+    private static By buttonOK = By.xpath("//button[normalize-space()='Ok. I Understood']");
 
     private static By inputSearchProduct = By.xpath("//input[@id='search' and @name='keyword']");
-    private By buttonSearchProduct = By.xpath("//input[@id='search' and @name='keyword']/following-sibling::div/button[@type='submit']");
+    private static By buttonSearchProduct = By.xpath("//input[@id='search' and @name='keyword']/following-sibling::div/button[@type='submit']");
 
     private static By productAfterSearch = By.xpath("(//div[normalize-space()='Products']/following-sibling::ul/li)[1]");
 
@@ -20,13 +20,13 @@ public class UserBasePage {
         WebUI.clickElement(loginButtonHomePage);
     }
 
-    public void clickClosePopup(){
+    public static void clickClosePopup(){
         if(WebUI.isDisplayed(headerPopup)){
             WebUI.clickElement(buttonClosePopup);
         }
     }
 
-    public void clickClosePolicy(){
+    public static void clickClosePolicy(){
         if (WebUI.isDisplayed(buttonOK)) {
             WebUI.clickElement(buttonOK);
         }
@@ -37,9 +37,16 @@ public class UserBasePage {
         WebUI.setText(inputSearchProduct, product);
     }
 
-    public void clickButtonSearchProduct(){
+    public static void userSearchProductWithClickButtonSearch(String product){
+        WebUI.clearText(inputSearchProduct);
+        WebUI.setText(inputSearchProduct, product);
+        clickButtonSearchProduct();
+    }
+
+    public static void clickButtonSearchProduct(){
         WebUI.clickElement(buttonSearchProduct);
     }
+
 
     public static void clickProductAfterSearch(){
         try{
