@@ -20,7 +20,7 @@ import java.util.List;
 public class WebUI {
 
     private static int TIMEOUT = 10;
-    private static double STEP_TIME = 0.5;
+    private static double STEP_TIME = 0.2;
     private static int PAGE_LOAD_TIMEOUT = 20;
 
 
@@ -73,10 +73,19 @@ public class WebUI {
         return DriverManager.getDriver().findElement(by);
     }
 
+    @Step("Find elements: {0}")
     public static List<WebElement> findElements(By by) {
         waitForElementVisible(by);
         return DriverManager.getDriver().findElements(by);
     }
+
+//    public static String getChildText(WebElement parent, By childLocator) {
+//        return parent.findElement(childLocator).getText();
+//    }
+//
+//    public static String getChildAttribute(WebElement parent, By childLocator, String attr) {
+//        return parent.findElement(childLocator).getAttribute(attr);
+//    }
 
 
     public static void titleIs() {

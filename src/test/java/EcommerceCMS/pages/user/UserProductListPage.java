@@ -2,11 +2,14 @@ package EcommerceCMS.pages.user;
 
 import keywords.WebUI;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import utils.LogUtils;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class UserProductListPage {
 
@@ -19,9 +22,22 @@ public class UserProductListPage {
     private By nameProduct_1 = By.xpath("(//form[@id='search-form']/descendant::div[@class='col'])[1]/descendant::div[contains(@class, 'rating')]/following-sibling::h3/a");
     private By nameProduct_2 = By.xpath("(//form[@id='search-form']/descendant::div[@class='col'])[2]/descendant::div[contains(@class, 'rating')]/following-sibling::h3/a");
 
+    // button popup cart
+    private By buttonPopupCart = By.xpath("//div[@id='cart_items']");
 
-    // name product in popup add cart
-    private By nameProductPopup = By.xpath("//div[@id='addToCart-modal-body']//h2");
+    // element of popup cart
+    private By removeProductInPopupCart = By.xpath("//div[@id='cart_items']//button");
+    private By quantityProductInPopupCart = By.xpath(".//span[contains(text(),'x')]");
+    private By priceProductInPopupCart = By.xpath(".//span[contains(text(),'$')]");
+    private By totalPriceInPopupCart = By.xpath("//span[normalize-space()='Subtotal']/following-sibling::span");
+
+    // list item cart element
+    private By cartItemElements = By.xpath("//div[@id='cart_items']//li[@class='list-group-item']");
+
+    // element product in popup add cart
+    private By nameProductPopupAddCart = By.xpath("//div[@id='addToCart-modal-body']//h2");
+    private By priceProductPopupAddCart = By.xpath("(//div[@id='addToCart-modal-body']//strong)[1]");
+    private By quantityProductPopupAddCart = By.xpath("//input[@name='quantity']");
 
     // button add cart when hover prodcut
     private By buttonAddCartProduct_1 = By.xpath("((//form[@id='search-form']/descendant::div[@class='col'])[1]/descendant::a[@data-title='Add to cart'])[1]");
@@ -42,7 +58,7 @@ public class UserProductListPage {
     // cart count
     private By cartCount = By.xpath("//div[@id='cart_items']//span[contains(@class, 'badge') and contains(@class, 'cart-count')]");
 
-    public void verifyUserProductListPage(String nameProductSearch){
+    public void verifyUserProductListPage(String nameProductSearch) {
         WebUI.waitForPageLoaded();
         String currentUrl = WebUI.getCurrentURL();
 
@@ -52,7 +68,7 @@ public class UserProductListPage {
 
         String[] nameTagURLSlug = urlSlug.split("\\?");
         String[] keywordTagURLSlug = nameTagURLSlug[1].split("=");
-        String[] productNameSearch =  keywordTagURLSlug[1].split("\\+");
+        String[] productNameSearch = keywordTagURLSlug[1].split("\\+");
 
 
         Assert.assertEquals(nameTagURLSlug[0], "search", "verifyUserProductListPage: redirect incorrect, name tag url not match");
@@ -67,17 +83,62 @@ public class UserProductListPage {
         LogUtils.info("verifyUserProductListPage: Passed - This Is Product List Page");
     }
 
-    // add 2 product cùng lúc
-    public void addProductToCart(){
+    public Map<String, Object> getElementPopupAddCart() {
+        String priceProductPopupFormat = WebUI.getText(priceProductPopupAddCart);
+        String priceRange = priceProductPopupFormat.replace("$", "").replace(",", "");
+        String[] prices = priceRange.split(" - ");
+        double minPrice = Double.parseDouble(prices[0]);
+        double maxPrice = Double.parseDouble(prices[1]);
+
+        int quantityProduct = Integer.parseInt(WebUI.getElementAttribute(quantityProductPopupAddCart, "value"));
+        String productName = WebUI.getText(nameProductPopupAddCart);
+
+        Map<String, Object> productInfo = new HashMap<>();
+        productInfo.put("name", productName);
+        productInfo.put("minPrice", minPrice);
+        productInfo.put("maxPrice", maxPrice);
+        productInfo.put("quantity", quantityProduct);
+        productInfo.put("minTotal", minPrice * quantityProduct);
+        productInfo.put("maxTotal", maxPrice * quantityProduct);
+
+        return productInfo;
+    }
+
+    public void checkCountCart() {
+        int cartCountCheck = Integer.parseInt(WebUI.getText(cartCount));
+        if (cartCountCheck > 0) {
+            for (int i = 0; i < cartCountCheck; i++) {
+                clickToPopupCart();
+                WebUI.clickElement(removeProductInPopupCart);
+            }
+        }
+    }
+
+
+    // add 2 product cụ thể
+    // flow: search product > product list page displayed > hover product > click button add cart
+    public void addProductToCart() {
+        // khai báo mảng productData
+        Map<String, Map<String, Object>> productData = new HashMap<>();
+
+        // check count cart
+        checkCountCart();
 
         // add product 1
         WebUI.hoverElement(product_1);
         WebUI.sleep(0.5);
         WebUI.clickElement(buttonAddCartProduct_1);
         verifyPopupAddCart();
+
+        // add product to Map for action verify add cart success
+        Map<String, Object> productInfo1 = getElementPopupAddCart();
+        productData.put((String) productInfo1.get("name"), productInfo1);
+
         clickButtonAddCartPopup();
         WebUI.sleep(0.5);
-        verifyAddCartSuccess();
+        verifyPopupAddCartSuccess();
+
+
         clickClosePopupAddCart();
 
         WebUI.sleep(1);
@@ -87,19 +148,32 @@ public class UserProductListPage {
         WebUI.sleep(1);
         WebUI.clickElement(buttonAddCartProduct_2);
         verifyPopupAddCart();
+
+        // add product to Map for action verify add cart success
+        Map<String, Object> productInfo2 = getElementPopupAddCart();
+        productData.put((String) productInfo2.get("name"), productInfo2);
+
+
         clickButtonAddCartPopup();
         WebUI.sleep(0.5);
-        verifyAddCartSuccess();
+        verifyPopupAddCartSuccess();
         clickClosePopupAddCart();
+
+        clickToPopupCart();
+        verifyAddCartSuccess(productData);
 
 
         LogUtils.info("addProductToCart: success");
     }
 
-    public void verifyPopupAddCart(){
+    public void clickToPopupCart() {
+        WebUI.clickElement(buttonPopupCart);
+    }
+
+    public void verifyPopupAddCart() {
         String getNameProduct_1 = WebUI.getText(nameProduct_1);
         String getNameProduct_2 = WebUI.getText(nameProduct_2);
-        String getNameProductPopup = WebUI.getText(nameProductPopup);
+        String getNameProductPopup = WebUI.getText(nameProductPopupAddCart);
 
         List<String> allNameProduct = new ArrayList<>();
         allNameProduct.add(getNameProduct_1);
@@ -111,34 +185,92 @@ public class UserProductListPage {
         LogUtils.info("✅ verifyPopupAddCart: verify success !");
     }
 
-    public void verifyAddCartSuccess(){
-
-        if(WebUI.isDisplayed(messageAddCartSuccess) && WebUI.isDisplayed(relatedProductSuggestion)){
+    // flow: hover product > click button add cart > verify popup add cart
+    public void verifyPopupAddCartSuccess() {
+        if (WebUI.isDisplayed(messageAddCartSuccess) && WebUI.isDisplayed(relatedProductSuggestion)) {
             countProductCart++;
         }
 
-
-        Assert.assertTrue(WebUI.isDisplayed(messageAddCartSuccess), "verifyAddCartSuccess: add cart fail, message is not display");
-        Assert.assertTrue(WebUI.isDisplayed(relatedProductSuggestion), "verifyAddCartSuccess: add cart fail, relate product suggestion is not display");
+        Assert.assertTrue(WebUI.isDisplayed(messageAddCartSuccess), "verifyPopupAddCartSuccess: add cart fail, message is not display");
+        Assert.assertTrue(WebUI.isDisplayed(relatedProductSuggestion), "verifyPopupAddCartSuccess: add cart fail, relate product suggestion is not display");
 
         // assert current count product
         int getCartCount = Integer.parseInt(WebUI.getText(cartCount));
 
-        LogUtils.info("verifyAddCartSuccess countProductCart: " + countProductCart);
-        LogUtils.info("verifyAddCartSuccess getCartCount: " + getCartCount);
+        LogUtils.info("verifyPopupAddCartSuccess countProductCart: " + countProductCart);
+        LogUtils.info("verifyPopupAddCartSuccess getCartCount: " + getCartCount);
 
-        Assert.assertEquals(countProductCart, getCartCount, "verifyAddCartSuccess: count add not match");
-
-        LogUtils.info("verifyAddCartSuccess: add cart success!");
+        Assert.assertEquals(countProductCart, getCartCount, "verifyPopupAddCartSuccess: count add not match");
+        LogUtils.info("verifyPopupAddCartSuccess: popup add cart success!");
 
     }
 
-    public void clickButtonAddCartPopup(){
+
+    // flow: click button cart > popup displayed > verify
+    public void verifyAddCartSuccess(Map<String, Map<String, Object>> productData) {
+        List<WebElement> cartItems = WebUI.findElements(cartItemElements);
+        double totalAllProducts = 0;
+
+        // actual product in cart popup
+        for (WebElement item : cartItems) {
+            String nameProductActual = item.findElement(By.cssSelector(".fw-600")).getText().trim();
+
+            String quantityRaw = item.findElement(quantityProductInPopupCart).getText();
+            int quantityProductActual = Integer.parseInt(quantityRaw.replace("x", "").trim());
+
+            String priceRaw = item.findElement(priceProductInPopupCart).getText();
+            // String priceRaw = item.findElement(By.xpath(".//span[contains(text(),'$')]")).getText();
+
+            double price = Double.parseDouble(priceRaw.replace("$", "").replace(",", "").trim());
+
+            double subtotal = price * quantityProductActual;
+            totalAllProducts += subtotal;
+
+            LogUtils.info("📦 Product: " + nameProductActual);
+            LogUtils.info("Quantity: " + quantityProductActual + ", Price: " + price + ", Subtotal: " + subtotal);
+
+            if (!productData.containsKey(nameProductActual)) {
+                LogUtils.warn("⚠️ Sản phẩm '" + nameProductActual + "' không có trong dữ liệu đã lưu!");
+                continue;
+            }
+
+            // expect product in cart popup
+            Map<String, Object> expected = productData.get(nameProductActual);
+            int expectedQty = (int) expected.get("quantity");
+            double minPrice = (double) expected.get("minPrice");
+            double maxPrice = (double) expected.get("maxPrice");
+
+            try {
+                Assert.assertEquals(quantityProductActual, expectedQty, "❌ Quantity not match for product: " + nameProductActual);
+                Assert.assertTrue(
+                        price >= minPrice && price <= maxPrice,
+                        "❌ Price product is not in range expected for product: " + nameProductActual
+                );
+            } catch (AssertionError e) {
+                LogUtils.error("❌ " + e.getMessage());
+                productData.remove(nameProductActual);
+                throw e;
+            }
+        }
+
+        // get total price actual in popop cart
+        String totalText = WebUI.getText(totalPriceInPopupCart);
+        double actualTotalPrice = Double.parseDouble(totalText.replace("$", "").replace(",", "").trim());
+
+        LogUtils.info("🔢 Expected total: " + totalAllProducts + " | Actual total: " + actualTotalPrice);
+        Assert.assertEquals(actualTotalPrice, totalAllProducts, 0.01, "❌ Total price in popup cart not match!");
+
+        LogUtils.info("✅ verifyAddCartSuccess successfully! Sản phẩm còn lại: " + productData.keySet());
+    }
+
+
+
+    public void clickButtonAddCartPopup() {
         WebUI.clickElement(buttonAddCartPopup);
         LogUtils.info("Click button add cart in popup add cart");
     }
 
-    public void clickClosePopupAddCart(){
+    public void clickClosePopupAddCart() {
         WebUI.clickElement(buttonClosePopupAddCart);
         LogUtils.info("Click button close popup add cart");
     }
