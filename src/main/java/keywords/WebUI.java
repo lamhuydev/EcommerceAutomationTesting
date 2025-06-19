@@ -20,7 +20,7 @@ import java.util.List;
 public class WebUI {
 
     private static int TIMEOUT = 10;
-    private static double STEP_TIME = 0.2;
+    private static double STEP_TIME = 0.3;
     private static int PAGE_LOAD_TIMEOUT = 20;
 
 
@@ -70,6 +70,10 @@ public class WebUI {
 
     public static WebElement findElement(By by) {
         waitForElementVisible(by);
+        return DriverManager.getDriver().findElement(by);
+    }
+
+    public static WebElement findElementNonWait(By by) {
         return DriverManager.getDriver().findElement(by);
     }
 
@@ -338,19 +342,62 @@ public class WebUI {
 
     public static boolean isDisplayed(By by) {
         try {
-            waitForElementVisible(by);
-            if (checkElementExist(by)) { // Kiểm tra nếu phần tử tồn tại trước
+            if (checkElementExist(by)) {
                 WebElement element = DriverManager.getDriver().findElement(by);
                 return element.isDisplayed();
             }
         } catch (Exception e) {
-            //ExtentTestManager.logMessage(Status.FAIL ,"Phần tử không hiển thị");
+            LogUtils.warn("⚠️ Không thể kiểm tra hiển thị của phần tử: " + by + " → " + e.getMessage());
         }
         return false;
     }
 
+    public static boolean isElementEnabled(By by) {
+        try {
+            WebElement element = DriverManager.getDriver().findElement(by);
+//            waitForElementVisible(by);
+            boolean enabled = element.isEnabled();
+
+            LogUtils.info("🔍 Trạng thái enabled của " + by + ": " + enabled);
+            return enabled;
+        } catch (Exception e) {
+            LogUtils.error("❌ Không lấy được trạng thái enabled của " + by + " → " + e.getMessage());
+            return false;
+        }
+    }
+
+    public static boolean isElementSelected(By locator) {
+        try {
+            WebElement element = DriverManager.getDriver().findElement(locator);
+            boolean selected = element.isSelected();
+            LogUtils.info("🔍 Trạng thái selected của " + locator + ": " + selected);
+            return selected;
+        } catch (Exception e) {
+            LogUtils.error("❌ Không lấy được trạng thái selected của " + locator + " → " + e.getMessage());
+            return false;
+        }
+    }
+
+
+
+
 
     // JavascriptExecutor
+    public static void clickElementWithScript(By by) {
+        try {
+            WebElement element = getWebElement(by);
+            JavascriptExecutor js = (JavascriptExecutor) DriverManager.getDriver();
+            js.executeScript("arguments[0].scrollIntoView({behavior: 'instant', block: 'center'});", element);
+            js.executeScript("arguments[0].click();", element);
+
+            LogUtils.info("Click element with JavaScript: " + by);
+            //ExtentTestManager.logMessage(Status.INFO, "Click element with JavaScript: " + by);
+        } catch (Exception e) {
+            LogUtils.error("❌ Không thể click element bằng script: " + by + " → " + e.getMessage());
+            throw e;
+        }
+    }
+
     public static void scrollToElement(By by) {
         JavascriptExecutor js = (JavascriptExecutor) DriverManager.getDriver();
         js.executeScript("arguments[0].scrollIntoView(false);", getWebElement(by));

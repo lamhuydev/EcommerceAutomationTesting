@@ -13,6 +13,12 @@ import java.util.Map;
 
 public class UserProductListPage {
 
+    private UserCartPage userCartPage;
+    private UserPopupCartPage userPopupCartPage;
+    private UserShippingPage userShippingPage;
+    private UserDeliveryPage userDeliveryPage;
+    private UserPaymentPage userPaymentPage;
+
     private int countProductCart = 0;
 
     private By product_1 = By.xpath("(//form[@id='search-form']/descendant::div[@class='col'])[1]");
@@ -30,6 +36,10 @@ public class UserProductListPage {
     private By quantityProductInPopupCart = By.xpath(".//span[contains(text(),'x')]");
     private By priceProductInPopupCart = By.xpath(".//span[contains(text(),'$')]");
     private By totalPriceInPopupCart = By.xpath("//span[normalize-space()='Subtotal']/following-sibling::span");
+    private By headerPopupCart = By.xpath("//div[normalize-space()='Cart Items']");
+    private By subTotalPopupCart = By.xpath("//span[normalize-space()='Subtotal']");
+    private By buttonViewCartPopupCart = By.xpath("//a[normalize-space()='View cart']");
+    private By buttonCheckoutPopupCart = By.xpath("//a[normalize-space()='Checkout']");
 
     // list item cart element
     private By cartItemElements = By.xpath("//div[@id='cart_items']//li[@class='list-group-item']");
@@ -38,6 +48,7 @@ public class UserProductListPage {
     private By nameProductPopupAddCart = By.xpath("//div[@id='addToCart-modal-body']//h2");
     private By priceProductPopupAddCart = By.xpath("(//div[@id='addToCart-modal-body']//strong)[1]");
     private By quantityProductPopupAddCart = By.xpath("//input[@name='quantity']");
+    private By colorProductPopupAddCart = By.xpath("//input[@name='color' and @checked]");
 
     // button add cart when hover prodcut
     private By buttonAddCartProduct_1 = By.xpath("((//form[@id='search-form']/descendant::div[@class='col'])[1]/descendant::a[@data-title='Add to cart'])[1]");
@@ -58,71 +69,22 @@ public class UserProductListPage {
     // cart count
     private By cartCount = By.xpath("//div[@id='cart_items']//span[contains(@class, 'badge') and contains(@class, 'cart-count')]");
 
-    public void verifyUserProductListPage(String nameProductSearch) {
-        WebUI.waitForPageLoaded();
-        String currentUrl = WebUI.getCurrentURL();
-
-        // Trích xuất slug từ URL
-        String[] parts = currentUrl.split("/");
-        String urlSlug = parts[parts.length - 1];
-
-        String[] nameTagURLSlug = urlSlug.split("\\?");
-        String[] keywordTagURLSlug = nameTagURLSlug[1].split("=");
-        String[] productNameSearch = keywordTagURLSlug[1].split("\\+");
-
-
-        Assert.assertEquals(nameTagURLSlug[0], "search", "verifyUserProductListPage: redirect incorrect, name tag url not match");
-        Assert.assertEquals(keywordTagURLSlug[0], "keyword", "verifyUserProductListPage: redirect incorrect, keyword tag url not match");
-
-
-        // ghép mảng thành chuỗi : ["laptop", "lenovo"] => "laptop lenovo"
-        String formatProductNameSearch = String.join(" ", productNameSearch);
-        Assert.assertEquals(formatProductNameSearch.trim().toLowerCase(), nameProductSearch.trim().toLowerCase(),
-                "Từ khóa tìm kiếm không khớp");
-
-        LogUtils.info("verifyUserProductListPage: Passed - This Is Product List Page");
-    }
-
-    public Map<String, Object> getElementPopupAddCart() {
-        String priceProductPopupFormat = WebUI.getText(priceProductPopupAddCart);
-        String priceRange = priceProductPopupFormat.replace("$", "").replace(",", "");
-        String[] prices = priceRange.split(" - ");
-        double minPrice = Double.parseDouble(prices[0]);
-        double maxPrice = Double.parseDouble(prices[1]);
-
-        int quantityProduct = Integer.parseInt(WebUI.getElementAttribute(quantityProductPopupAddCart, "value"));
-        String productName = WebUI.getText(nameProductPopupAddCart);
-
-        Map<String, Object> productInfo = new HashMap<>();
-        productInfo.put("name", productName);
-        productInfo.put("minPrice", minPrice);
-        productInfo.put("maxPrice", maxPrice);
-        productInfo.put("quantity", quantityProduct);
-        productInfo.put("minTotal", minPrice * quantityProduct);
-        productInfo.put("maxTotal", maxPrice * quantityProduct);
-
-        return productInfo;
-    }
-
-    public void checkCountCart() {
-        int cartCountCheck = Integer.parseInt(WebUI.getText(cartCount));
-        if (cartCountCheck > 0) {
-            for (int i = 0; i < cartCountCheck; i++) {
-                clickToPopupCart();
-                WebUI.clickElement(removeProductInPopupCart);
-            }
-        }
-    }
-
 
     // add 2 product cụ thể
     // flow: search product > product list page displayed > hover product > click button add cart
     public void addProductToCart() {
+        userPopupCartPage = new UserPopupCartPage();
+        userCartPage = new UserCartPage();
+        userShippingPage = new UserShippingPage();
+        userDeliveryPage = new UserDeliveryPage();
+        userPaymentPage = new UserPaymentPage();
+
         // khai báo mảng productData
         Map<String, Map<String, Object>> productData = new HashMap<>();
 
         // check count cart
-        checkCountCart();
+        // checkCountCart();
+        userPopupCartPage.checkCountCart();
 
         // add product 1
         WebUI.hoverElement(product_1);
@@ -159,15 +121,109 @@ public class UserProductListPage {
         verifyPopupAddCartSuccess();
         clickClosePopupAddCart();
 
-        clickToPopupCart();
+        // clickToPopupCart();
+        // verifyPopupCart();
+        userPopupCartPage.clickToPopupCart();
+        userPopupCartPage.verifyPopupCart();
+
+        // verify popup cart
         verifyAddCartSuccess(productData);
+
+        // click to cart page
+        userPopupCartPage.clickButtonViewCart();
+
+        // verify cart page
+        userCartPage.verifyCartPage();
+        userCartPage.verifyProductInCart(productData);
+
+        // click shipping page
+        userShippingPage.clickButtonShippingPage();
+
+        // verify shipping page
+        userShippingPage.verifyShippingPage();
+
+        // click option address
+        userShippingPage.clickOptionAddress();
+
+        // click to delivery page
+        userShippingPage.clickDeliveryPage();
+
+        // verify delivery page
+        userDeliveryPage.verifyDeliveryPage();
+
+        // verify product in delivery page
+        userDeliveryPage.verifyProductDeliveryPage(productData);
+
+        // click payment page
+        userDeliveryPage.clickPaymentPage();
+
+        // verify payment page
+        userPaymentPage.verifyPaymentPage();
+
+        // verify product in payment page
+        userPaymentPage.verifyProductPaymentPage(productData);
+
+        // click agree terms
+        userPaymentPage.clickInputAgree();
+
+        // click complete order
+        userPaymentPage.clickButtonComplete();
+
 
 
         LogUtils.info("addProductToCart: success");
     }
 
-    public void clickToPopupCart() {
-        WebUI.clickElement(buttonPopupCart);
+
+    public void verifyUserProductListPage(String nameProductSearch) {
+        WebUI.waitForPageLoaded();
+        String currentUrl = WebUI.getCurrentURL();
+
+        // Trích xuất slug từ URL
+        String[] parts = currentUrl.split("/");
+        String urlSlug = parts[parts.length - 1];
+
+        String[] nameTagURLSlug = urlSlug.split("\\?");
+        String[] keywordTagURLSlug = nameTagURLSlug[1].split("=");
+        String[] productNameSearch = keywordTagURLSlug[1].split("\\+");
+
+
+        Assert.assertEquals(nameTagURLSlug[0], "search", "verifyUserProductListPage: redirect incorrect, name tag url not match");
+        Assert.assertEquals(keywordTagURLSlug[0], "keyword", "verifyUserProductListPage: redirect incorrect, keyword tag url not match");
+
+
+        // ghép mảng thành chuỗi : ["laptop", "lenovo"] => "laptop lenovo"
+        String formatProductNameSearch = String.join(" ", productNameSearch);
+        Assert.assertEquals(formatProductNameSearch.trim().toLowerCase(), nameProductSearch.trim().toLowerCase(),
+                "Từ khóa tìm kiếm không khớp");
+
+        LogUtils.info("verifyUserProductListPage: Passed - This Is Product List Page");
+    }
+
+    public Map<String, Object> getElementPopupAddCart() {
+        String priceProductPopupFormat = WebUI.getText(priceProductPopupAddCart);
+        String priceRange = priceProductPopupFormat.replace("$", "").replace(",", "");
+        String[] prices = priceRange.split(" - ");
+        double minPrice = Double.parseDouble(prices[0]);
+        double maxPrice = Double.parseDouble(prices[1]);
+
+        int quantityProduct = Integer.parseInt(WebUI.getElementAttribute(quantityProductPopupAddCart, "value"));
+        String productName = WebUI.getText(nameProductPopupAddCart);
+
+        WebElement colorElement = WebUI.findElementNonWait(colorProductPopupAddCart); // KHÔNG dùng waitVisible
+        String color = colorElement.getAttribute("value");
+
+        Map<String, Object> productInfo = new HashMap<>();
+        productInfo.put("name", productName);
+        productInfo.put("minPrice", minPrice);
+        productInfo.put("maxPrice", maxPrice);
+        productInfo.put("quantity", quantityProduct);
+        productInfo.put("color", color);
+        productInfo.put("minTotal", minPrice * quantityProduct);
+        productInfo.put("maxTotal", maxPrice * quantityProduct);
+
+
+        return productInfo;
     }
 
     public void verifyPopupAddCart() {
@@ -274,6 +330,5 @@ public class UserProductListPage {
         WebUI.clickElement(buttonClosePopupAddCart);
         LogUtils.info("Click button close popup add cart");
     }
-
 
 }

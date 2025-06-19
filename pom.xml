@@ -152,7 +152,10 @@
                     <configuration>
                         <suiteXmlFiles>
                             <!-- Call Suite name -->
-                            <suiteXmlFile>src/test/resources/suite/Suite_Login_Test.xml</suiteXmlFile>
+<!--                            <suiteXmlFile>src/test/resources/suite/Suite_Login_Test.xml</suiteXmlFile>-->
+<!--                            <suiteXmlFile>src/test/resources/suite/Suite_SaveDataProductToExcel_Test.xml</suiteXmlFile>-->
+<!--                            <suiteXmlFile>src/test/resources/suite/Suite_Update_UserProfile_Test.xml</suiteXmlFile>-->
+                            <suiteXmlFile>src/test/resources/suite/Suite_AddProduct.xml</suiteXmlFile>
 
                         </suiteXmlFiles>
 
