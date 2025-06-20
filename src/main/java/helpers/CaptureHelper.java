@@ -42,7 +42,7 @@ public class CaptureHelper extends ScreenRecorder {
         } else if (!movieFolder.isDirectory()) {
             throw new IOException("\"" + movieFolder + "\" is not a directory.");
         }
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH-mm-ss");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH-mm");
         return new File(movieFolder, name + "-" + dateFormat.format(new Date()) + "." + Registry.getInstance().getExtension(fileFormat));
     }
 
@@ -86,7 +86,7 @@ public class CaptureHelper extends ScreenRecorder {
 
 
     //Tạo format ngày giờ để xíu gắn dô cái name của screenshot hoặc record video không bị trùng tên (không bị ghi đè file)
-    private static SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH-mm-ss");
+    private static SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH-mm");
 
     public static void captureScreenshot(String screenshotName) {
         try {

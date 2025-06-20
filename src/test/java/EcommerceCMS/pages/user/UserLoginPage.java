@@ -41,6 +41,7 @@ public class UserLoginPage {
 
         UserBasePage userBasePage = new UserBasePage();
         userBasePage.clickClosePopup();
+
         userBasePage.clickButtonLoginHomePage();
 
         verifyLoginPage();
@@ -60,10 +61,10 @@ public class UserLoginPage {
         userBasePage.clickButtonLoginHomePage();
 
         verifyLoginPage();
-
         setTextEmail(email);
         setTextPassword(password);
         clickLoginButton();
+//        userBasePage.clickClosePolicy();
     }
 
     public void verifyLoginPage(){
@@ -89,4 +90,5 @@ public class UserLoginPage {
         Assert.assertTrue(DriverManager.getDriver().getCurrentUrl().contains("login"), "verifyLoginSuccess: login fail, still in login page");
         Assert.assertTrue(WebUI.isDisplayed(messageLoginFail), "verifyLoginSuccess: login fail, still in login page");
     }
+
 }

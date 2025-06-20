@@ -20,7 +20,7 @@ import java.util.List;
 public class WebUI {
 
     private static int TIMEOUT = 10;
-    private static double STEP_TIME = 0.3;
+    private static double STEP_TIME = 0.2;
     private static int PAGE_LOAD_TIMEOUT = 20;
 
 
@@ -343,6 +343,7 @@ public class WebUI {
     public static boolean isDisplayed(By by) {
         try {
             if (checkElementExist(by)) {
+                waitForElementVisible(by);
                 WebElement element = DriverManager.getDriver().findElement(by);
                 return element.isDisplayed();
             }
