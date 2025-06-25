@@ -18,7 +18,7 @@ public class BaseTest {
 
     @BeforeMethod
     @Parameters({"browser"})
-    public void createDriver(@Optional("chrome")String browser) {
+    public void createDriver(@Optional("edge")String browser) {
         WebDriver driver = setupDriver(browser);
         DriverManager.setDriver(driver);
 
@@ -33,9 +33,9 @@ public class BaseTest {
 
 
         // this if else have priority is "browser" in config
-        if(!PropertiesHelper.getValue("browser").isEmpty() || !PropertiesHelper.getValue("browser").isBlank()){
-            browser = PropertiesHelper.getValue("browser");
-        }
+//        if(!PropertiesHelper.getValue("browser").isEmpty() || !PropertiesHelper.getValue("browser").isBlank()){
+//            browser = PropertiesHelper.getValue("browser");
+//        }
 
         switch (browser.trim().toLowerCase()){
             case "chrome":

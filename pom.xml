@@ -161,10 +161,11 @@
                     <configuration>
                         <suiteXmlFiles>
                             <!-- Call Suite name -->
-                            <suiteXmlFile>src/test/resources/suite/Suite_Login_Test.xml</suiteXmlFile>
-<!--                            <suiteXmlFile>src/test/resources/suite/Suite_SaveDataProductToExcel_Test.xml</suiteXmlFile>-->
-<!--                            <suiteXmlFile>src/test/resources/suite/Suite_Update_UserProfile_Test.xml</suiteXmlFile>-->
-<!--                            <suiteXmlFile>src/test/resources/suite/Suite_AddProduct.xml</suiteXmlFile>-->
+                            <!-- User -->
+                            <suiteXmlFile>src/test/resources/suite/MasterSuite.xml</suiteXmlFile>
+                            <!-- Admin -->
+
+<!--                            <suiteXmlFile>src/test/resources/suite/admin/Suite_Check_Detail_Product_Test.xml</suiteXmlFile>-->
 
                         </suiteXmlFiles>
 

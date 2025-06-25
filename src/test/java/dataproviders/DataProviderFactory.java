@@ -5,6 +5,8 @@ import helpers.SystemHelper;
 import org.testng.annotations.DataProvider;
 import utils.LogUtils;
 
+import java.util.Arrays;
+
 public class DataProviderFactory {
 
     @DataProvider(name = "data_login_success_from_excel")
@@ -12,7 +14,6 @@ public class DataProviderFactory {
         ExcelHelper excelHelper = new ExcelHelper();
         Object[][] data = excelHelper.getExcelDataProvider(SystemHelper.getCurrentDir() + "src/test/resources/datatest/UserLogin.xlsx", "Login");
 
-        // Chỉ lấy dòng số 2 (index = 1)
         if (data.length > 1) {
             LogUtils.info("Login Data from Excel: "+ data);
             return new Object[][] { data[0] };
@@ -26,7 +27,6 @@ public class DataProviderFactory {
         ExcelHelper excelHelper = new ExcelHelper();
         Object[][] data = excelHelper.getExcelDataProvider(SystemHelper.getCurrentDir() + "src/test/resources/datatest/UserLogin.xlsx", "Login");
 
-        // Chỉ lấy dòng số 2 (index = 1)
         if (data.length > 1) {
             LogUtils.info("Login Data from Excel: "+ data);
             return new Object[][] { data[1] };
@@ -40,7 +40,6 @@ public class DataProviderFactory {
         ExcelHelper excelHelper = new ExcelHelper();
         Object[][] data = excelHelper.getExcelDataProvider(SystemHelper.getCurrentDir() + "src/test/resources/datatest/UserLogin.xlsx", "Login");
 
-        // Chỉ lấy dòng số 2 (index = 1)
         if (data.length > 1) {
             LogUtils.info("Login Data from Excel: "+ data);
             return new Object[][] { data[2] };
@@ -48,5 +47,15 @@ public class DataProviderFactory {
             return new Object[][] {}; // Trả về mảng rỗng nếu dữ liệu không đủ
         }
     }
+
+    @DataProvider(name = "data_add_new_product_form_excel")
+    public Object[][] dataAddNewProduct(){
+        ExcelHelper excelHelper = new ExcelHelper();
+        Object[][] data = excelHelper.getExcelDataProvider(SystemHelper.getCurrentDir() + "/src/test/resources/datatest/SetProductData.xlsx", "ProductData");
+
+        LogUtils.info("✅ Read data from Excel: " + Arrays.deepToString(data));
+        return data;
+    }
+
 
 }

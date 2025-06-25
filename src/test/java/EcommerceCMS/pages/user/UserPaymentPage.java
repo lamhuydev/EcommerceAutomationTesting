@@ -1,5 +1,6 @@
 package EcommerceCMS.pages.user;
 
+import io.qameta.allure.Step;
 import keywords.WebUI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -23,6 +24,7 @@ public class UserPaymentPage {
     private By subTotal = By.xpath("//th[normalize-space()='Subtotal']/following-sibling::td/span");
     private By total = By.xpath("//tr[@class='cart-total']/td//span");
 
+    @Step("Action verify payment page")
     public void verifyPaymentPage(){
         LogUtils.info("🚛 Start verify payment page");
         String colorExpected = "#e62e04";
@@ -36,6 +38,7 @@ public class UserPaymentPage {
         Assert.assertTrue(currentURL.contains("payment_select"), "url not match");
     }
 
+    @Step("Action verify product in payment page")
     public void verifyProductPaymentPage(Map<String, Map<String, Object>> productData) {
         LogUtils.info("🚛 Start verify product in payment page");
 
@@ -122,12 +125,12 @@ public class UserPaymentPage {
         LogUtils.info("verifyProductPaymentPage: success!");
     }
 
-
+    @Step("Action click button complete")
     public void clickButtonComplete() {
         WebUI.clickElement(buttonCompleteOrder);
     }
 
-
+    @Step("Action click button agree")
     public void clickInputAgree(){
         WebUI.clickElement(inputAgree);
     }

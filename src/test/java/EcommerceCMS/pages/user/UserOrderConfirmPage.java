@@ -1,9 +1,11 @@
 package EcommerceCMS.pages.user;
 
+import io.qameta.allure.Step;
 import keywords.WebUI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.Color;
 import org.testng.Assert;
+import utils.LogUtils;
 
 import java.awt.*;
 
@@ -13,7 +15,7 @@ public class UserOrderConfirmPage {
     private By messageOrderSuccess = By.xpath("//span[normalize-space()='Your order has been placed successfully']");
 
 
-
+    @Step("Action verify oder confirm page")
     public void verifyOrderConfirmPage(){
         String colorExpected = "#e62e04";
         String currentURL = WebUI.getCurrentURL();
@@ -24,8 +26,9 @@ public class UserOrderConfirmPage {
 
         Assert.assertEquals(colorActual, colorExpected, "color header not match");
         Assert.assertTrue(WebUI.isDisplayed(messageOrderSuccess), "message order success is not displayed");
-        Assert.assertTrue(currentURL.contains("order-confirmed"), "url incorrect");
+        Assert.assertTrue(currentURL.contains("order-confirmed"), "url order confirmed page incorrect");
 
+        LogUtils.info("Verify order confirm page successfully!");
     }
 
 }

@@ -1,5 +1,6 @@
 package EcommerceCMS.pages.user;
 
+import io.qameta.allure.Step;
 import keywords.WebUI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -24,6 +25,7 @@ public class UserCartPage {
     private By priceProductCart = By.xpath(".//span[normalize-space()='Price']/following-sibling::span");
     private By totalPriceEachProduct = By.xpath(".//span[normalize-space()='Total']/following-sibling::span");
 
+    @Step("Action verify correct cart page")
     public void verifyCartPage() {
         String currentURL = WebUI.getCurrentURL();
 
@@ -39,6 +41,7 @@ public class UserCartPage {
         Assert.assertTrue(currentURL.contains("cart"), "verifyCartPage: url dont have cart char");
     }
 
+    @Step("Action verify count product in cart")
     public void verifyProductInCart(Map<String, Map<String, Object>> productData) {
         List<WebElement> cartItems = WebUI.findElements(listProductCartPage);
         double totalAllProducts = 0;

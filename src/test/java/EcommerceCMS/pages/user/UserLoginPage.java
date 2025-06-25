@@ -2,6 +2,7 @@ package EcommerceCMS.pages.user;
 
 import drivers.DriverManager;
 import helpers.PropertiesHelper;
+import io.qameta.allure.Step;
 import keywords.WebUI;
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -18,22 +19,26 @@ public class UserLoginPage {
     private By menuDashboard = By.xpath("(//span[normalize-space()='Dashboard'])[1]");
     private By messageLoginFail = By.xpath("//span[contains(normalize-space(), 'Invalid login')]");
 
+    @Step("Action set text email")
     private void setTextEmail(String email){
         WebUI.clearText(inputEmail);
         WebUI.setText(inputEmail, email);
     }
 
+    @Step("Action set text password")
     private void setTextPassword(String password){
         WebUI.clearText(inputPassword);
         WebUI.setText(inputPassword, password);
     }
 
+    @Step("Action click button login")
     private void clickLoginButton(){
         WebUI.clickElement(buttonLoginLoginPage);
     }
 
 
     // login Ecommerce with email and password correct for another page
+    @Step("Action login ecommerce for another page")
     public void loginEcommercePage(){
 //        PropertiesHelper.loadAllFiles();
         String url = PropertiesHelper.getValue("url_cms_anhtester");
@@ -51,6 +56,7 @@ public class UserLoginPage {
         clickLoginButton();
     }
 
+    @Step("Action login for user")
     public void loginEcommercePage(String email, String password){
 //        PropertiesHelper.loadAllFiles();
         String url = PropertiesHelper.getValue("url_cms_anhtester");
@@ -67,6 +73,7 @@ public class UserLoginPage {
 //        userBasePage.clickClosePolicy();
     }
 
+    @Step("Action verify correct login page")
     public void verifyLoginPage(){
         String headerLoginPageText = DriverManager.getDriver().findElement(headerLoginPage).getText();
         Assert.assertTrue(headerLoginPageText.contains("Login"), "verifyLoginPage: navigate incorrect");
@@ -76,6 +83,7 @@ public class UserLoginPage {
         Assert.assertTrue(WebUI.isDisplayed(forgotPassword), "verifyLoginPage: navigate incorrect");
     }
 
+    @Step("Action verify login success")
     public void verifyLoginSuccess(){
         String expectedURL = "https://cms.anhtester.com/dashboard"; // URL sau khi đăng nhập thành công
         Assert.assertEquals(DriverManager.getDriver().getCurrentUrl(), expectedURL, "Login failed: Incorrect redirect!");
@@ -83,6 +91,7 @@ public class UserLoginPage {
 
     }
 
+    @Step("Action verify login fail")
     public void verifyLoginFail(){
         UserBasePage userBasePage = new UserBasePage();
         userBasePage.clickClosePolicy();

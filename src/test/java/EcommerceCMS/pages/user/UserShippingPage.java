@@ -1,5 +1,6 @@
 package EcommerceCMS.pages.user;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.support.Color;
 import keywords.WebUI;
 import org.openqa.selenium.By;
@@ -10,15 +11,16 @@ public class UserShippingPage {
 
     private By buttonShippingPage = By.xpath("//a[normalize-space()='Continue to Shipping']");
     private By headerShippingPage = By.xpath("//h3[contains(normalize-space(), 'Shipping info')]");
-    private By optionAddressShippingPage = By.xpath("(//input[@name='address_id'])[8]");
+    private By optionAddressShippingPage = By.xpath("(//input[@name='address_id'])[8]/ancestor::label/parent::div");
     private By buttonAddNewAddressShippingPage = By.xpath("//div[text()='Add New Address']");
     private By buttonRedirectToDeliveryInfo = By.xpath("//button[normalize-space()='Continue to Delivery Info']");
 
-
+    @Step("Action click button shipping page")
     public void clickButtonShippingPage() {
         WebUI.clickElement(buttonShippingPage);
     }
 
+    @Step("Action verify correct shipping page")
     public void verifyShippingPage() {
         LogUtils.info("🚛 Start verify shipping page");
         String currentURL = WebUI.getCurrentURL();
@@ -36,12 +38,15 @@ public class UserShippingPage {
         Assert.assertTrue(WebUI.getText(buttonRedirectToDeliveryInfo).contains("Continue to Delivery Info"), "verifyShippingPage: text button redirect not match");
     }
 
+    @Step("Action click option address")
     public void clickOptionAddress() {
         WebUI.sleep(1);
 //        WebUI.scrollToElement(optionAddressShippingPage);
-        WebUI.clickElementWithScript(optionAddressShippingPage);
+//        WebUI.clickElementWithScript(optionAddressShippingPage);
+        WebUI.clickElement(optionAddressShippingPage);
     }
 
+    @Step("Action click delivery page")
     public void clickDeliveryPage() {
         WebUI.scrollToElement(buttonRedirectToDeliveryInfo);
         WebUI.clickElement(buttonRedirectToDeliveryInfo);

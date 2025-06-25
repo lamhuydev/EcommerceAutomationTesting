@@ -1,3 +1,0 @@
-15/6 - Login User Page > Thêm vào giỏ hàng 2 mặt hàng tuỳ ý
-16/6 - Remember: verify add cart success in cart page -> Tiến hành thanh toán gồm: 5 bước để Checkout
-20/6 - done 5 bước checkout

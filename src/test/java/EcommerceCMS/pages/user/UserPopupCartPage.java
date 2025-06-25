@@ -1,5 +1,6 @@
 package EcommerceCMS.pages.user;
 
+import io.qameta.allure.Step;
 import keywords.WebUI;
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -22,7 +23,7 @@ public class UserPopupCartPage {
     // cart count
     private By cartCount = By.xpath("//div[@id='cart_items']//span[contains(@class, 'badge') and contains(@class, 'cart-count')]");
 
-
+    @Step("Action verify correct popup cart")
     public void verifyPopupCart(){
         WebUI.isDisplayed(headerPopupCart);
         WebUI.isDisplayed(subTotalPopupCart);
@@ -31,11 +32,12 @@ public class UserPopupCartPage {
         Assert.assertTrue(WebUI.getText(headerPopupCart).equals("Cart Items"), "verifyPopupCart: open popup cart fail");
     }
 
-
+    @Step("Action click to popup cart")
     public void clickToPopupCart() {
         WebUI.clickElement(buttonPopupCart);
     }
 
+    @Step("Action check count cart")
     public void checkCountCart() {
         int cartCountCheck = Integer.parseInt(WebUI.getText(cartCount));
         if (cartCountCheck > 0) {
@@ -46,6 +48,7 @@ public class UserPopupCartPage {
         }
     }
 
+    @Step("Action click button view cart")
     public void clickButtonViewCart(){
         WebUI.clickElement(buttonViewCartPopupCart);
     }

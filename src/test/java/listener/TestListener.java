@@ -19,13 +19,13 @@ import java.util.List;
 
 public class TestListener implements ITestListener {
 
-    private static int total_test;
-    private static int total_test_passed;
-    private static int total_test_failed;
-    private static int total_test_skipped;
+    public static int total_test;
+    public static int total_test_passed;
+    public static int total_test_failed;
+    public static int total_test_skipped;
 
     private static String nameClass;
-    private List<ITestResult> failedTests = new ArrayList<>();
+    public static List<ITestResult> failedTests = new ArrayList<>();
 
     // hàm lấy tên Test case từ @Test
     public String getTestName(ITestResult result) {
@@ -119,68 +119,6 @@ public class TestListener implements ITestListener {
         LogUtils.info("⭐️ Skipped: " + total_test_skipped);
 
         CaptureHelper.stopRecord();
-
-        StringBuilder body = new StringBuilder();
-
-        body.append("<div style='font-family:sans-serif;padding:20px;background:#f5f7fa;'>");
-        body.append("<div style='max-width:600px;margin:auto;background:#fff;padding:20px;border-radius:8px;border:1px solid #ddd;'>");
-
-        body.append("<h2 style='color:#2c3e50;'>📊 Test Summary</h2>");
-        body.append("<table style='width:100%;border-collapse:collapse;font-size:14px;'>");
-        body.append("<tr><td><b>Total tests:</b></td><td style='color:#2980b9;'>" + total_test + "</td></tr>");
-        body.append("<tr><td><b style='color:green;'>✅ Passed:</b></td><td style='color:green;'>" + total_test_passed + "</td></tr>");
-        body.append("<tr><td><b style='color:red;'>❌ Failed:</b></td><td style='color:red;'>" + total_test_failed + "</td></tr>");
-        body.append("<tr><td><b style='color:orange;'>⏭ Skipped:</b></td><td style='color:orange;'>" + total_test_skipped + "</td></tr>");
-        body.append("</table>");
-
-//        body.append("<p style='margin-top:20px;'>🔗 <a href='http://localhost:63342/index.html' style='color:#3498db;'>Click để xem Allure Report</a></p>");
-
-        if (!failedTests.isEmpty()) {
-            body.append("<hr style='border:none;border-top:1px solid #eee;margin:20px 0;'/>");
-            body.append("<h3 style='color:#c0392b;'>📉 Chi tiết Test Case thất bại:</h3>");
-
-            for (ITestResult r : failedTests) {
-                String methodName = r.getMethod().getMethodName();
-                String timestamp = dateFormat.format(new Date(r.getEndMillis()));
-
-                File screenshot = new File("exports/screenshots/" + methodName + "_" + timestamp + ".png");
-                File video = new File("exports/video_records/" + methodName + "-" + timestamp + ".avi");
-
-
-                body.append("<div style='background:#fce4e4;padding:12px;margin-bottom:15px;border-radius:6px;'>");
-                body.append("<p style='margin:0;'><b>❗ " + methodName + "</b></p>");
-                body.append("<ul style='margin:5px 0 0 15px;'>");
-                body.append("<li>📸 Screenshot đính kèm</li>");
-                body.append("<li>🎬 Video đính kèm</li>");
-                body.append("</ul>");
-                body.append("</div>");
-            }
-        }
-
-        body.append("</div></div>");
-
-        // File đính kèm
-        List<File> attachments = new ArrayList<>();
-        for (ITestResult r : failedTests) {
-            String method = r.getMethod().getMethodName();
-            String timestamp = dateFormat.format(new Date(r.getEndMillis()));
-
-            // time for video record
-            String ts = (String) context.getAttribute("videoTimestamp");
-
-            File screenshot = new File("exports/screenshot/" + method + "_" + timestamp + ".png");
-            File video = new File("exports/video_records/" + nameClass + "-" + ts + ".avi");
-
-            LogUtils.info("method mail: " + method);
-            LogUtils.info("timestamp mail: " + timestamp);
-            LogUtils.info("screenshot mail: " + screenshot);
-            LogUtils.info("video mail: " + video);
-
-            if (screenshot.exists()) attachments.add(screenshot);
-            if (video.exists()) attachments.add(video);
-        }
-
-        EmailUtils.sendHtmlEmail("📧 Tổng kết Test Suite", body.toString(), attachments);
     }
 
 

@@ -1,6 +1,7 @@
 package EcommerceCMS.pages.user;
 
 import helpers.ExcelHelper;
+import io.qameta.allure.Step;
 import keywords.WebUI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -15,13 +16,14 @@ import java.util.*;
 public class UserProductDetailPage {
 
     private static By nameProduct = By.xpath("//div[@id='order_details']/following::div[@class='text-left']/h1");
-    private static By priceProduct = By.xpath("//div[normalize-space()='Price:']/following-sibling::div/div/strong");
+    private static By priceProduct = By.xpath("(//div[contains(normalize-space(), 'Price:')]/following-sibling::div/div/strong)[1]");
     private static By colorProduct = By.xpath("//div[@class='aiz-radio-inline']/child::label");
     private static By availableQuantityProduct = By.xpath("//span[@id='available-quantity']");
     private static By descriptionProdut = By.xpath("//div[@id='tab_default_1']/descendant::p");
     private static By imgProduct = By.xpath("(//div[@data-fade='true']/descendant::img)[1]");
     private static By discountPrice = By.xpath("//div[normalize-space()='Discount Price:']/following-sibling::div/div/strong");
 
+    @Step("Action verify correct info product page")
     public void verifyInfoProductPage(String nameProductSearch) {
         try {
             String currentUrl = WebUI.getCurrentURL();
@@ -84,7 +86,7 @@ public class UserProductDetailPage {
         }
     }
 
-
+    @Step("Action get info product to excel")
     public static void getInfoProductToExcel() {
         try {
             List<WebElement> getColorProduct = WebUI.findElements(colorProduct);
@@ -117,13 +119,13 @@ public class UserProductDetailPage {
                     currentTime
             );
 
-            ExcelHelper.writeDataToExcel(productData, "src/test/resources/datatest/ProductData.xlsx");
+            ExcelHelper.writeDataToExcel(productData, "src/test/resources/datatest/GetProductData.xlsx");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
-
+    @Step("Action verify add product data to excel")
     public void verifyAddProductDataToExcel() {
 
         String price;
@@ -156,7 +158,7 @@ public class UserProductDetailPage {
         expectedDataProduct.put("Time", currentTime);
 
         ExcelHelper excelHelper = new ExcelHelper();
-        Map<String, String> actualData = excelHelper.lastProductEntry("src/test/resources/datatest/ProductData.xlsx");
+        Map<String, String> actualData = excelHelper.lastProductEntry("src/test/resources/datatest/GetProductData.xlsx");
 
         LogUtils.info("expectedDataProduct: " + expectedDataProduct.toString());
         LogUtils.info("actualData: " + actualData.toString());

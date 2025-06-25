@@ -14,8 +14,12 @@ import reports.AllureManager;
 //import reports.//ExtentTestManager;
 import utils.LogUtils;
 
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.time.Duration;
 import java.util.List;
+import java.util.Set;
 
 public class WebUI {
 
@@ -30,6 +34,101 @@ public class WebUI {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+    }
+
+
+    // Lưu window hiện tại
+    public static String getCurrentWindowHandle() {
+        return DriverManager.getDriver().getWindowHandle();
+    }
+
+    // Lấy toàn bộ các window đang mở
+    public static Set<String> getAllWindowHandles() {
+        return DriverManager.getDriver().getWindowHandles();
+    }
+
+    // Chờ đến khi có số tab lớn hơn giá trị cho trước
+    public static void waitForNewTabOpened(int currentTabCount) {
+        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(10));
+        wait.until(driver -> driver.getWindowHandles().size() > currentTabCount);
+    }
+
+    // Chuyển sang tab khác (mặc định là tab mới)
+    public static void switchToNewTab(String oldWindowHandle) {
+        for (String windowHandle : getAllWindowHandles()) {
+            if (!windowHandle.equals(oldWindowHandle)) {
+                DriverManager.getDriver().switchTo().window(windowHandle);
+                LogUtils.info("✅ Switched to new tab with URL: " + DriverManager.getDriver().getCurrentUrl());
+                return;
+            }
+        }
+        LogUtils.warn("⚠️ Không tìm thấy tab mới để switch.");
+    }
+
+    // Đóng tab hiện tại và quay về tab cũ
+    public static void closeCurrentTabAndSwitchBack(String originalWindow) {
+        DriverManager.getDriver().close();
+        DriverManager.getDriver().switchTo().window(originalWindow);
+        LogUtils.info("🔙 Switched back to original tab.");
+    }
+
+
+    public static void searchText(By by, String value) {
+        try {
+            waitForElementVisible(by);
+            sleep(STEP_TIME);
+
+            WebElement element = getWebElement(by);
+            element.clear();
+            element.sendKeys(value);
+
+            // Nhấn Enter
+            Actions action = new Actions(DriverManager.getDriver());
+            action.moveToElement(element)
+                    .sendKeys(Keys.ENTER)
+                    .build()
+                    .perform();
+
+            LogUtils.info("🔍 Tìm kiếm với từ khóa [" + value + "] bằng element: " + by.toString());
+        } catch (Exception e) {
+            LogUtils.error("❌ Lỗi khi thực hiện thao tác searchText: " + e.getMessage());
+        }
+    }
+
+
+
+    public static void uploadFileWithRobotClass(By elementFileForm, String filePath) {
+        //Click để mở form upload
+        WebUI.clickElement(elementFileForm);
+        WebUI.sleep(2);
+
+        // Khởi tạo Robot class
+        Robot rb = null;
+        try {
+            rb = new Robot();
+        } catch (AWTException e) {
+            e.printStackTrace();
+        }
+
+        // Copy File path vào Clipboard
+        StringSelection str = new StringSelection(filePath);
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
+
+        // Nhấn Control+V để dán
+        rb.keyPress(KeyEvent.VK_CONTROL);
+        rb.keyPress(KeyEvent.VK_V);
+
+        // Xác nhận Control V trên
+        rb.keyRelease(KeyEvent.VK_CONTROL);
+        rb.keyRelease(KeyEvent.VK_V);
+
+        WebUI.sleep(1);
+
+        // Nhấn Enter
+        rb.keyPress(KeyEvent.VK_ENTER);
+        rb.keyRelease(KeyEvent.VK_ENTER);
+
+        WebUI.sleep(2);
     }
 
 
@@ -145,6 +244,12 @@ public class WebUI {
 
         AllureManager.saveTextLog("Get text of element: " + by + " || ==> Text Return: " + text);
         return text; //Trả về một giá trị kiểu String
+    }
+
+    @Step("Get title current page")
+    public static String getTitle(){
+        waitForPageLoaded();
+        return DriverManager.getDriver().getTitle();
     }
 
 
@@ -511,6 +616,27 @@ public class WebUI {
             return false;
         }
     }
+
+
+    public static boolean clickEnterWithActions(By by) {
+        try {
+            WebElement element = getWebElement(by);
+            Actions action = new Actions(DriverManager.getDriver());
+
+            action.moveToElement(element)
+                    .click()  // optional nếu cần focus
+                    .sendKeys(Keys.ENTER)
+                    .build()
+                    .perform();
+
+            LogUtils.info("✅ Nhấn Enter thành công vào element: " + by.toString());
+            return true;
+        } catch (Exception e) {
+            LogUtils.error("❌ Lỗi khi nhấn Enter: " + e.getMessage());
+            return false;
+        }
+    }
+
 
 
     public static void logConsole(Object message) {

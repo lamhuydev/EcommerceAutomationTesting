@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Admin Login Test">
+    <parameter name="browser" value="egde"></parameter>
+    <test name="User Add Product Test" parallel="methods" thread-count="2">
+        <classes>
+            <class name="EcommerceCMS.testcases.admin.AdminCheckDetailProduct"></class>
+        </classes>
+    </test>
+</suite>

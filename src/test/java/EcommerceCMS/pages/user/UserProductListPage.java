@@ -1,11 +1,13 @@
 package EcommerceCMS.pages.user;
 
+import io.qameta.allure.Step;
 import keywords.WebUI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import utils.LogUtils;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -18,15 +20,16 @@ public class UserProductListPage {
     private UserShippingPage userShippingPage;
     private UserDeliveryPage userDeliveryPage;
     private UserPaymentPage userPaymentPage;
+    private UserOrderConfirmPage userOrderConfirmPage;
 
     private int countProductCart = 0;
 
-    private By product_1 = By.xpath("(//form[@id='search-form']/descendant::div[@class='col'])[1]");
-    private By product_2 = By.xpath("(//form[@id='search-form']/descendant::div[@class='col'])[2]");
+    private By product_1 = By.xpath("(//form[@id='search-form']/descendant::div[@class='col'])[2]");
+    private By product_2 = By.xpath("(//form[@id='search-form']/descendant::div[@class='col'])[3]");
 
     // name product in product list page
-    private By nameProduct_1 = By.xpath("(//form[@id='search-form']/descendant::div[@class='col'])[1]/descendant::div[contains(@class, 'rating')]/following-sibling::h3/a");
-    private By nameProduct_2 = By.xpath("(//form[@id='search-form']/descendant::div[@class='col'])[2]/descendant::div[contains(@class, 'rating')]/following-sibling::h3/a");
+    private By nameProduct_1 = By.xpath("(//form[@id='search-form']/descendant::div[@class='col'])[2]/descendant::div[contains(@class, 'rating')]/following-sibling::h3/a");
+    private By nameProduct_2 = By.xpath("(//form[@id='search-form']/descendant::div[@class='col'])[3]/descendant::div[contains(@class, 'rating')]/following-sibling::h3/a");
 
     // button popup cart
     private By buttonPopupCart = By.xpath("//div[@id='cart_items']");
@@ -51,8 +54,8 @@ public class UserProductListPage {
     private By colorProductPopupAddCart = By.xpath("//input[@name='color' and @checked]");
 
     // button add cart when hover prodcut
-    private By buttonAddCartProduct_1 = By.xpath("((//form[@id='search-form']/descendant::div[@class='col'])[1]/descendant::a[@data-title='Add to cart'])[1]");
-    private By buttonAddCartProduct_2 = By.xpath("((//form[@id='search-form']/descendant::div[@class='col'])[2]/descendant::a[@data-title='Add to cart'])[1]");
+    private By buttonAddCartProduct_1 = By.xpath("((//form[@id='search-form']/descendant::div[@class='col'])[2]/descendant::a[@data-title='Add to cart'])[1]");
+    private By buttonAddCartProduct_2 = By.xpath("((//form[@id='search-form']/descendant::div[@class='col'])[3]/descendant::a[@data-title='Add to cart'])[1]");
 
     // button add cart when click buttonAddCartProduct_1
     private By buttonAddCartPopup = By.xpath("//span[normalize-space()='Add to cart']");
@@ -72,12 +75,15 @@ public class UserProductListPage {
 
     // add 2 product cụ thể
     // flow: search product > product list page displayed > hover product > click button add cart
+    @Step("Action add product to cart")
     public void addProductToCart() {
         userPopupCartPage = new UserPopupCartPage();
         userCartPage = new UserCartPage();
         userShippingPage = new UserShippingPage();
         userDeliveryPage = new UserDeliveryPage();
         userPaymentPage = new UserPaymentPage();
+        userOrderConfirmPage = new UserOrderConfirmPage();
+
 
         // khai báo mảng productData
         Map<String, Map<String, Object>> productData = new HashMap<>();
@@ -169,12 +175,13 @@ public class UserProductListPage {
         // click complete order
         userPaymentPage.clickButtonComplete();
 
-
+        // verify order confirmed page
+        userOrderConfirmPage.verifyOrderConfirmPage();
 
         LogUtils.info("addProductToCart: success");
     }
 
-
+    @Step("Action verify user prduct list page")
     public void verifyUserProductListPage(String nameProductSearch) {
         WebUI.waitForPageLoaded();
         String currentUrl = WebUI.getCurrentURL();
@@ -200,12 +207,37 @@ public class UserProductListPage {
         LogUtils.info("verifyUserProductListPage: Passed - This Is Product List Page");
     }
 
+    @Step("Action get element popup add cart")
     public Map<String, Object> getElementPopupAddCart() {
         String priceProductPopupFormat = WebUI.getText(priceProductPopupAddCart);
         String priceRange = priceProductPopupFormat.replace("$", "").replace(",", "");
+
+
+
         String[] prices = priceRange.split(" - ");
-        double minPrice = Double.parseDouble(prices[0]);
-        double maxPrice = Double.parseDouble(prices[1]);
+
+        LogUtils.info("🔍 Raw price (popup): " + priceProductPopupFormat);
+        LogUtils.info("💡 Formatted price range: " + priceRange);
+        for (int i = 0; i < prices.length; i++) {
+            LogUtils.info("📌 prices[" + i + "]: " + prices[i]);
+        }
+
+        double minPrice;
+        double maxPrice;
+
+        if (prices.length == 2) {
+            minPrice = Double.parseDouble(prices[0]);
+            maxPrice = Double.parseDouble(prices[1]);
+            LogUtils.info("💲 Giá min: " + minPrice + " | Giá max: " + maxPrice);
+        } else if (prices.length == 1) {
+            minPrice = Double.parseDouble(prices[0]);
+            maxPrice = minPrice; // nếu không có khoảng thì giá min = max
+            LogUtils.info("💲 Chỉ có một mức giá: " + minPrice);
+        } else {
+            LogUtils.error("❌ Không tách được giá hợp lệ từ chuỗi: " + priceRange);
+            throw new RuntimeException("Giá sản phẩm không đúng định dạng");
+        }
+
 
         int quantityProduct = Integer.parseInt(WebUI.getElementAttribute(quantityProductPopupAddCart, "value"));
         String productName = WebUI.getText(nameProductPopupAddCart);
@@ -226,6 +258,7 @@ public class UserProductListPage {
         return productInfo;
     }
 
+    @Step("Action verify correct popup add cart")
     public void verifyPopupAddCart() {
         String getNameProduct_1 = WebUI.getText(nameProduct_1);
         String getNameProduct_2 = WebUI.getText(nameProduct_2);
@@ -242,6 +275,7 @@ public class UserProductListPage {
     }
 
     // flow: hover product > click button add cart > verify popup add cart
+    @Step("Action verify popup add cart success")
     public void verifyPopupAddCartSuccess() {
         if (WebUI.isDisplayed(messageAddCartSuccess) && WebUI.isDisplayed(relatedProductSuggestion)) {
             countProductCart++;
@@ -263,6 +297,8 @@ public class UserProductListPage {
 
 
     // flow: click button cart > popup displayed > verify
+    // for popup cart
+    @Step("Action verify add cart success")
     public void verifyAddCartSuccess(Map<String, Map<String, Object>> productData) {
         List<WebElement> cartItems = WebUI.findElements(cartItemElements);
         double totalAllProducts = 0;
@@ -319,13 +355,13 @@ public class UserProductListPage {
         LogUtils.info("✅ verifyAddCartSuccess successfully! Sản phẩm còn lại: " + productData.keySet());
     }
 
-
-
+    @Step("Action click button add cart popup")
     public void clickButtonAddCartPopup() {
         WebUI.clickElement(buttonAddCartPopup);
         LogUtils.info("Click button add cart in popup add cart");
     }
 
+    @Step("Action click button close popup add cart")
     public void clickClosePopupAddCart() {
         WebUI.clickElement(buttonClosePopupAddCart);
         LogUtils.info("Click button close popup add cart");

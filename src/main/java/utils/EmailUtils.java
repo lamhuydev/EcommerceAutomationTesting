@@ -13,7 +13,8 @@ import java.util.Date;
 public class EmailUtils {
 
     public static void sendHtmlEmail(String subject, String htmlBody, List<File> attachments) {
-        final String username = "lamgiahuy03tv@gmail.com";
+        final String username = PropertiesHelper.getValue("user_email_from");
+//        final String username = "lamgiahuy03tv@gmail.com";
         final String password = PropertiesHelper.getValue("pass_email");
 
         Properties props = new Properties();
@@ -31,7 +32,8 @@ public class EmailUtils {
         try {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(username));
-            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("lamgiahuy1612@gmail.com"));
+            String email_to = PropertiesHelper.getValue("user_email_to");
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email_to));
             message.setSubject(subject);
 
             // Nội dung HTML

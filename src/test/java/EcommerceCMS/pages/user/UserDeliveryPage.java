@@ -1,5 +1,6 @@
 package EcommerceCMS.pages.user;
 
+import io.qameta.allure.Step;
 import keywords.WebUI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -20,7 +21,7 @@ public class UserDeliveryPage {
     // product in delivery page
     private By productDeliveryPage = By.xpath("//li[@class='list-group-item']//span[@class='fs-14 opacity-60']");
 
-
+    @Step("Action verify correct delivery page")
     public void verifyDeliveryPage() {
         LogUtils.info("Start verify delivery page");
         String colorExpected = "#e62e04";
@@ -41,6 +42,7 @@ public class UserDeliveryPage {
     }
 
 
+    @Step("Action verify correct product delivery page")
     public void verifyProductDeliveryPage(Map<String, Map<String, Object>> productData) {
         LogUtils.info("🚛 Start verify product in delivery page");
         List<WebElement> cartItems = WebUI.findElements(productDeliveryPage);
@@ -56,6 +58,7 @@ public class UserDeliveryPage {
         }
     }
 
+    @Step("Action click button payment to redirect payment page")
     public void clickPaymentPage(){
         WebUI.clickElement(buttonPayment);
     }

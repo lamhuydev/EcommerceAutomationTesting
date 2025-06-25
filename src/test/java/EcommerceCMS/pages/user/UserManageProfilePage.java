@@ -1,5 +1,6 @@
 package EcommerceCMS.pages.user;
 
+import io.qameta.allure.Step;
 import keywords.WebUI;
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -18,6 +19,7 @@ public class UserManageProfilePage {
 
     private String nameProfile;
 
+    @Step("Action click menu profile")
     public void clickMenuProfilePage() {
         if (WebUI.isDisplayed(menuManageProfile)) {
             WebUI.scrollToElement(menuManageProfile);
@@ -28,13 +30,14 @@ public class UserManageProfilePage {
         }
     }
 
-
+    @Step("Action verify menu profile page")
     public void verifyMenuProfilePage() {
         Assert.assertTrue(WebUI.getCurrentURL().contains("profile"), "verifyMenuProfilePage: is not profile page (URl is not correct)");
         Assert.assertEquals(WebUI.findElement(headerManageProfile).getText(), "Manage Profile", "verifyMenuProfilePage: is not profile page (header profile page not match)");
         Assert.assertTrue(WebUI.isDisplayed(buttonUpdateProfile), "verifyMenuProfilePage: is not profile page (not have button update profile)");
     }
 
+    @Step("Action click button update profile")
     public void clickButtonUpdateProfile() {
         if (WebUI.isDisplayed(buttonUpdateProfile)) {
             WebUI.scrollToElement(buttonUpdateProfile);
@@ -46,6 +49,7 @@ public class UserManageProfilePage {
 
     }
 
+    @Step("Action verify update user profile success")
     public void verifyUpdateUserProfileSuccess(String expectedValue, String updateType) {
         try {
             if (!WebUI.isDisplayed(inputName)) {
@@ -73,6 +77,7 @@ public class UserManageProfilePage {
         }
     }
 
+    @Step("Action update username profile")
     public void updateUserNameProfile(String oldValue, String newValue, String updateType) {
         if (!WebUI.isDisplayed(inputName)) {
             LogUtils.error("updateUserProfile: input field is not displayed!");

@@ -17,7 +17,7 @@ public class UserUpdateProfileTest extends BaseTest {
     @Story("Update User Profile")
     @Owner("Huy")
     @Severity(SeverityLevel.NORMAL)
-    @Test
+    @Test(priority = 0)
     @Description("This Test Case Will Add New Name to Profile")
     public void testUpdateUserWithAddNewName() {
         userLoginPage = new UserLoginPage();
@@ -41,7 +41,7 @@ public class UserUpdateProfileTest extends BaseTest {
     @Story("Change Part of User Profile")
     @Owner("Huy")
     @Severity(SeverityLevel.NORMAL)
-    @Test
+    @Test (priority = 1)
     @Description("This Test Case Will Change Part of Username")
     public void testUpdateUserWithChangeValue() {
         userLoginPage = new UserLoginPage();
@@ -54,9 +54,12 @@ public class UserUpdateProfileTest extends BaseTest {
         userManageProfilePage.clickMenuProfilePage();
         userManageProfilePage.verifyMenuProfilePage();
 
-        userManageProfilePage.updateUserNameProfile("thuủi", "tài","replace");
+
+        // Nhớ thay đổi oldValue, hoặc không thì chạy tuần tự từ trên xuống
+        // ex: userName = Nguyễn Thị Thanh => oldValue: "Nguyễn" or "Thị" or "Thanh"
+        userManageProfilePage.updateUserNameProfile("Hoàng", "Tài","replace");
         WebUI.sleep(1);
-        userManageProfilePage.verifyUpdateUserProfileSuccess("tài", "replace");
+        userManageProfilePage.verifyUpdateUserProfileSuccess("Tài", "replace");
     }
 
 
@@ -65,7 +68,7 @@ public class UserUpdateProfileTest extends BaseTest {
     @Story("Delete Part of User Profile")
     @Owner("Huy")
     @Severity(SeverityLevel.NORMAL)
-    @Test
+    @Test (priority = 2)
     @Description("This Test Case Will Delete Part of Username")
     public void testUpdateUserWithDeletePart() {
         userLoginPage = new UserLoginPage();
@@ -78,7 +81,9 @@ public class UserUpdateProfileTest extends BaseTest {
         userManageProfilePage.clickMenuProfilePage();
         userManageProfilePage.verifyMenuProfilePage();
 
-        userManageProfilePage.updateUserNameProfile("Huy", "", "delete");
+        // Nhớ thay đổi oldValue, hoặc không thì chạy tuần tự từ trên xuống
+        // ex: userName = Nguyễn Thị Thanh => oldValue: "Nguyễn" or "Thị" or "Thanh"
+        userManageProfilePage.updateUserNameProfile("Tài", "", "delete");
         WebUI.sleep(1);
         userManageProfilePage.verifyUpdateUserProfileSuccess("", "delete");
     }

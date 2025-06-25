@@ -149,59 +149,118 @@ public class ExcelHelper {
         }
     }
 
+//    public Object[][] getExcelDataProvider(String filePath, String sheetName) {
+//        Object[][] data = null;
+//        Workbook workbook = null;
+//        try {
+//            // load the file
+//            FileInputStream fis = new FileInputStream(filePath);
+//
+//            // load the workbook
+//            workbook = new XSSFWorkbook(fis);
+//
+//            // load the sheet
+//            Sheet sh = workbook.getSheet(sheetName);
+//
+//            if (sh == null) {
+//                throw new RuntimeException("❌ Không tìm thấy sheet '" + sheetName + "' trong file Excel.");
+//            }
+//
+//            // load the row
+//            Row row = sh.getRow(0);
+//
+//            //
+//            int noOfRows = sh.getPhysicalNumberOfRows();
+//            int noOfCols = row.getLastCellNum();
+//
+//            System.out.println(noOfRows + " - " + noOfCols);
+//
+//            Cell cell;
+//            data = new Object[noOfRows - 1][noOfCols];
+//
+//            //
+//            for (int i = 1; i < noOfRows; i++) {
+//                for (int j = 0; j < noOfCols; j++) {
+//                    row = sh.getRow(i);
+//                    cell = row.getCell(j);
+//
+//                    switch (cell.getCellType()) {
+//                        case STRING:
+//                            data[i - 1][j] = cell.getStringCellValue();
+//                            break;
+//                        case NUMERIC:
+//                            data[i - 1][j] = String.valueOf(cell.getNumericCellValue());
+//                            break;
+//                        case BLANK:
+//                            data[i - 1][j] = cell.getStringCellValue();
+//                            break;
+//                        default:
+//                            data[i - 1][j] = cell.getStringCellValue();
+//                            break;
+//                    }
+//                }
+//            }
+//        } catch (Exception e) {
+//            System.out.println("The exception is:" + e.getMessage());
+//            throw new RuntimeException(e);
+//        }
+//        return data;
+//    }
+
+
     public Object[][] getExcelDataProvider(String filePath, String sheetName) {
-        Object[][] data = null;
-        Workbook workbook = null;
-        try {
-            // load the file
-            FileInputStream fis = new FileInputStream(filePath);
+        try (FileInputStream fis = new FileInputStream(filePath);
+             Workbook workbook = new XSSFWorkbook(fis)) {
 
-            // load the workbook
-            workbook = new XSSFWorkbook(fis);
+            Sheet sheet = workbook.getSheet(sheetName);
+            if (sheet == null) {
+                throw new RuntimeException("❌ Không tìm thấy sheet: '" + sheetName + "'");
+            }
 
-            // load the sheet
-            Sheet sh = workbook.getSheet(sheetName);
+            int noOfRows = sheet.getPhysicalNumberOfRows();
+            int noOfCols = sheet.getRow(0).getLastCellNum();
+            Object[][] data = new Object[noOfRows - 1][noOfCols];
 
-            // load the row
-            Row row = sh.getRow(0);
-
-            //
-            int noOfRows = sh.getPhysicalNumberOfRows();
-            int noOfCols = row.getLastCellNum();
-
-            System.out.println(noOfRows + " - " + noOfCols);
-
-            Cell cell;
-            data = new Object[noOfRows - 1][noOfCols];
-
-            //
             for (int i = 1; i < noOfRows; i++) {
+                Row row = sheet.getRow(i);
                 for (int j = 0; j < noOfCols; j++) {
-                    row = sh.getRow(i);
-                    cell = row.getCell(j);
+                    String value = "";
 
-                    switch (cell.getCellType()) {
-                        case STRING:
-                            data[i - 1][j] = cell.getStringCellValue();
-                            break;
-                        case NUMERIC:
-                            data[i - 1][j] = String.valueOf(cell.getNumericCellValue());
-                            break;
-                        case BLANK:
-                            data[i - 1][j] = cell.getStringCellValue();
-                            break;
-                        default:
-                            data[i - 1][j] = cell.getStringCellValue();
-                            break;
+                    if (row != null) {
+                        Cell cell = row.getCell(j);
+                        if (cell != null) {
+                            switch (cell.getCellType()) {
+                                case STRING:
+                                    value = cell.getStringCellValue();
+                                    break;
+                                case NUMERIC:
+                                    value = String.valueOf(cell.getNumericCellValue());
+                                    break;
+                                case BOOLEAN:
+                                    value = String.valueOf(cell.getBooleanCellValue());
+                                    break;
+                                case FORMULA:
+                                    value = cell.getCellFormula(); // Hoặc: cell.getStringCellValue() tùy mục đích
+                                    break;
+                                case BLANK:
+                                default:
+                                    value = "";
+                                    break;
+                            }
+                        }
                     }
+
+                    data[i - 1][j] = value;
                 }
             }
-        } catch (Exception e) {
-            System.out.println("The exception is:" + e.getMessage());
-            throw new RuntimeException(e);
+
+            return data;
+
+        } catch (IOException e) {
+            throw new RuntimeException("❌ Lỗi khi đọc file Excel: " + e.getMessage(), e);
         }
-        return data;
     }
+
 
     //Hàm này dùng cho trường hợp nhiều Field trong File Excel
     public int getColumns() {
