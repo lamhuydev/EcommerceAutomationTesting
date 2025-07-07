@@ -25,7 +25,7 @@ public class AdminCheckDetailProduct extends BaseTest {
     @Description("Admin adds new product and verify detail is correctly shown on the user product page")
     @Test(dataProvider = "data_add_new_product_form_excel", dataProviderClass = DataProviderFactory.class)
     // flow: login admin > add new product > check detail product
-    public void testAdminCheckDetailProduct(String productName, String category, String brand, String unit, String weight, String tag, String price, String quantity, String description, String img){
+    public void testAdminCheckDetailProduct(String productName, String category, String brand, String unit, String color ,String weight, String tag, String price, String quantity, String description, String img){
         adminBasePage = new AdminBasePage();
         adminLoginPage = new AdminLoginPage();
         adminAddNewProductPage = new AdminAddNewProductPage();
@@ -45,7 +45,7 @@ public class AdminCheckDetailProduct extends BaseTest {
         adminAddNewProductPage.verifyAddNewProductPage();
 
         // action add new product
-        adminAddNewProductPage.addNewProduct(productName, category, brand, unit, weight, tag, price, quantity, description, img);
+        adminAddNewProductPage.addNewProduct(productName, category, brand, unit, color, weight, tag, price, quantity, description, img);
 
         WebUI.waitForPageLoaded();
 

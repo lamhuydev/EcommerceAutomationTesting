@@ -148,6 +148,14 @@
         </dependency>
 
 
+        <!--   env     -->
+        <!-- https://mvnrepository.com/artifact/io.github.cdimascio/dotenv-java -->
+        <dependency>
+            <groupId>io.github.cdimascio</groupId>
+            <artifactId>dotenv-java</artifactId>
+            <version>3.2.0</version>
+        </dependency>
+
     </dependencies>
 
 
@@ -161,11 +169,10 @@
                     <configuration>
                         <suiteXmlFiles>
                             <!-- Call Suite name -->
-                            <!-- User -->
                             <suiteXmlFile>src/test/resources/suite/MasterSuite.xml</suiteXmlFile>
-                            <!-- Admin -->
-
-<!--                            <suiteXmlFile>src/test/resources/suite/admin/Suite_Check_Detail_Product_Test.xml</suiteXmlFile>-->
+<!--                            <suiteXmlFile>src/test/resources/suite/MasterSuiteGroup_1.xml</suiteXmlFile>-->
+<!--                            <suiteXmlFile>src/test/resources/suite/MasterSuiteGroup_2.xml</suiteXmlFile>-->
+<!--                            <suiteXmlFile>src/test/resources/suite/MasterSuiteGroup_3.xml</suiteXmlFile>-->
 
                         </suiteXmlFiles>
 

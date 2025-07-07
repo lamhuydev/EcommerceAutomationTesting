@@ -9,14 +9,16 @@ import java.util.Properties;
 import helpers.PropertiesHelper;
 import java.util.Date;
 
+import io.github.cdimascio.dotenv.Dotenv;
 
 public class EmailUtils {
 
     public static void sendHtmlEmail(String subject, String htmlBody, List<File> attachments) {
+        Dotenv dotenv = Dotenv.load();
         final String username = PropertiesHelper.getValue("user_email_from");
 //        final String username = "lamgiahuy03tv@gmail.com";
-        final String password = PropertiesHelper.getValue("pass_email");
-
+//        final String password = PropertiesHelper.getValue("pass_email");
+        String password = dotenv.get("pass_email");
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");

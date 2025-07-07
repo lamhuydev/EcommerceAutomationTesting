@@ -1,19 +1,25 @@
 package EcommerceCMS.pages.user;
 
+import drivers.DriverManager;
 import io.qameta.allure.Step;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.Color;
 import keywords.WebUI;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import utils.LogUtils;
 
+import java.util.List;
+
 public class UserShippingPage {
 
     private By buttonShippingPage = By.xpath("//a[normalize-space()='Continue to Shipping']");
     private By headerShippingPage = By.xpath("//h3[contains(normalize-space(), 'Shipping info')]");
-    private By optionAddressShippingPage = By.xpath("(//input[@name='address_id'])[8]/ancestor::label/parent::div");
+    private By optionAddressShippingPage = By.xpath("(//input[@name='address_id'])[1]/ancestor::label/parent::div");
     private By buttonAddNewAddressShippingPage = By.xpath("//div[text()='Add New Address']");
     private By buttonRedirectToDeliveryInfo = By.xpath("//button[normalize-space()='Continue to Delivery Info']");
+
+    private By allOptionAddress = By.xpath("//input[@name='address_id']");
 
     @Step("Action click button shipping page")
     public void clickButtonShippingPage() {
@@ -41,9 +47,27 @@ public class UserShippingPage {
     @Step("Action click option address")
     public void clickOptionAddress() {
         WebUI.sleep(1);
-//        WebUI.scrollToElement(optionAddressShippingPage);
-//        WebUI.clickElementWithScript(optionAddressShippingPage);
-        WebUI.clickElement(optionAddressShippingPage);
+
+        List<WebElement> addressOptions = DriverManager.getDriver().findElements(allOptionAddress);
+
+        boolean isAnyChecked = false;
+
+        for (WebElement option : addressOptions) {
+            if (option.isSelected()) {
+                isAnyChecked = true;
+                break;
+            }
+        }
+
+        // Nếu chưa có option nào được chọn
+        if (!isAnyChecked) {
+            // Click vào option đầu tiên
+//            WebUI.clickElement(addressOptions.get(0));
+            WebUI.clickElement(optionAddressShippingPage);
+            LogUtils.info("✅ Clicked on the first address option because none was selected.");
+        } else {
+            LogUtils.info("✅ An address option is already selected. No action taken.");
+        }
     }
 
     @Step("Action click delivery page")

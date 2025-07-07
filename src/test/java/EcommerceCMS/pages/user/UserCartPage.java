@@ -42,7 +42,7 @@ public class UserCartPage {
     }
 
     @Step("Action verify count product in cart")
-    public void verifyProductInCart(Map<String, Map<String, Object>> productData) {
+    public void verifyProductInCart(List<Map<String, Object>> productData) {
         List<WebElement> cartItems = WebUI.findElements(listProductCartPage);
         double totalAllProducts = 0;
 
@@ -54,46 +54,50 @@ public class UserCartPage {
             double price = Double.parseDouble(priceRaw.replace("$", "").replace(",", "").trim());
 
             String totalPriceEachProductRaw = item.findElement(totalPriceEachProduct).getText();
-            double getTotalEachProduct = Double.parseDouble(totalPriceEachProductRaw.replace("$", "").trim());
+            double getTotalEachProduct = Double.parseDouble(totalPriceEachProductRaw.replace("$", "").replace(",", "").trim());
 
             double subtotal = price * quantityProductActual;
             totalAllProducts += subtotal;
 
-            LogUtils.info("Total price each product actual: " + getTotalEachProduct + ", Total price each product expected: " + subtotal);
-            Assert.assertEquals(getTotalEachProduct, subtotal, 0.01, "❌ Tổng tiền từng sản phẩm không đúng!");
-
-            LogUtils.info("📦 Toàn bộ productData: " + productData.toString());
             LogUtils.info("🧾 Product: " + nameProductActual +
                     " | Qty: " + quantityProductActual +
                     " | Price: $" + price +
                     " | Subtotal: $" + subtotal);
+            LogUtils.info("Total price each product actual: " + getTotalEachProduct + ", expected: " + subtotal);
+            Assert.assertEquals(getTotalEachProduct, subtotal, 0.01, "❌ Tổng tiền từng sản phẩm không đúng!");
 
-            LogUtils.info("📦 Keys trong productData: " + productData.keySet());
-
+            // Tách tên để tìm trong productData
             String[] nameProductDataKey = nameProductActual.split("-");
+            String nameToFind = nameProductDataKey[0].trim();
 
-            if (!productData.containsKey(nameProductDataKey[0].trim())) {
+            Map<String, Object> expected = null;
+            for (Map<String, Object> product : productData) {
+                if (nameToFind.equals(product.get("name"))) {
+                    expected = product;
+                    break;
+                }
+            }
+
+            if (expected == null) {
                 LogUtils.warn("⚠️ Sản phẩm '" + nameProductActual + "' không có trong dữ liệu đã lưu!");
                 continue;
             }
 
-            Map<String, Object> expected = productData.get(nameProductDataKey[0].trim());
             int expectedQty = (int) expected.get("quantity");
             double minPrice = (double) expected.get("minPrice");
             double maxPrice = (double) expected.get("maxPrice");
 
             LogUtils.info("🎯 Expected → Qty: " + expectedQty + " | Min: " + minPrice + " | Max: " + maxPrice);
 
-
             try {
                 Assert.assertEquals(quantityProductActual, expectedQty, "❌ Quantity không đúng cho sản phẩm: " + nameProductActual);
                 Assert.assertTrue(
-                        price == minPrice || price == maxPrice ||
-                                    price >= minPrice && price <= maxPrice
-                        , "❌ Price không nằm trong khoảng cho sản phẩm: " + nameProductActual);
+                        price >= minPrice && price <= maxPrice,
+                        "❌ Price không nằm trong khoảng cho sản phẩm: " + nameProductActual
+                );
             } catch (AssertionError e) {
                 LogUtils.error("❌ " + e.getMessage());
-                productData.remove(nameProductActual);
+                productData.remove(expected);
                 throw e;
             }
         }
@@ -104,8 +108,9 @@ public class UserCartPage {
         LogUtils.info("🔢 Expected total: " + totalAllProducts + " | Actual total: " + actualTotalPrice);
         Assert.assertEquals(actualTotalPrice, totalAllProducts, 0.01, "❌ Tổng tiền giỏ hàng không khớp!");
 
-        LogUtils.info("✅ verifyProductInCart hoàn tất! Còn lại trong productData: " + productData.keySet());
+        LogUtils.info("✅ verifyProductInCart hoàn tất!");
     }
+
 
 
 }

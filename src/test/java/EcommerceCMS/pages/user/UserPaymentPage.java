@@ -39,12 +39,12 @@ public class UserPaymentPage {
     }
 
     @Step("Action verify product in payment page")
-    public void verifyProductPaymentPage(Map<String, Map<String, Object>> productData) {
+    public void verifyProductPaymentPage(List<Map<String, Object>> productData) {
         LogUtils.info("🚛 Start verify product in payment page");
 
         List<WebElement> cartItems = WebUI.findElements(allItemProduct);
 
-        // assert count product
+        // 👉 So sánh số lượng sản phẩm
         String countProductRaw = WebUI.getText(summaryItems);
         String[] countProductFormat = countProductRaw.split(" ");
         int countProductActual = Integer.parseInt(countProductFormat[0].trim());
@@ -54,12 +54,11 @@ public class UserPaymentPage {
         LogUtils.info("countProductActual: " + countProductActual);
         LogUtils.info("countProductExpected: " + countProductExpected);
 
-        Assert.assertEquals(countProductActual, countProductExpected, "count product not match");
+        Assert.assertEquals(countProductActual, countProductExpected, "❌ Số lượng sản phẩm không khớp");
 
         double subTotalExpected = 0;
 
         for (WebElement item : cartItems) {
-
             // 👉 Lấy tên sản phẩm
             WebElement nameElement = item.findElement(By.cssSelector(".product-name"));
             String quantityText = nameElement.findElement(By.cssSelector(".product-quantity")).getText().trim();
@@ -71,42 +70,48 @@ public class UserPaymentPage {
 
             // 👉 Lấy giá sản phẩm
             String priceRaw = item.findElement(By.cssSelector(".product-total")).getText().trim();
-            double priceProductActual = Double.parseDouble(priceRaw.replace("$", "").trim());
+            double priceProductActual = Double.parseDouble(priceRaw.replace("$", "").replace(",", "").trim());
 
-            // 👉 Tính subtotal từng dòng
-            subTotalExpected +=  priceProductActual;
-
+            subTotalExpected += priceProductActual;
 
             LogUtils.info("🔍 Sản phẩm: " + nameProductActual);
             LogUtils.info("   Số lượng: " + quantityProductActual);
             LogUtils.info("   Giá: " + priceProductActual);
-//            LogUtils.info("   Tổng dòng: " + lineTotal);
 
-            LogUtils.info("productData" + productData.get(nameProductActual));
+            // 👉 Tìm bản ghi tương ứng trong productData
+            Map<String, Object> matchedProduct = null;
+            for (Map<String, Object> product : productData) {
+                String name = (String) product.get("name");
+                if (nameProductActual.equals(name)) {
+                    matchedProduct = product;
+                    break;
+                }
+            }
 
-            double minPriceProductExpected = (double) productData.get(nameProductActual).get("minPrice");
-            double maxPriceProductExpected = (double) productData.get(nameProductActual).get("maxPrice");
+            Assert.assertNotNull(matchedProduct, "❌ Không tìm thấy sản phẩm: " + nameProductActual);
 
-            double minTotalPriceEachProductExpected = (double)  productData.get(nameProductActual).get("minTotal");
-            double maxTotalPriceEachProductExpected = (double)  productData.get(nameProductActual).get("maxTotal");
+            double minPriceProductExpected = (double) matchedProduct.get("minPrice");
+            double maxPriceProductExpected = (double) matchedProduct.get("maxPrice");
+            double minTotalPriceEachProductExpected = (double) matchedProduct.get("minTotal");
+            double maxTotalPriceEachProductExpected = (double) matchedProduct.get("maxTotal");
 
-
-            // 👉 Assert info product actual and expected
-            Assert.assertTrue(productData.containsKey(nameProductActual), "❌ Không tìm thấy sản phẩm: " + nameProductActual);
-            Assert.assertEquals(quantityProductActual,(int) productData.get(nameProductActual).get("quantity"));
+            Assert.assertEquals(quantityProductActual, (int) matchedProduct.get("quantity"), "❌ Quantity không khớp cho sản phẩm: " + nameProductActual);
             Assert.assertTrue(
-                    priceProductActual == minTotalPriceEachProductExpected || priceProductActual == maxTotalPriceEachProductExpected ||
-                            priceProductActual >= minTotalPriceEachProductExpected && priceProductActual <= maxTotalPriceEachProductExpected,
-                    "price product actual not match with expected"
+                    priceProductActual >= minTotalPriceEachProductExpected && priceProductActual <= maxTotalPriceEachProductExpected,
+                    "❌ Price của sản phẩm '" + nameProductActual + "' không nằm trong khoảng mong đợi!"
             );
-
         }
 
-        // 👉 So sánh tổng subtotal sau khi duyệt xong toàn bộ
+        // 👉 So sánh subtotal
         String subTotalText = WebUI.getText(subTotal);
         double actualSubTotal = Double.parseDouble(subTotalText.replace("$", "").replace(",", "").trim());
 
-        // assert total price all product
+        LogUtils.info("💰 Tổng tiền mong đợi (calculated): " + subTotalExpected);
+        LogUtils.info("💰 Tổng tiền hiển thị UI: " + actualSubTotal);
+
+        Assert.assertEquals(actualSubTotal, subTotalExpected, 0.01, "❌ Tổng tiền không khớp với subtotal!");
+
+        // 👉 So sánh tổng thanh toán (subtotal + shipping)
         String totalShippingRaw = WebUI.getText(totalShipping);
         double totalShippingActual = Double.parseDouble(totalShippingRaw.replace("$", "").replace(",", "").trim());
 
@@ -115,15 +120,11 @@ public class UserPaymentPage {
 
         double totalExpected = totalShippingActual + actualSubTotal;
 
-        LogUtils.info("💰 Tổng tiền mong đợi (calculated): " + subTotalExpected);
-        LogUtils.info("💰 Tổng tiền hiển thị UI: " + actualSubTotal);
+        Assert.assertEquals(totalActual, totalExpected, 0.01, "❌ Tổng thanh toán không khớp!");
 
-
-        Assert.assertEquals(actualSubTotal, subTotalExpected, "❌ Tổng tiền không khớp với subtotal!");
-        Assert.assertEquals(totalActual, totalExpected, "total price all product not match");
-
-        LogUtils.info("verifyProductPaymentPage: success!");
+        LogUtils.info("✅ verifyProductPaymentPage: success!");
     }
+
 
     @Step("Action click button complete")
     public void clickButtonComplete() {

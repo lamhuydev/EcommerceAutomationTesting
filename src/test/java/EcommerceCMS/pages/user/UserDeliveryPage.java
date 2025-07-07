@@ -43,7 +43,7 @@ public class UserDeliveryPage {
 
 
     @Step("Action verify correct product delivery page")
-    public void verifyProductDeliveryPage(Map<String, Map<String, Object>> productData) {
+    public void verifyProductDeliveryPage(List<Map<String, Object>> productData) {
         LogUtils.info("🚛 Start verify product in delivery page");
         List<WebElement> cartItems = WebUI.findElements(productDeliveryPage);
 
@@ -51,8 +51,21 @@ public class UserDeliveryPage {
             String nameProductActual = item.getText().trim();
             LogUtils.info("📦 nameProductActual: " + nameProductActual);
 
+//            Assert.assertTrue(
+//                    productData.containsKey(nameProductActual),
+//                    "❌ Không tìm thấy sản phẩm trong productData: " + nameProductActual
+//            );
+
+            boolean found = false;
+            for (Map<String, Object> product : productData) {
+                if (nameProductActual.equals(product.get("name"))) {
+                    found = true;
+                    break;
+                }
+            }
+
             Assert.assertTrue(
-                    productData.containsKey(nameProductActual),
+                    found,
                     "❌ Không tìm thấy sản phẩm trong productData: " + nameProductActual
             );
         }

@@ -26,6 +26,7 @@ public class UserOrderConfirmPage {
 
         Assert.assertEquals(colorActual, colorExpected, "color header not match");
         Assert.assertTrue(WebUI.isDisplayed(messageOrderSuccess), "message order success is not displayed");
+        Assert.assertEquals(WebUI.getText(messageOrderSuccess), "Your order has been placed successfully", "Message order success is not match");
         Assert.assertTrue(currentURL.contains("order-confirmed"), "url order confirmed page incorrect");
 
         LogUtils.info("Verify order confirm page successfully!");

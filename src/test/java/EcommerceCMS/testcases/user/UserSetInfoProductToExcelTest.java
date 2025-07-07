@@ -24,7 +24,7 @@ public class UserSetInfoProductToExcelTest extends BaseTest {
 
         userLoginPage = new UserLoginPage();
         userProductDetailPage = new UserProductDetailPage();
-        String nameProductSearch = "Laptop edit";
+        String nameProductSearch = "Laptop asus";
 
         userLoginPage.loginEcommercePage();
         userLoginPage.verifyLoginSuccess();

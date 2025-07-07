@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="MasterSuite" verbose="1" >
+    <listeners>
+        <listener class-name="listener.SuiteListener"/>
+    </listeners>
+    <suite-files>
+        <suite-file path="admin/Suite_Check_Detail_Product_Test.xml"/>
+    </suite-files>
+</suite>

@@ -6,6 +6,7 @@ import io.qameta.allure.Step;
 import keywords.WebUI;
 import org.openqa.selenium.By;
 import org.testng.Assert;
+import utils.LogUtils;
 
 public class UserLoginPage {
 
@@ -46,6 +47,7 @@ public class UserLoginPage {
 
         UserBasePage userBasePage = new UserBasePage();
         userBasePage.clickClosePopup();
+//        userBasePage.clickClosePolicy();
 
         userBasePage.clickButtonLoginHomePage();
 
@@ -88,16 +90,20 @@ public class UserLoginPage {
         String expectedURL = "https://cms.anhtester.com/dashboard"; // URL sau khi đăng nhập thành công
         Assert.assertEquals(DriverManager.getDriver().getCurrentUrl(), expectedURL, "Login failed: Incorrect redirect!");
         Assert.assertTrue(WebUI.isDisplayed(menuDashboard), "verifyLoginSuccess: login fail (menuDashboard)");
+        LogUtils.info("Verify login success !");
 
     }
 
     @Step("Action verify login fail")
     public void verifyLoginFail(){
         UserBasePage userBasePage = new UserBasePage();
-        userBasePage.clickClosePolicy();
+//        userBasePage.clickClosePolicy();
 
         Assert.assertTrue(DriverManager.getDriver().getCurrentUrl().contains("login"), "verifyLoginSuccess: login fail, still in login page");
-        Assert.assertTrue(WebUI.isDisplayed(messageLoginFail), "verifyLoginSuccess: login fail, still in login page");
+//        Assert.assertTrue(WebUI.isDisplayed(messageLoginFail), "verifyLoginSuccess: login fail, message login fail is not display");
+        Assert.assertTrue(WebUI.getText(messageLoginFail).contains("Invalid login"), "text message login fail is not correct");
+
+        LogUtils.info("Verify login fail success !");
     }
 
 }

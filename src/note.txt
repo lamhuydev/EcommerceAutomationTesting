@@ -1,3 +1,4 @@
+allure serve target/allure-results
 package main sẽ chứa code để làm web/app như thêm sửa xóa,...
 package test dùng để chứa code test
 

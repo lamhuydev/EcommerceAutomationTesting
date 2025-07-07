@@ -41,8 +41,21 @@ public class AdminAddNewProductPage {
     private By imagePreviewGallery = By.xpath("(//div[contains(@class, 'file-preview')]/div[contains(@class, 'file-preview-item')])[1]");
     private By imagePreviewThumbnail = By.xpath("(//div[contains(@class, 'file-preview')]/div[contains(@class, 'file-preview-item')])[2]");
 
+    private By buttonEnableColor = By.xpath("//button[@data-id='colors']/parent::div/parent::div/following-sibling::div/label");
+    private By buttonSelectColor = By.xpath("//button[@data-id='colors']");
+    private By inputSearchColor = By.xpath("//button[@data-id='colors']/following-sibling::div//input");
+    private By colorPosition_1 = By.xpath("(//button[@data-id='colors']/following-sibling::div//ul/li)[1]");
+    private By titleColor = By.xpath("//h5[normalize-space()='Product Variation']");
+
+
     private By inputUnitPrice = By.xpath("//input[@name='unit_price']");
     private By inputQuantity = By.xpath("//input[@name='current_stock']");
+
+    // quantity for color
+    private final String xpathQtyPrefix = "//input[@name='qty_";
+    // price for color
+    private final String xpathPricePrefix = "//input[@name='price_";
+
     private By divDescription = By.xpath("//div[@role='textbox']");
 
     private By buttonSaveAndPublish = By.xpath("//button[normalize-space()='Save & Publish']");
@@ -81,7 +94,7 @@ public class AdminAddNewProductPage {
     }
 
     @Step("Action add new product")
-    public void addNewProduct(String productName, String category, String brand, String unit, String weight, String tag, String price, String quantity, String description, String img) {
+    public void addNewProduct(String productName, String category, String brand, String unit, String color ,  String weight, String tag, String price, String quantity, String description, String img) {
 
         // clear text and set text input product name
         WebUI.clearText(inputName);
@@ -125,15 +138,35 @@ public class AdminAddNewProductPage {
 
         WebUI.waitForElementVisible(imagePreviewThumbnail);
 
+        // handle select color
+//        WebUI.scrollToElementAtTop(buttonSelectColor);
+        WebUI.clickElement(buttonEnableColor);
+        WebUI.clickElement(buttonSelectColor);
+        WebUI.clearText(inputSearchColor);
+        WebUI.setText(inputSearchColor, color);
+        WebUI.clickElement(colorPosition_1);
+        WebUI.clickElement(titleColor);
+
+        WebUI.sleep(1);
+
         // clear text and set text input price
         WebUI.clearText(inputUnitPrice);
         WebUI.setText(inputUnitPrice, price);
 
-        // clear text and set text input quantity
-        WebUI.clearText(inputQuantity);
-        WebUI.setText(inputQuantity, quantity);
+        WebUI.sleep(1);
 
-        WebUI.scrollToElement(divDescription);
+        // clear text and set text input quantity
+        By quantityForColor = By.xpath(xpathQtyPrefix + color + "']");
+//        WebUI.scrollToElementAtBottom(quantityForColor);
+        WebUI.clearText(quantityForColor);
+        WebUI.setText(quantityForColor, quantity);
+
+        // clear text price for color
+        By priceForColor = By.xpath(xpathPricePrefix + color + "']");
+        WebUI.clearText(priceForColor);
+        WebUI.setText(priceForColor, String.valueOf(price));
+
+//        WebUI.scrollToElement(divDescription);
         WebUI.sleep(2);
         WebUI.setText(divDescription, description);
 
@@ -144,6 +177,7 @@ public class AdminAddNewProductPage {
         LogUtils.info("⚖️ Weight: " + weight);
         LogUtils.info("🔖 Tag: " + tag);
         LogUtils.info("💵 Price: " + price);
+        LogUtils.info("💵 Color: " + color);
         LogUtils.info("📦 Quantity: " + quantity);
         LogUtils.info("🧾 Description: " + description);
         LogUtils.info("🖼️ Image path: " + img);
@@ -245,12 +279,23 @@ public class AdminAddNewProductPage {
 
     @Step("Verify add new product success")
     public void verifyAddNewProductSuccess(String nameProduct) {
+//        WebUI.waitForPageLoaded();
+
+        // assert message add new success alert and correct text
+        Assert.assertEquals(WebUI.getText(messageSuccess), "Product has been inserted successfully", "content of message add new product success is not match");
+        Assert.assertTrue(WebUI.isDisplayed(messageSuccess), "message add new product success is not display");
+
+        // assert correct url
         String currentURL = WebUI.getCurrentURL();
+        Assert.assertTrue(currentURL.contains("products/admin"), "add new product fail, url is not correct");
+
+
         WebUI.searchText(inputSearchProduct, nameProduct);
 
         String nameProductIntableSearch = WebUI.getText(search_nameProduct);
 
-        Assert.assertTrue(currentURL.contains("products/admin"), "add new product fail, url is not correct");
+
+
         Assert.assertTrue(WebUI.isDisplayed(headerProductPage), "add new product fail, header product page is not display");
         Assert.assertEquals(WebUI.getText(headerProductPage), "All Product", "add new product fail, text header product not match");
 //        Assert.assertFalse(WebUI.isDisplayed(notFound), "add new product faild, not found product: " + nameProduct);

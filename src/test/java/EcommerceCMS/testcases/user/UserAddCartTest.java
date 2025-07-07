@@ -37,5 +37,6 @@ public class UserAddCartTest extends BaseTest {
         // action add cart
         userProductListPage.verifyUserProductListPage(nameProductSearch);
         userProductListPage.addProductToCart();
+        WebUI.sleep(2);
     }
 }

@@ -43,6 +43,7 @@ public class UserPopupCartPage {
         if (cartCountCheck > 0) {
             for (int i = 0; i < cartCountCheck; i++) {
                 clickToPopupCart();
+                WebUI.sleep(1);
                 WebUI.clickElement(removeProductInPopupCart);
             }
         }
