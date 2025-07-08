@@ -4142,3 +4142,500 @@ Session ID: a3882a74f80be237f0a63766d9f309d2
 [INFO] 08-07-2025 09:33:49 [main] LogUtils - 🔵 Bắt đầu chạy toàn bộ suite: MasterSuite
 [INFO] 08-07-2025 09:33:49 [main] LogUtils - 🟢 Kết thúc toàn bộ suite: MasterSuite
 [INFO] 08-07-2025 09:33:52 [main] LogUtils - ✅ Email with attachments sent!
+[INFO] 08-07-2025 09:53:16 [main] LogUtils - ⚙\uFE0F Thời gian chạy toàn bộ test:Tue Jul 08 09:53:15 ICT 2025
+[INFO] 08-07-2025 09:53:17 [main] LogUtils - ⚙️ Bắt đầu test suite cho class: UserLoginTest
+[INFO] 08-07-2025 09:53:19 [TestNG-test=User Login Test-2] LogUtils - Login Data from Excel: [[Ljava.lang.Object;@63eb0b96
+[INFO] 08-07-2025 09:53:19 [TestNG-test=User Login Test-3] LogUtils - Login Data from Excel: [[Ljava.lang.Object;@58287cdc
+[INFO] 08-07-2025 09:53:19 [TestNG-test=User Login Test-1] LogUtils - Login Data from Excel: [[Ljava.lang.Object;@62e60b41
+[INFO] 08-07-2025 09:53:23 [TestNG-test=User Login Test-2] LogUtils - Run with Edge browser
+[INFO] 08-07-2025 09:53:23 [TestNG-test=User Login Test-1] LogUtils - Run with Edge browser
+[INFO] 08-07-2025 09:53:23 [TestNG-test=User Login Test-3] LogUtils - Run with Edge browser
+[INFO] 08-07-2025 09:53:23 [TestNG-test=User Login Test-2] LogUtils - Bắt đầu chạy test: testUserLoginPageFailWithInvalidEmail
+[INFO] 08-07-2025 09:53:23 [TestNG-test=User Login Test-1] LogUtils - Bắt đầu chạy test: testUserLoginPageSuccess
+[INFO] 08-07-2025 09:53:23 [TestNG-test=User Login Test-3] LogUtils - Bắt đầu chạy test: testUserLoginPageFailWithInvalidPassword
+[INFO] 08-07-2025 09:53:25 [TestNG-test=User Login Test-2] LogUtils - 🌐 Open URL: https://cms.anhtester.com/
+[INFO] 08-07-2025 09:53:25 [TestNG-test=User Login Test-1] LogUtils - 🌐 Open URL: https://cms.anhtester.com/
+[INFO] 08-07-2025 09:53:26 [TestNG-test=User Login Test-3] LogUtils - 🌐 Open URL: https://cms.anhtester.com/
+[INFO] 08-07-2025 09:53:26 [TestNG-test=User Login Test-2] LogUtils - checkElementExist: true --- By.xpath: //b[normalize-space()='Website Demo']
+[INFO] 08-07-2025 09:53:26 [TestNG-test=User Login Test-1] LogUtils - checkElementExist: true --- By.xpath: //b[normalize-space()='Website Demo']
+[INFO] 08-07-2025 09:53:27 [TestNG-test=User Login Test-3] LogUtils - checkElementExist: true --- By.xpath: //b[normalize-space()='Website Demo']
+[INFO] 08-07-2025 09:53:27 [TestNG-test=User Login Test-1] LogUtils - Click on element By.xpath: //b[normalize-space()='Website Demo']/following::button[@data-value='removed']
+[INFO] 08-07-2025 09:53:27 [TestNG-test=User Login Test-2] LogUtils - Click on element By.xpath: //b[normalize-space()='Website Demo']/following::button[@data-value='removed']
+[INFO] 08-07-2025 09:53:27 [TestNG-test=User Login Test-3] LogUtils - Click on element By.xpath: //b[normalize-space()='Website Demo']/following::button[@data-value='removed']
+[INFO] 08-07-2025 09:53:28 [TestNG-test=User Login Test-1] LogUtils - Click on element By.xpath: (//a[normalize-space()='Login'])[1]
+[INFO] 08-07-2025 09:53:28 [TestNG-test=User Login Test-2] LogUtils - Click on element By.xpath: (//a[normalize-space()='Login'])[1]
+[INFO] 08-07-2025 09:53:29 [TestNG-test=User Login Test-3] LogUtils - Click on element By.xpath: (//a[normalize-space()='Login'])[1]
+[INFO] 08-07-2025 09:53:29 [TestNG-test=User Login Test-2] LogUtils - checkElementExist: true --- By.xpath: //a[contains(normalize-space(), 'Forgot password')]
+[INFO] 08-07-2025 09:53:29 [TestNG-test=User Login Test-1] LogUtils - checkElementExist: true --- By.xpath: //a[contains(normalize-space(), 'Forgot password')]
+[INFO] 08-07-2025 09:53:29 [TestNG-test=User Login Test-3] LogUtils - checkElementExist: true --- By.xpath: //a[contains(normalize-space(), 'Forgot password')]
+[INFO] 08-07-2025 09:53:29 [TestNG-test=User Login Test-1] LogUtils - Clear text on element By.xpath: //input[@id='email']
+[INFO] 08-07-2025 09:53:29 [TestNG-test=User Login Test-3] LogUtils - Clear text on element By.xpath: //input[@id='email']
+[INFO] 08-07-2025 09:53:29 [TestNG-test=User Login Test-2] LogUtils - Clear text on element By.xpath: //input[@id='email']
+[INFO] 08-07-2025 09:53:29 [TestNG-test=User Login Test-1] LogUtils - Set text [customer@example.com] on element: By.xpath: //input[@id='email']
+[INFO] 08-07-2025 09:53:29 [TestNG-test=User Login Test-3] LogUtils - Set text [customer@example.com] on element: By.xpath: //input[@id='email']
+[INFO] 08-07-2025 09:53:29 [TestNG-test=User Login Test-2] LogUtils - Set text [customer123@example.com] on element: By.xpath: //input[@id='email']
+[INFO] 08-07-2025 09:53:30 [TestNG-test=User Login Test-3] LogUtils - Clear text on element By.xpath: //input[@id='password']
+[INFO] 08-07-2025 09:53:30 [TestNG-test=User Login Test-1] LogUtils - Clear text on element By.xpath: //input[@id='password']
+[INFO] 08-07-2025 09:53:30 [TestNG-test=User Login Test-2] LogUtils - Clear text on element By.xpath: //input[@id='password']
+[INFO] 08-07-2025 09:53:30 [TestNG-test=User Login Test-2] LogUtils - Set text [123456] on element: By.xpath: //input[@id='password']
+[INFO] 08-07-2025 09:53:30 [TestNG-test=User Login Test-1] LogUtils - Set text [123456] on element: By.xpath: //input[@id='password']
+[INFO] 08-07-2025 09:53:30 [TestNG-test=User Login Test-3] LogUtils - Set text [123] on element: By.xpath: //input[@id='password']
+[INFO] 08-07-2025 09:53:32 [TestNG-test=User Login Test-2] LogUtils - Click on element By.xpath: //button[normalize-space()='Login']
+[INFO] 08-07-2025 09:53:32 [TestNG-test=User Login Test-3] LogUtils - Click on element By.xpath: //button[normalize-space()='Login']
+[INFO] 08-07-2025 09:53:33 [TestNG-test=User Login Test-1] LogUtils - Click on element By.xpath: //button[normalize-space()='Login']
+[INFO] 08-07-2025 09:53:34 [TestNG-test=User Login Test-2] LogUtils - Get text of element: By.xpath: //span[contains(normalize-space(), 'Invalid login')] || ==> Text Return: Invalid login credentials
+[INFO] 08-07-2025 09:53:34 [TestNG-test=User Login Test-3] LogUtils - Get text of element: By.xpath: //span[contains(normalize-space(), 'Invalid login')] || ==> Text Return: Invalid login credentials
+[INFO] 08-07-2025 09:53:34 [TestNG-test=User Login Test-2] LogUtils - Verify login fail success !
+[INFO] 08-07-2025 09:53:34 [TestNG-test=User Login Test-3] LogUtils - Verify login fail success !
+[INFO] 08-07-2025 09:53:34 [TestNG-test=User Login Test-3] LogUtils - ✅ Đây là Test case chạy thành công: testUserLoginPageFailWithInvalidPassword
+[INFO] 08-07-2025 09:53:34 [TestNG-test=User Login Test-2] LogUtils - ✅ Đây là Test case chạy thành công: testUserLoginPageFailWithInvalidEmail
+[INFO] 08-07-2025 09:53:35 [TestNG-test=User Login Test-1] LogUtils - checkElementExist: true --- By.xpath: (//span[normalize-space()='Dashboard'])[1]
+[INFO] 08-07-2025 09:53:35 [TestNG-test=User Login Test-1] LogUtils - Verify login success !
+[INFO] 08-07-2025 09:53:35 [TestNG-test=User Login Test-1] LogUtils - ✅ Đây là Test case chạy thành công: testUserLoginPageSuccess
+[INFO] 08-07-2025 09:53:35 [main] LogUtils - ⭐️ Total test: 3
+[INFO] 08-07-2025 09:53:35 [main] LogUtils - ⭐️ Passed: 3
+[INFO] 08-07-2025 09:53:35 [main] LogUtils - ⭐️ Failed: 0
+[INFO] 08-07-2025 09:53:35 [main] LogUtils - ⭐️ Skipped: 0
+[INFO] 08-07-2025 09:53:35 [main] LogUtils - 🟢 Kết thúc toàn bộ suite: User Login Test
+[INFO] 08-07-2025 09:53:39 [main] LogUtils - ✅ Email with attachments sent!
+[INFO] 08-07-2025 09:53:40 [main] LogUtils - ⚙\uFE0F Thời gian chạy toàn bộ test:Tue Jul 08 09:53:40 ICT 2025
+[INFO] 08-07-2025 09:53:40 [main] LogUtils - ⚙️ Bắt đầu test suite cho class: UserUpdateProfileTest
+[INFO] 08-07-2025 09:53:41 [main] LogUtils - Run with Edge browser
+[INFO] 08-07-2025 09:53:41 [main] LogUtils - Bắt đầu chạy test: testUpdateUserWithAddNewName
+[INFO] 08-07-2025 09:53:43 [main] LogUtils - 🌐 Open URL: https://cms.anhtester.com/
+[INFO] 08-07-2025 09:53:43 [main] LogUtils - checkElementExist: true --- By.xpath: //b[normalize-space()='Website Demo']
+[INFO] 08-07-2025 09:53:44 [main] LogUtils - Click on element By.xpath: //b[normalize-space()='Website Demo']/following::button[@data-value='removed']
+[INFO] 08-07-2025 09:53:46 [main] LogUtils - Click on element By.xpath: (//a[normalize-space()='Login'])[1]
+[INFO] 08-07-2025 09:53:46 [main] LogUtils - checkElementExist: true --- By.xpath: //a[contains(normalize-space(), 'Forgot password')]
+[INFO] 08-07-2025 09:53:47 [main] LogUtils - Clear text on element By.xpath: //input[@id='email']
+[INFO] 08-07-2025 09:53:47 [main] LogUtils - Set text [customer@example.com] on element: By.xpath: //input[@id='email']
+[INFO] 08-07-2025 09:53:47 [main] LogUtils - Clear text on element By.xpath: //input[@id='password']
+[INFO] 08-07-2025 09:53:48 [main] LogUtils - Set text [123456] on element: By.xpath: //input[@id='password']
+[INFO] 08-07-2025 09:53:49 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Login']
+[INFO] 08-07-2025 09:53:49 [main] LogUtils - checkElementExist: true --- By.xpath: (//span[normalize-space()='Dashboard'])[1]
+[INFO] 08-07-2025 09:53:49 [main] LogUtils - Verify login success !
+[INFO] 08-07-2025 09:53:50 [main] LogUtils - checkElementExist: true --- By.xpath: (//span[normalize-space()='Manage Profile'])[1]
+[INFO] 08-07-2025 09:53:51 [main] LogUtils - Click on element By.xpath: (//span[normalize-space()='Manage Profile'])[1]
+[INFO] 08-07-2025 09:53:51 [main] LogUtils - Get current url: https://cms.anhtester.com/profile
+[INFO] 08-07-2025 09:53:51 [main] LogUtils - checkElementExist: true --- By.xpath: //button[normalize-space()='Update Profile']
+[INFO] 08-07-2025 09:53:52 [main] LogUtils - checkElementExist: true --- By.xpath: //input[@placeholder='Your name' and @name='name']
+[INFO] 08-07-2025 09:53:52 [main] LogUtils - Get attribute of element By.xpath: //input[@placeholder='Your name' and @name='name']
+[INFO] 08-07-2025 09:53:52 [main] LogUtils - ==> Attribute value: 
+[INFO] 08-07-2025 09:53:52 [main] LogUtils - Clear text on element By.xpath: //input[@placeholder='Your name' and @name='name']
+[INFO] 08-07-2025 09:53:52 [main] LogUtils - Set text [ Hoàng] on element: By.xpath: //input[@placeholder='Your name' and @name='name']
+[INFO] 08-07-2025 09:53:52 [main] LogUtils - checkElementExist: true --- By.xpath: //button[normalize-space()='Update Profile']
+[INFO] 08-07-2025 09:53:54 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Update Profile']
+[INFO] 08-07-2025 09:53:55 [main] LogUtils - checkElementExist: true --- By.xpath: //input[@placeholder='Your name' and @name='name']
+[INFO] 08-07-2025 09:53:55 [main] LogUtils - Get attribute of element By.xpath: //input[@placeholder='Your name' and @name='name']
+[INFO] 08-07-2025 09:53:55 [main] LogUtils - ==> Attribute value: Hoàng
+[INFO] 08-07-2025 09:53:55 [main] LogUtils - checkElementExist: true --- By.xpath: //span[contains(normalize-space(), 'updated successfully')]
+[INFO] 08-07-2025 09:53:55 [main] LogUtils - verifyUpdateUserProfileSuccess: profile updated successfully!
+[INFO] 08-07-2025 09:53:55 [main] LogUtils - checkElementExist: true --- By.xpath: //span[contains(normalize-space(), 'updated successfully')]
+[INFO] 08-07-2025 09:53:55 [main] LogUtils - verifyUpdateUserProfileSuccess: profile updated successfully!
+[INFO] 08-07-2025 09:53:55 [main] LogUtils - ✅ Đây là Test case chạy thành công: testUpdateUserWithAddNewName
+[INFO] 08-07-2025 09:53:57 [main] LogUtils - Run with Edge browser
+[INFO] 08-07-2025 09:53:57 [main] LogUtils - Bắt đầu chạy test: testUpdateUserWithChangeValue
+[INFO] 08-07-2025 09:53:59 [main] LogUtils - 🌐 Open URL: https://cms.anhtester.com/
+[INFO] 08-07-2025 09:53:59 [main] LogUtils - checkElementExist: true --- By.xpath: //b[normalize-space()='Website Demo']
+[INFO] 08-07-2025 09:54:00 [main] LogUtils - Click on element By.xpath: //b[normalize-space()='Website Demo']/following::button[@data-value='removed']
+[INFO] 08-07-2025 09:54:01 [main] LogUtils - Click on element By.xpath: (//a[normalize-space()='Login'])[1]
+[INFO] 08-07-2025 09:54:01 [main] LogUtils - checkElementExist: true --- By.xpath: //a[contains(normalize-space(), 'Forgot password')]
+[INFO] 08-07-2025 09:54:01 [main] LogUtils - Clear text on element By.xpath: //input[@id='email']
+[INFO] 08-07-2025 09:54:01 [main] LogUtils - Set text [customer@example.com] on element: By.xpath: //input[@id='email']
+[INFO] 08-07-2025 09:54:02 [main] LogUtils - Clear text on element By.xpath: //input[@id='password']
+[INFO] 08-07-2025 09:54:02 [main] LogUtils - Set text [123456] on element: By.xpath: //input[@id='password']
+[INFO] 08-07-2025 09:54:02 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Login']
+[INFO] 08-07-2025 09:54:04 [main] LogUtils - checkElementExist: true --- By.xpath: (//span[normalize-space()='Dashboard'])[1]
+[INFO] 08-07-2025 09:54:04 [main] LogUtils - Verify login success !
+[INFO] 08-07-2025 09:54:05 [main] LogUtils - checkElementExist: true --- By.xpath: (//span[normalize-space()='Manage Profile'])[1]
+[INFO] 08-07-2025 09:54:06 [main] LogUtils - Click on element By.xpath: (//span[normalize-space()='Manage Profile'])[1]
+[INFO] 08-07-2025 09:54:06 [main] LogUtils - Get current url: https://cms.anhtester.com/profile
+[INFO] 08-07-2025 09:54:06 [main] LogUtils - checkElementExist: true --- By.xpath: //button[normalize-space()='Update Profile']
+[INFO] 08-07-2025 09:54:06 [main] LogUtils - checkElementExist: true --- By.xpath: //input[@placeholder='Your name' and @name='name']
+[INFO] 08-07-2025 09:54:06 [main] LogUtils - Get attribute of element By.xpath: //input[@placeholder='Your name' and @name='name']
+[INFO] 08-07-2025 09:54:06 [main] LogUtils - ==> Attribute value: Hoàng
+[INFO] 08-07-2025 09:54:07 [main] LogUtils - Clear text on element By.xpath: //input[@placeholder='Your name' and @name='name']
+[INFO] 08-07-2025 09:54:07 [main] LogUtils - Set text [Tài] on element: By.xpath: //input[@placeholder='Your name' and @name='name']
+[INFO] 08-07-2025 09:54:07 [main] LogUtils - checkElementExist: true --- By.xpath: //button[normalize-space()='Update Profile']
+[INFO] 08-07-2025 09:54:08 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Update Profile']
+[INFO] 08-07-2025 09:54:09 [main] LogUtils - checkElementExist: true --- By.xpath: //input[@placeholder='Your name' and @name='name']
+[INFO] 08-07-2025 09:54:09 [main] LogUtils - Get attribute of element By.xpath: //input[@placeholder='Your name' and @name='name']
+[INFO] 08-07-2025 09:54:09 [main] LogUtils - ==> Attribute value: Tài
+[INFO] 08-07-2025 09:54:09 [main] LogUtils - checkElementExist: true --- By.xpath: //span[contains(normalize-space(), 'updated successfully')]
+[INFO] 08-07-2025 09:54:09 [main] LogUtils - verifyUpdateUserProfileSuccess: profile updated successfully!
+[INFO] 08-07-2025 09:54:09 [main] LogUtils - checkElementExist: true --- By.xpath: //span[contains(normalize-space(), 'updated successfully')]
+[INFO] 08-07-2025 09:54:10 [main] LogUtils - verifyUpdateUserProfileSuccess: profile updated successfully!
+[INFO] 08-07-2025 09:54:10 [main] LogUtils - ✅ Đây là Test case chạy thành công: testUpdateUserWithChangeValue
+[INFO] 08-07-2025 09:54:12 [main] LogUtils - Run with Edge browser
+[INFO] 08-07-2025 09:54:12 [main] LogUtils - Bắt đầu chạy test: testUpdateUserWithDeletePart
+[INFO] 08-07-2025 09:54:14 [main] LogUtils - 🌐 Open URL: https://cms.anhtester.com/
+[INFO] 08-07-2025 09:54:14 [main] LogUtils - checkElementExist: true --- By.xpath: //b[normalize-space()='Website Demo']
+[INFO] 08-07-2025 09:54:14 [main] LogUtils - Click on element By.xpath: //b[normalize-space()='Website Demo']/following::button[@data-value='removed']
+[INFO] 08-07-2025 09:54:15 [main] LogUtils - Click on element By.xpath: (//a[normalize-space()='Login'])[1]
+[INFO] 08-07-2025 09:54:15 [main] LogUtils - checkElementExist: true --- By.xpath: //a[contains(normalize-space(), 'Forgot password')]
+[INFO] 08-07-2025 09:54:16 [main] LogUtils - Clear text on element By.xpath: //input[@id='email']
+[INFO] 08-07-2025 09:54:16 [main] LogUtils - Set text [customer@example.com] on element: By.xpath: //input[@id='email']
+[INFO] 08-07-2025 09:54:16 [main] LogUtils - Clear text on element By.xpath: //input[@id='password']
+[INFO] 08-07-2025 09:54:16 [main] LogUtils - Set text [123456] on element: By.xpath: //input[@id='password']
+[INFO] 08-07-2025 09:54:17 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Login']
+[INFO] 08-07-2025 09:54:18 [main] LogUtils - checkElementExist: true --- By.xpath: (//span[normalize-space()='Dashboard'])[1]
+[INFO] 08-07-2025 09:54:18 [main] LogUtils - Verify login success !
+[INFO] 08-07-2025 09:54:19 [main] LogUtils - checkElementExist: true --- By.xpath: (//span[normalize-space()='Manage Profile'])[1]
+[INFO] 08-07-2025 09:54:20 [main] LogUtils - Click on element By.xpath: (//span[normalize-space()='Manage Profile'])[1]
+[INFO] 08-07-2025 09:54:20 [main] LogUtils - Get current url: https://cms.anhtester.com/profile
+[INFO] 08-07-2025 09:54:20 [main] LogUtils - checkElementExist: true --- By.xpath: //button[normalize-space()='Update Profile']
+[INFO] 08-07-2025 09:54:21 [main] LogUtils - checkElementExist: true --- By.xpath: //input[@placeholder='Your name' and @name='name']
+[INFO] 08-07-2025 09:54:21 [main] LogUtils - Get attribute of element By.xpath: //input[@placeholder='Your name' and @name='name']
+[INFO] 08-07-2025 09:54:21 [main] LogUtils - ==> Attribute value: Tài
+[INFO] 08-07-2025 09:54:21 [main] LogUtils - Clear text on element By.xpath: //input[@placeholder='Your name' and @name='name']
+[INFO] 08-07-2025 09:54:21 [main] LogUtils - Set text [] on element: By.xpath: //input[@placeholder='Your name' and @name='name']
+[INFO] 08-07-2025 09:54:21 [main] LogUtils - checkElementExist: true --- By.xpath: //button[normalize-space()='Update Profile']
+[INFO] 08-07-2025 09:54:22 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Update Profile']
+[INFO] 08-07-2025 09:54:23 [main] LogUtils - checkElementExist: true --- By.xpath: //input[@placeholder='Your name' and @name='name']
+[INFO] 08-07-2025 09:54:24 [main] LogUtils - checkElementExist: true --- By.xpath: //span[contains(normalize-space(), 'updated successfully')]
+[INFO] 08-07-2025 09:54:24 [main] LogUtils - verifyUpdateUserProfileSuccess: profile updated successfully!
+[INFO] 08-07-2025 09:54:24 [main] LogUtils - ✅ Đây là Test case chạy thành công: testUpdateUserWithDeletePart
+[INFO] 08-07-2025 09:54:24 [main] LogUtils - ⭐️ Total test: 6
+[INFO] 08-07-2025 09:54:24 [main] LogUtils - ⭐️ Passed: 6
+[INFO] 08-07-2025 09:54:24 [main] LogUtils - ⭐️ Failed: 0
+[INFO] 08-07-2025 09:54:24 [main] LogUtils - ⭐️ Skipped: 0
+[INFO] 08-07-2025 09:54:24 [main] LogUtils - 🟢 Kết thúc toàn bộ suite: Update User Profile Test
+[INFO] 08-07-2025 09:54:28 [main] LogUtils - ✅ Email with attachments sent!
+[INFO] 08-07-2025 09:54:28 [main] LogUtils - ⚙\uFE0F Thời gian chạy toàn bộ test:Tue Jul 08 09:54:28 ICT 2025
+[INFO] 08-07-2025 09:54:28 [main] LogUtils - ⚙️ Bắt đầu test suite cho class: UserSetInfoProductToExcelTest
+[INFO] 08-07-2025 09:54:29 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - Run with Edge browser
+[INFO] 08-07-2025 09:54:29 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - Bắt đầu chạy test: testSetInfoProduct
+[INFO] 08-07-2025 09:54:31 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - 🌐 Open URL: https://cms.anhtester.com/
+[INFO] 08-07-2025 09:54:31 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - checkElementExist: true --- By.xpath: //b[normalize-space()='Website Demo']
+[INFO] 08-07-2025 09:54:32 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - Click on element By.xpath: //b[normalize-space()='Website Demo']/following::button[@data-value='removed']
+[INFO] 08-07-2025 09:54:33 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - Click on element By.xpath: (//a[normalize-space()='Login'])[1]
+[INFO] 08-07-2025 09:54:33 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - checkElementExist: true --- By.xpath: //a[contains(normalize-space(), 'Forgot password')]
+[INFO] 08-07-2025 09:54:33 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - Clear text on element By.xpath: //input[@id='email']
+[INFO] 08-07-2025 09:54:34 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - Set text [customer@example.com] on element: By.xpath: //input[@id='email']
+[INFO] 08-07-2025 09:54:34 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - Clear text on element By.xpath: //input[@id='password']
+[INFO] 08-07-2025 09:54:34 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - Set text [123456] on element: By.xpath: //input[@id='password']
+[INFO] 08-07-2025 09:54:36 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - Click on element By.xpath: //button[normalize-space()='Login']
+[INFO] 08-07-2025 09:54:36 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - checkElementExist: true --- By.xpath: (//span[normalize-space()='Dashboard'])[1]
+[INFO] 08-07-2025 09:54:36 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - Verify login success !
+[INFO] 08-07-2025 09:54:36 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - Clear text on element By.xpath: //input[@id='search' and @name='keyword']
+[INFO] 08-07-2025 09:54:36 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - Set text [Laptop asus] on element: By.xpath: //input[@id='search' and @name='keyword']
+[INFO] 08-07-2025 09:54:40 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - Click on element By.xpath: (//div[normalize-space()='Products']/following-sibling::ul/li)[1]
+[INFO] 08-07-2025 09:54:40 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - Get current url: https://cms.anhtester.com/product/laptop-asus
+[INFO] 08-07-2025 09:54:41 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - formatSlug: laptop asus
+[INFO] 08-07-2025 09:54:41 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - Product Name: laptop asus
+[INFO] 08-07-2025 09:54:41 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - Search Words: [laptop, asus]
+[INFO] 08-07-2025 09:54:41 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - Matched Words: [laptop, laptop, asus, asus]
+[INFO] 08-07-2025 09:54:41 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - Total Matches: 4
+[INFO] 08-07-2025 09:54:41 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - verifyInfoProductPage: Passed - Product is correctly displayed on the page!
+[INFO] 08-07-2025 09:54:41 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - checkElementExist: true --- By.xpath: (//div[contains(normalize-space(), 'Price:')]/following-sibling::div/div/strong)[1]
+[INFO] 08-07-2025 09:54:41 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - checkElementExist: true --- By.xpath: (//div[contains(normalize-space(), 'Price:')]/following-sibling::div/div/strong)[1]
+[INFO] 08-07-2025 09:54:41 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - Get text of element: By.xpath: (//div[contains(normalize-space(), 'Price:')]/following-sibling::div/div/strong)[1] || ==> Text Return: $3,000.00
+[INFO] 08-07-2025 09:54:41 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - Get text of element: By.xpath: //div[@id='order_details']/following::div[@class='text-left']/h1 || ==> Text Return: Laptop Asus
+[INFO] 08-07-2025 09:54:41 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - Get text of element: By.xpath: //span[@id='available-quantity'] || ==> Text Return: 500
+[INFO] 08-07-2025 09:54:41 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - Get text of element: By.xpath: //div[@id='tab_default_1']/descendant::p || ==> Text Return: Laptop asus vừa mạnh vừa đẹp
+[INFO] 08-07-2025 09:54:41 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - Get attribute of element By.xpath: (//div[@data-fade='true']/descendant::img)[1]
+[INFO] 08-07-2025 09:54:41 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - ==> Attribute value: https://cms.anhtester.com/public/uploads/all/2S6eZZGA1BeFKFx17nPI6L4sxZSdPQG8DMKAm8e1.webp
+[INFO] 08-07-2025 09:54:42 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - Data written successfully to Excel!
+[INFO] 08-07-2025 09:54:42 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - checkElementExist: true --- By.xpath: (//div[contains(normalize-space(), 'Price:')]/following-sibling::div/div/strong)[1]
+[INFO] 08-07-2025 09:54:42 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - checkElementExist: true --- By.xpath: (//div[contains(normalize-space(), 'Price:')]/following-sibling::div/div/strong)[1]
+[INFO] 08-07-2025 09:54:42 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - Get text of element: By.xpath: (//div[contains(normalize-space(), 'Price:')]/following-sibling::div/div/strong)[1] || ==> Text Return: $3,000.00
+[INFO] 08-07-2025 09:54:42 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - Get text of element: By.xpath: //div[@id='order_details']/following::div[@class='text-left']/h1 || ==> Text Return: Laptop Asus
+[INFO] 08-07-2025 09:54:42 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - Get text of element: By.xpath: //span[@id='available-quantity'] || ==> Text Return: 500
+[INFO] 08-07-2025 09:54:42 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - Get text of element: By.xpath: //div[@id='tab_default_1']/descendant::p || ==> Text Return: Laptop asus vừa mạnh vừa đẹp
+[INFO] 08-07-2025 09:54:42 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - Get attribute of element By.xpath: (//div[@data-fade='true']/descendant::img)[1]
+[INFO] 08-07-2025 09:54:42 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - ==> Attribute value: https://cms.anhtester.com/public/uploads/all/2S6eZZGA1BeFKFx17nPI6L4sxZSdPQG8DMKAm8e1.webp
+[INFO] 08-07-2025 09:54:42 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - expectedDataProduct: {URL image=https://cms.anhtester.com/public/uploads/all/2S6eZZGA1BeFKFx17nPI6L4sxZSdPQG8DMKAm8e1.webp, Description=Laptop asus vừa mạnh vừa đẹp, Price=$3,000.00, Available Quantity=500, Product Name=Laptop Asus, Time=08/07/2025 09:54, Color =Aqua}
+[INFO] 08-07-2025 09:54:42 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - actualData: {URL image=https://cms.anhtester.com/public/uploads/all/2S6eZZGA1BeFKFx17nPI6L4sxZSdPQG8DMKAm8e1.webp, Description=Laptop asus vừa mạnh vừa đẹp, Price=$3,000.00, Available Quantity=500, Product Name=Laptop Asus, Time=08/07/2025 09:54, Color =Aqua}
+[INFO] 08-07-2025 09:54:42 [TestNG-test=Save Data Product To Excel Test-1] LogUtils - ✅ Đây là Test case chạy thành công: testSetInfoProduct
+[INFO] 08-07-2025 09:54:43 [main] LogUtils - ⭐️ Total test: 7
+[INFO] 08-07-2025 09:54:43 [main] LogUtils - ⭐️ Passed: 7
+[INFO] 08-07-2025 09:54:43 [main] LogUtils - ⭐️ Failed: 0
+[INFO] 08-07-2025 09:54:43 [main] LogUtils - ⭐️ Skipped: 0
+[INFO] 08-07-2025 09:54:43 [main] LogUtils - 🟢 Kết thúc toàn bộ suite: Save Data Product To Excel Test
+[INFO] 08-07-2025 09:54:46 [main] LogUtils - ✅ Email with attachments sent!
+[INFO] 08-07-2025 09:54:46 [main] LogUtils - ⚙\uFE0F Thời gian chạy toàn bộ test:Tue Jul 08 09:54:46 ICT 2025
+[INFO] 08-07-2025 09:54:46 [main] LogUtils - ⚙️ Bắt đầu test suite cho class: UserAddCartTest
+[INFO] 08-07-2025 09:54:46 [TestNG-test=User Add Product Test-1] LogUtils - Run with Edge browser (default)
+[INFO] 08-07-2025 09:54:48 [TestNG-test=User Add Product Test-1] LogUtils - Bắt đầu chạy test: testAddCart
+[INFO] 08-07-2025 09:54:50 [TestNG-test=User Add Product Test-1] LogUtils - 🌐 Open URL: https://cms.anhtester.com/
+[INFO] 08-07-2025 09:54:50 [TestNG-test=User Add Product Test-1] LogUtils - checkElementExist: true --- By.xpath: //b[normalize-space()='Website Demo']
+[INFO] 08-07-2025 09:54:50 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: //b[normalize-space()='Website Demo']/following::button[@data-value='removed']
+[INFO] 08-07-2025 09:54:51 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: (//a[normalize-space()='Login'])[1]
+[INFO] 08-07-2025 09:54:51 [TestNG-test=User Add Product Test-1] LogUtils - checkElementExist: true --- By.xpath: //a[contains(normalize-space(), 'Forgot password')]
+[INFO] 08-07-2025 09:54:52 [TestNG-test=User Add Product Test-1] LogUtils - Clear text on element By.xpath: //input[@id='email']
+[INFO] 08-07-2025 09:54:52 [TestNG-test=User Add Product Test-1] LogUtils - Set text [customer@example.com] on element: By.xpath: //input[@id='email']
+[INFO] 08-07-2025 09:54:52 [TestNG-test=User Add Product Test-1] LogUtils - Clear text on element By.xpath: //input[@id='password']
+[INFO] 08-07-2025 09:54:52 [TestNG-test=User Add Product Test-1] LogUtils - Set text [123456] on element: By.xpath: //input[@id='password']
+[INFO] 08-07-2025 09:54:54 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: //button[normalize-space()='Login']
+[INFO] 08-07-2025 09:54:54 [TestNG-test=User Add Product Test-1] LogUtils - Clear text on element By.xpath: //input[@id='search' and @name='keyword']
+[INFO] 08-07-2025 09:54:54 [TestNG-test=User Add Product Test-1] LogUtils - Set text [laptop pro game] on element: By.xpath: //input[@id='search' and @name='keyword']
+[INFO] 08-07-2025 09:54:56 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: //input[@id='search' and @name='keyword']/following-sibling::div/button[@type='submit']
+[INFO] 08-07-2025 09:54:57 [TestNG-test=User Add Product Test-1] LogUtils - Get current url: https://cms.anhtester.com/search?keyword=laptop+pro+game
+[INFO] 08-07-2025 09:54:57 [TestNG-test=User Add Product Test-1] LogUtils - verifyUserProductListPage: Passed - This Is Product List Page
+[INFO] 08-07-2025 09:54:58 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: //div[@id='cart_items']//span[contains(@class, 'badge') and contains(@class, 'cart-count')] || ==> Text Return: 0
+[INFO] 08-07-2025 09:54:59 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: ((//form[@id='search-form']/descendant::div[@class='col'])[1]/descendant::a[@data-title='Add to cart'])[1]
+[INFO] 08-07-2025 09:54:59 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: (//form[@id='search-form']/descendant::div[@class='col'])[1]/descendant::div[contains(@class, 'rating')]/following-sibling::h3/a || ==> Text Return: Laptop Asus
+[INFO] 08-07-2025 09:54:59 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: (//form[@id='search-form']/descendant::div[@class='col'])[2]/descendant::div[contains(@class, 'rating')]/following-sibling::h3/a || ==> Text Return: Laptop Asus
+[INFO] 08-07-2025 09:54:59 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: //div[@id='addToCart-modal-body']//h2 || ==> Text Return: Laptop Asus
+[INFO] 08-07-2025 09:54:59 [TestNG-test=User Add Product Test-1] LogUtils - ✅ verifyPopupAddCart: verify success !
+[INFO] 08-07-2025 09:54:59 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: (//div[@id='addToCart-modal-body']//strong)[1] || ==> Text Return: $3,000.00
+[INFO] 08-07-2025 09:54:59 [TestNG-test=User Add Product Test-1] LogUtils - 🔍 Raw price (popup): $3,000.00
+[INFO] 08-07-2025 09:54:59 [TestNG-test=User Add Product Test-1] LogUtils - 💡 Formatted price range: 3000.00
+[INFO] 08-07-2025 09:54:59 [TestNG-test=User Add Product Test-1] LogUtils - 📌 prices[0]: 3000.00
+[INFO] 08-07-2025 09:54:59 [TestNG-test=User Add Product Test-1] LogUtils - 💲 Chỉ có một mức giá: 3000.0
+[INFO] 08-07-2025 09:54:59 [TestNG-test=User Add Product Test-1] LogUtils - Get attribute of element By.xpath: //input[@name='quantity']
+[INFO] 08-07-2025 09:54:59 [TestNG-test=User Add Product Test-1] LogUtils - ==> Attribute value: 1
+[INFO] 08-07-2025 09:55:00 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: //div[@id='addToCart-modal-body']//h2 || ==> Text Return: Laptop Asus
+[INFO] 08-07-2025 09:55:00 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: //span[normalize-space()='Add to cart']
+[INFO] 08-07-2025 09:55:00 [TestNG-test=User Add Product Test-1] LogUtils - Click button add cart in popup add cart
+[INFO] 08-07-2025 09:55:00 [TestNG-test=User Add Product Test-1] LogUtils - checkElementExist: true --- By.xpath: //h3[normalize-space()='Item added to your cart!']
+[INFO] 08-07-2025 09:55:01 [TestNG-test=User Add Product Test-1] LogUtils - checkElementExist: true --- By.xpath: //span[normalize-space()='Frequently Bought Together']
+[INFO] 08-07-2025 09:55:01 [TestNG-test=User Add Product Test-1] LogUtils - checkElementExist: true --- By.xpath: //h3[normalize-space()='Item added to your cart!']
+[INFO] 08-07-2025 09:55:01 [TestNG-test=User Add Product Test-1] LogUtils - checkElementExist: true --- By.xpath: //span[normalize-space()='Frequently Bought Together']
+[INFO] 08-07-2025 09:55:01 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: //div[@id='cart_items']//span[contains(@class, 'badge') and contains(@class, 'cart-count')] || ==> Text Return: 1
+[INFO] 08-07-2025 09:55:01 [TestNG-test=User Add Product Test-1] LogUtils - verifyPopupAddCartSuccess countProductCart: 1
+[INFO] 08-07-2025 09:55:01 [TestNG-test=User Add Product Test-1] LogUtils - verifyPopupAddCartSuccess getCartCount: 1
+[INFO] 08-07-2025 09:55:01 [TestNG-test=User Add Product Test-1] LogUtils - verifyPopupAddCartSuccess: popup add cart success!
+[INFO] 08-07-2025 09:55:01 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: //div[@id='addToCart']/descendant::button[contains(@class, 'close') and @aria-label='Close']
+[INFO] 08-07-2025 09:55:01 [TestNG-test=User Add Product Test-1] LogUtils - Click button close popup add cart
+[INFO] 08-07-2025 09:55:04 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: ((//form[@id='search-form']/descendant::div[@class='col'])[2]/descendant::a[@data-title='Add to cart'])[1]
+[INFO] 08-07-2025 09:55:04 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: (//form[@id='search-form']/descendant::div[@class='col'])[1]/descendant::div[contains(@class, 'rating')]/following-sibling::h3/a || ==> Text Return: Laptop Asus
+[INFO] 08-07-2025 09:55:04 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: (//form[@id='search-form']/descendant::div[@class='col'])[2]/descendant::div[contains(@class, 'rating')]/following-sibling::h3/a || ==> Text Return: Laptop Asus
+[INFO] 08-07-2025 09:55:04 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: //div[@id='addToCart-modal-body']//h2 || ==> Text Return: Laptop Asus
+[INFO] 08-07-2025 09:55:04 [TestNG-test=User Add Product Test-1] LogUtils - ✅ verifyPopupAddCart: verify success !
+[INFO] 08-07-2025 09:55:04 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: (//div[@id='addToCart-modal-body']//strong)[1] || ==> Text Return: $3,000.00
+[INFO] 08-07-2025 09:55:04 [TestNG-test=User Add Product Test-1] LogUtils - 🔍 Raw price (popup): $3,000.00
+[INFO] 08-07-2025 09:55:04 [TestNG-test=User Add Product Test-1] LogUtils - 💡 Formatted price range: 3000.00
+[INFO] 08-07-2025 09:55:04 [TestNG-test=User Add Product Test-1] LogUtils - 📌 prices[0]: 3000.00
+[INFO] 08-07-2025 09:55:04 [TestNG-test=User Add Product Test-1] LogUtils - 💲 Chỉ có một mức giá: 3000.0
+[INFO] 08-07-2025 09:55:04 [TestNG-test=User Add Product Test-1] LogUtils - Get attribute of element By.xpath: //input[@name='quantity']
+[INFO] 08-07-2025 09:55:04 [TestNG-test=User Add Product Test-1] LogUtils - ==> Attribute value: 1
+[INFO] 08-07-2025 09:55:04 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: //div[@id='addToCart-modal-body']//h2 || ==> Text Return: Laptop Asus
+[INFO] 08-07-2025 09:55:05 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: //span[normalize-space()='Add to cart']
+[INFO] 08-07-2025 09:55:05 [TestNG-test=User Add Product Test-1] LogUtils - Click button add cart in popup add cart
+[INFO] 08-07-2025 09:55:05 [TestNG-test=User Add Product Test-1] LogUtils - checkElementExist: true --- By.xpath: //h3[normalize-space()='Item added to your cart!']
+[INFO] 08-07-2025 09:55:05 [TestNG-test=User Add Product Test-1] LogUtils - checkElementExist: true --- By.xpath: //span[normalize-space()='Frequently Bought Together']
+[INFO] 08-07-2025 09:55:05 [TestNG-test=User Add Product Test-1] LogUtils - checkElementExist: true --- By.xpath: //h3[normalize-space()='Item added to your cart!']
+[INFO] 08-07-2025 09:55:06 [TestNG-test=User Add Product Test-1] LogUtils - checkElementExist: true --- By.xpath: //span[normalize-space()='Frequently Bought Together']
+[INFO] 08-07-2025 09:55:06 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: //div[@id='cart_items']//span[contains(@class, 'badge') and contains(@class, 'cart-count')] || ==> Text Return: 2
+[INFO] 08-07-2025 09:55:06 [TestNG-test=User Add Product Test-1] LogUtils - verifyPopupAddCartSuccess countProductCart: 2
+[INFO] 08-07-2025 09:55:06 [TestNG-test=User Add Product Test-1] LogUtils - verifyPopupAddCartSuccess getCartCount: 2
+[INFO] 08-07-2025 09:55:06 [TestNG-test=User Add Product Test-1] LogUtils - verifyPopupAddCartSuccess: popup add cart success!
+[INFO] 08-07-2025 09:55:06 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: //div[@id='addToCart']/descendant::button[contains(@class, 'close') and @aria-label='Close']
+[INFO] 08-07-2025 09:55:06 [TestNG-test=User Add Product Test-1] LogUtils - Click button close popup add cart
+[INFO] 08-07-2025 09:55:06 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: //div[@id='cart_items']
+[INFO] 08-07-2025 09:55:06 [TestNG-test=User Add Product Test-1] LogUtils - checkElementExist: true --- By.xpath: //div[normalize-space()='Cart Items']
+[INFO] 08-07-2025 09:55:06 [TestNG-test=User Add Product Test-1] LogUtils - checkElementExist: true --- By.xpath: //span[normalize-space()='Subtotal']
+[INFO] 08-07-2025 09:55:07 [TestNG-test=User Add Product Test-1] LogUtils - checkElementExist: true --- By.xpath: //a[normalize-space()='View cart']
+[INFO] 08-07-2025 09:55:07 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: //div[normalize-space()='Cart Items'] || ==> Text Return: Cart Items
+[INFO] 08-07-2025 09:55:07 [TestNG-test=User Add Product Test-1] LogUtils - 📦 Product: Laptop Asus
+[INFO] 08-07-2025 09:55:07 [TestNG-test=User Add Product Test-1] LogUtils - Quantity: 1, Price: 3000.0, Subtotal: 3000.0
+[INFO] 08-07-2025 09:55:07 [TestNG-test=User Add Product Test-1] LogUtils - 📦 Product: Laptop Asus
+[INFO] 08-07-2025 09:55:07 [TestNG-test=User Add Product Test-1] LogUtils - Quantity: 1, Price: 3000.0, Subtotal: 3000.0
+[INFO] 08-07-2025 09:55:07 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: //span[normalize-space()='Subtotal']/following-sibling::span || ==> Text Return: $6,000.00
+[INFO] 08-07-2025 09:55:07 [TestNG-test=User Add Product Test-1] LogUtils - 🔢 Expected total: 6000.0 | Actual total: 6000.0
+[INFO] 08-07-2025 09:55:07 [TestNG-test=User Add Product Test-1] LogUtils - ✅ verifyAddCartSuccess successfully! Sản phẩm còn lại: 2
+[INFO] 08-07-2025 09:55:08 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: //a[normalize-space()='View cart']
+[INFO] 08-07-2025 09:55:08 [TestNG-test=User Add Product Test-1] LogUtils - Get current url: https://cms.anhtester.com/cart
+[INFO] 08-07-2025 09:55:08 [TestNG-test=User Add Product Test-1] LogUtils - checkElementExist: true --- By.xpath: //h3[contains(normalize-space(),'My Cart')]
+[INFO] 08-07-2025 09:55:08 [TestNG-test=User Add Product Test-1] LogUtils - checkElementExist: true --- By.xpath: //section[@id='cart-summary']/descendant::span[normalize-space()='Subtotal']
+[INFO] 08-07-2025 09:55:08 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: //h3[contains(normalize-space(),'My Cart')] || ==> Text Return: 1. My Cart
+[INFO] 08-07-2025 09:55:08 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: //section[@id='cart-summary']/descendant::span[normalize-space()='Subtotal'] || ==> Text Return: Subtotal
+[INFO] 08-07-2025 09:55:09 [TestNG-test=User Add Product Test-1] LogUtils - 🧾 Product: Laptop Asus - Aqua | Qty: 1 | Price: $3000.0 | Subtotal: $3000.0
+[INFO] 08-07-2025 09:55:09 [TestNG-test=User Add Product Test-1] LogUtils - Total price each product actual: 3000.0, expected: 3000.0
+[INFO] 08-07-2025 09:55:09 [TestNG-test=User Add Product Test-1] LogUtils - 🎯 Expected → Qty: 1 | Min: 3000.0 | Max: 3000.0
+[INFO] 08-07-2025 09:55:09 [TestNG-test=User Add Product Test-1] LogUtils - 🧾 Product: Laptop Asus - Aqua | Qty: 1 | Price: $3000.0 | Subtotal: $3000.0
+[INFO] 08-07-2025 09:55:09 [TestNG-test=User Add Product Test-1] LogUtils - Total price each product actual: 3000.0, expected: 3000.0
+[INFO] 08-07-2025 09:55:09 [TestNG-test=User Add Product Test-1] LogUtils - 🎯 Expected → Qty: 1 | Min: 3000.0 | Max: 3000.0
+[INFO] 08-07-2025 09:55:09 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: //section[@id='cart-summary']/descendant::span[normalize-space()='Subtotal']/following-sibling::span || ==> Text Return: $6,000.00
+[INFO] 08-07-2025 09:55:09 [TestNG-test=User Add Product Test-1] LogUtils - 🔢 Expected total: 6000.0 | Actual total: 6000.0
+[INFO] 08-07-2025 09:55:09 [TestNG-test=User Add Product Test-1] LogUtils - ✅ verifyProductInCart hoàn tất!
+[INFO] 08-07-2025 09:55:10 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: //a[normalize-space()='Continue to Shipping']
+[INFO] 08-07-2025 09:55:10 [TestNG-test=User Add Product Test-1] LogUtils - 🚛 Start verify shipping page
+[INFO] 08-07-2025 09:55:10 [TestNG-test=User Add Product Test-1] LogUtils - Get current url: https://cms.anhtester.com/checkout
+[INFO] 08-07-2025 09:55:10 [TestNG-test=User Add Product Test-1] LogUtils - Get CSS value color of element By.xpath: //h3[contains(normalize-space(), 'Shipping info')]
+[INFO] 08-07-2025 09:55:10 [TestNG-test=User Add Product Test-1] LogUtils - ==> CSS value: rgba(230, 46, 4, 1)
+[INFO] 08-07-2025 09:55:10 [TestNG-test=User Add Product Test-1] LogUtils - colorHeaderShippingPage: #e62e04
+[INFO] 08-07-2025 09:55:11 [TestNG-test=User Add Product Test-1] LogUtils - 🔍 Trạng thái enabled của By.xpath: (//input[@name='address_id'])[1]/ancestor::label/parent::div: true
+[INFO] 08-07-2025 09:55:11 [TestNG-test=User Add Product Test-1] LogUtils - 🔍 Trạng thái enabled của By.xpath: //div[text()='Add New Address']: true
+[INFO] 08-07-2025 09:55:11 [TestNG-test=User Add Product Test-1] LogUtils - 🔍 Trạng thái enabled của By.xpath: //button[normalize-space()='Continue to Delivery Info']: true
+[INFO] 08-07-2025 09:55:11 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: //button[normalize-space()='Continue to Delivery Info'] || ==> Text Return: Continue to Delivery Info
+[INFO] 08-07-2025 09:55:12 [TestNG-test=User Add Product Test-1] LogUtils - ✅ An address option is already selected. No action taken.
+[INFO] 08-07-2025 09:55:13 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: //button[normalize-space()='Continue to Delivery Info']
+[INFO] 08-07-2025 09:55:13 [TestNG-test=User Add Product Test-1] LogUtils - Start verify delivery page
+[INFO] 08-07-2025 09:55:13 [TestNG-test=User Add Product Test-1] LogUtils - Get current url: https://cms.anhtester.com/checkout/delivery_info
+[INFO] 08-07-2025 09:55:13 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: //h3[normalize-space()='3. Delivery info'] || ==> Text Return: 3. Delivery info
+[INFO] 08-07-2025 09:55:13 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: //h5[normalize-space()='Active eCommerce CMS Products'] || ==> Text Return: Active eCommerce CMS Products
+[INFO] 08-07-2025 09:55:13 [TestNG-test=User Add Product Test-1] LogUtils - Get CSS value color of element By.xpath: //h3[normalize-space()='3. Delivery info']
+[INFO] 08-07-2025 09:55:13 [TestNG-test=User Add Product Test-1] LogUtils - ==> CSS value: rgba(230, 46, 4, 1)
+[INFO] 08-07-2025 09:55:13 [TestNG-test=User Add Product Test-1] LogUtils - checkElementExist: true --- By.xpath: //h5[normalize-space()='Active eCommerce CMS Products']
+[INFO] 08-07-2025 09:55:13 [TestNG-test=User Add Product Test-1] LogUtils - checkElementExist: true --- By.xpath: //h3[normalize-space()='3. Delivery info']
+[INFO] 08-07-2025 09:55:13 [TestNG-test=User Add Product Test-1] LogUtils - 🔍 Trạng thái enabled của By.xpath: //button[normalize-space()='Continue to Payment']: true
+[INFO] 08-07-2025 09:55:13 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: //button[normalize-space()='Continue to Payment'] || ==> Text Return: Continue to Payment
+[INFO] 08-07-2025 09:55:13 [TestNG-test=User Add Product Test-1] LogUtils - 🚛 Start verify product in delivery page
+[INFO] 08-07-2025 09:55:13 [TestNG-test=User Add Product Test-1] LogUtils - 📦 nameProductActual: Laptop Asus
+[INFO] 08-07-2025 09:55:13 [TestNG-test=User Add Product Test-1] LogUtils - 📦 nameProductActual: Laptop Asus
+[INFO] 08-07-2025 09:55:14 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: //button[normalize-space()='Continue to Payment']
+[INFO] 08-07-2025 09:55:14 [TestNG-test=User Add Product Test-1] LogUtils - 🚛 Start verify payment page
+[INFO] 08-07-2025 09:55:14 [TestNG-test=User Add Product Test-1] LogUtils - Get current url: https://cms.anhtester.com/checkout/payment_select
+[INFO] 08-07-2025 09:55:14 [TestNG-test=User Add Product Test-1] LogUtils - Get CSS value color of element By.xpath: //h3[normalize-space()='4. Payment']
+[INFO] 08-07-2025 09:55:15 [TestNG-test=User Add Product Test-1] LogUtils - ==> CSS value: rgba(230, 46, 4, 1)
+[INFO] 08-07-2025 09:55:15 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: //button[normalize-space()='Complete Order'] || ==> Text Return: Complete Order
+[INFO] 08-07-2025 09:55:15 [TestNG-test=User Add Product Test-1] LogUtils - 🔍 Trạng thái enabled của By.xpath: //button[normalize-space()='Complete Order']: true
+[INFO] 08-07-2025 09:55:15 [TestNG-test=User Add Product Test-1] LogUtils - 🚛 Start verify product in payment page
+[INFO] 08-07-2025 09:55:15 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: //h3[normalize-space()='Summary']/following::span[contains(normalize-space(), 'Items')] || ==> Text Return: 2 Items
+[INFO] 08-07-2025 09:55:15 [TestNG-test=User Add Product Test-1] LogUtils - countProductActual: 2
+[INFO] 08-07-2025 09:55:15 [TestNG-test=User Add Product Test-1] LogUtils - countProductExpected: 2
+[INFO] 08-07-2025 09:55:15 [TestNG-test=User Add Product Test-1] LogUtils - 🔍 Sản phẩm: Laptop Asus
+[INFO] 08-07-2025 09:55:15 [TestNG-test=User Add Product Test-1] LogUtils -    Số lượng: 1
+[INFO] 08-07-2025 09:55:15 [TestNG-test=User Add Product Test-1] LogUtils -    Giá: 3000.0
+[INFO] 08-07-2025 09:55:15 [TestNG-test=User Add Product Test-1] LogUtils - 🔍 Sản phẩm: Laptop Asus
+[INFO] 08-07-2025 09:55:15 [TestNG-test=User Add Product Test-1] LogUtils -    Số lượng: 1
+[INFO] 08-07-2025 09:55:15 [TestNG-test=User Add Product Test-1] LogUtils -    Giá: 3000.0
+[INFO] 08-07-2025 09:55:15 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: //th[normalize-space()='Subtotal']/following-sibling::td/span || ==> Text Return: $6,000.00
+[INFO] 08-07-2025 09:55:15 [TestNG-test=User Add Product Test-1] LogUtils - 💰 Tổng tiền mong đợi (calculated): 6000.0
+[INFO] 08-07-2025 09:55:15 [TestNG-test=User Add Product Test-1] LogUtils - 💰 Tổng tiền hiển thị UI: 6000.0
+[INFO] 08-07-2025 09:55:15 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: //th[normalize-space()='Total Shipping']//following-sibling::td/span || ==> Text Return: $30,000.00
+[INFO] 08-07-2025 09:55:15 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: //tr[@class='cart-total']/td//span || ==> Text Return: $36,000.00
+[INFO] 08-07-2025 09:55:15 [TestNG-test=User Add Product Test-1] LogUtils - ✅ verifyProductPaymentPage: success!
+[INFO] 08-07-2025 09:55:15 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: //input[@id='agree_checkbox']/ancestor::label[@class='aiz-checkbox']
+[INFO] 08-07-2025 09:55:19 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: //button[normalize-space()='Complete Order']
+[INFO] 08-07-2025 09:55:19 [TestNG-test=User Add Product Test-1] LogUtils - Get current url: https://cms.anhtester.com/checkout/order-confirmed
+[INFO] 08-07-2025 09:55:19 [TestNG-test=User Add Product Test-1] LogUtils - Get CSS value color of element By.xpath: //h3[normalize-space()='5. Confirmation']
+[INFO] 08-07-2025 09:55:19 [TestNG-test=User Add Product Test-1] LogUtils - ==> CSS value: rgba(230, 46, 4, 1)
+[INFO] 08-07-2025 09:55:19 [TestNG-test=User Add Product Test-1] LogUtils - checkElementExist: true --- By.xpath: //span[normalize-space()='Your order has been placed successfully']
+[INFO] 08-07-2025 09:55:19 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: //span[normalize-space()='Your order has been placed successfully'] || ==> Text Return: Your order has been placed successfully
+[INFO] 08-07-2025 09:55:19 [TestNG-test=User Add Product Test-1] LogUtils - Verify order confirm page successfully!
+[INFO] 08-07-2025 09:55:19 [TestNG-test=User Add Product Test-1] LogUtils - addProductToCart: success
+[INFO] 08-07-2025 09:55:21 [TestNG-test=User Add Product Test-1] LogUtils - ✅ Đây là Test case chạy thành công: testAddCart
+[INFO] 08-07-2025 09:55:22 [main] LogUtils - ⭐️ Total test: 8
+[INFO] 08-07-2025 09:55:22 [main] LogUtils - ⭐️ Passed: 8
+[INFO] 08-07-2025 09:55:22 [main] LogUtils - ⭐️ Failed: 0
+[INFO] 08-07-2025 09:55:22 [main] LogUtils - ⭐️ Skipped: 0
+[INFO] 08-07-2025 09:55:22 [main] LogUtils - 🟢 Kết thúc toàn bộ suite: User Add Product Test
+[INFO] 08-07-2025 09:55:25 [main] LogUtils - ✅ Email with attachments sent!
+[INFO] 08-07-2025 09:55:25 [main] LogUtils - ⚙\uFE0F Thời gian chạy toàn bộ test:Tue Jul 08 09:55:25 ICT 2025
+[INFO] 08-07-2025 09:55:25 [main] LogUtils - ⚙️ Bắt đầu test suite cho class: AdminCheckDetailProduct
+[INFO] 08-07-2025 09:55:25 [TestNG-test=User Add Product Test-1] LogUtils - ✅ Read data from Excel: [[Laptop Asus, Laptop, Asus, PC, Aqua, 5, laptop asus, 3000, 500, Laptop asus vừa mạnh vừa đẹp, laptop_asus.webp]]
+[INFO] 08-07-2025 09:55:25 [TestNG-test=User Add Product Test-1] LogUtils - Run with Edge browser (default)
+[INFO] 08-07-2025 09:55:27 [TestNG-test=User Add Product Test-1] LogUtils - Bắt đầu chạy test: testAdminCheckDetailProduct
+[INFO] 08-07-2025 09:55:29 [TestNG-test=User Add Product Test-1] LogUtils - 🌐 Open URL: https://cms.anhtester.com/
+[INFO] 08-07-2025 09:55:29 [TestNG-test=User Add Product Test-1] LogUtils - checkElementExist: true --- By.xpath: //b[normalize-space()='Website Demo']
+[INFO] 08-07-2025 09:55:29 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: //b[normalize-space()='Website Demo']/following::button[@data-value='removed']
+[INFO] 08-07-2025 09:55:30 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: (//a[normalize-space()='Login'])[1]
+[INFO] 08-07-2025 09:55:30 [TestNG-test=User Add Product Test-1] LogUtils - checkElementExist: true --- By.xpath: //a[contains(normalize-space(), 'Forgot password')]
+[INFO] 08-07-2025 09:55:31 [TestNG-test=User Add Product Test-1] LogUtils - Clear text on element By.xpath: //input[@id='email']
+[INFO] 08-07-2025 09:55:31 [TestNG-test=User Add Product Test-1] LogUtils - Set text [admin@example.com] on element: By.xpath: //input[@id='email']
+[INFO] 08-07-2025 09:55:31 [TestNG-test=User Add Product Test-1] LogUtils - Clear text on element By.xpath: //input[@id='password']
+[INFO] 08-07-2025 09:55:32 [TestNG-test=User Add Product Test-1] LogUtils - Set text [123456] on element: By.xpath: //input[@id='password']
+[INFO] 08-07-2025 09:55:35 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: //button[normalize-space()='Login']
+[INFO] 08-07-2025 09:55:37 [TestNG-test=User Add Product Test-1] LogUtils - Get current url: https://cms.anhtester.com/admin
+[INFO] 08-07-2025 09:55:37 [TestNG-test=User Add Product Test-1] LogUtils - checkElementExist: true --- By.xpath: (//span[normalize-space()='Dashboard'])[1]
+[INFO] 08-07-2025 09:55:37 [TestNG-test=User Add Product Test-1] LogUtils - checkElementExist: true --- By.xpath: //span[normalize-space()='Admin Example']
+[INFO] 08-07-2025 09:55:37 [TestNG-test=User Add Product Test-1] LogUtils - checkElementExist: true --- By.xpath: //span[normalize-space()='Clear Cache']
+[INFO] 08-07-2025 09:55:37 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: //span[normalize-space()='Clear Cache'] || ==> Text Return: Clear Cache
+[INFO] 08-07-2025 09:55:37 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: //ul[@id='main-menu']//span[normalize-space()='Products']
+[INFO] 08-07-2025 09:55:39 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: //span[normalize-space()='Add New Product']
+[INFO] 08-07-2025 09:55:39 [TestNG-test=User Add Product Test-1] LogUtils - Get current url: https://cms.anhtester.com/admin/products/create
+[INFO] 08-07-2025 09:55:39 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: //h5[normalize-space()='Add New Product'] || ==> Text Return: Add New Product
+[INFO] 08-07-2025 09:55:39 [TestNG-test=User Add Product Test-1] LogUtils - checkElementExist: true --- By.xpath: //h5[normalize-space()='Product Information']
+[INFO] 08-07-2025 09:55:39 [TestNG-test=User Add Product Test-1] LogUtils - checkElementExist: true --- By.xpath: //h5[normalize-space()='Add New Product']
+[INFO] 08-07-2025 09:55:39 [TestNG-test=User Add Product Test-1] LogUtils - Verify add new product page successfully
+[INFO] 08-07-2025 09:55:39 [TestNG-test=User Add Product Test-1] LogUtils - Clear text on element By.xpath: //input[@name='name']
+[INFO] 08-07-2025 09:55:40 [TestNG-test=User Add Product Test-1] LogUtils - Set text [Laptop Asus] on element: By.xpath: //input[@name='name']
+[INFO] 08-07-2025 09:55:40 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: //button[@data-id='category_id']
+[INFO] 08-07-2025 09:55:40 [TestNG-test=User Add Product Test-1] LogUtils - Set text [Laptop] on element: By.xpath: //button[@data-id='category_id']/following-sibling::div//input
+[INFO] 08-07-2025 09:55:41 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: (//div[@id='bs-select-1']//li)[1]
+[INFO] 08-07-2025 09:55:41 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: //button[@data-id='brand_id']
+[INFO] 08-07-2025 09:55:41 [TestNG-test=User Add Product Test-1] LogUtils - Set text [Asus] on element: By.xpath: //button[@data-id='brand_id']/following-sibling::div//input
+[INFO] 08-07-2025 09:55:42 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: (//div[@id='bs-select-2']//li)[1]
+[INFO] 08-07-2025 09:55:42 [TestNG-test=User Add Product Test-1] LogUtils - Clear text on element By.xpath: //input[@name='unit']
+[INFO] 08-07-2025 09:55:42 [TestNG-test=User Add Product Test-1] LogUtils - Set text [PC] on element: By.xpath: //input[@name='unit']
+[INFO] 08-07-2025 09:55:43 [TestNG-test=User Add Product Test-1] LogUtils - Clear text on element By.xpath: //input[@name='weight']
+[INFO] 08-07-2025 09:55:43 [TestNG-test=User Add Product Test-1] LogUtils - Set text [5] on element: By.xpath: //input[@name='weight']
+[INFO] 08-07-2025 09:55:43 [TestNG-test=User Add Product Test-1] LogUtils - Set text [laptop asus] on element: By.xpath: //tags[@role='tagslist']
+[INFO] 08-07-2025 09:55:44 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: //label[@for='signinSrEmail' and contains(normalize-space(), 'Gallery Images ')]/following-sibling::div/div
+[INFO] 08-07-2025 09:55:46 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: //a[normalize-space()='Upload New']
+[INFO] 08-07-2025 09:55:46 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: //button[normalize-space()='Browse']
+[INFO] 08-07-2025 09:55:48 [TestNG-test=User Add Product Test-1] LogUtils - 📁 File path để upload: D:\LearnAutomationTest\EcommerceAutomationTesting\src\test\resources\datatest\laptop_asus.webp
+[INFO] 08-07-2025 09:55:48 [TestNG-test=User Add Product Test-1] LogUtils - 📋 Đã copy đường dẫn file vào clipboard
+[INFO] 08-07-2025 09:55:49 [TestNG-test=User Add Product Test-1] LogUtils - ⌨️ Đã thực hiện Ctrl + V
+[INFO] 08-07-2025 09:55:51 [TestNG-test=User Add Product Test-1] LogUtils - ⏎ Đã nhấn Enter để xác nhận chọn file
+[INFO] 08-07-2025 09:55:53 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: //a[normalize-space()='Select File']
+[INFO] 08-07-2025 09:55:54 [TestNG-test=User Add Product Test-1] LogUtils - Click element with JavaScript: By.xpath: (//div[@title='laptop_asus.webp'])[23]
+[INFO] 08-07-2025 09:55:55 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: //button[normalize-space()='Add Files']
+[INFO] 08-07-2025 09:55:55 [TestNG-test=User Add Product Test-1] LogUtils - ✅ Upload file thành công và đã xác nhận trong UI
+[INFO] 08-07-2025 09:55:56 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: //label[@for='signinSrEmail' and contains(normalize-space(), 'Thumbnail Image ')]/following-sibling::div/div[@data-type='image']
+[INFO] 08-07-2025 09:55:58 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: //a[normalize-space()='Upload New']
+[INFO] 08-07-2025 09:55:58 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: //button[normalize-space()='Browse']
+[INFO] 08-07-2025 09:56:01 [TestNG-test=User Add Product Test-1] LogUtils - 📁 File path để upload: D:\LearnAutomationTest\EcommerceAutomationTesting\src\test\resources\datatest\laptop_asus.webp
+[INFO] 08-07-2025 09:56:01 [TestNG-test=User Add Product Test-1] LogUtils - 📋 Đã copy đường dẫn file vào clipboard
+[INFO] 08-07-2025 09:56:01 [TestNG-test=User Add Product Test-1] LogUtils - ⌨️ Đã thực hiện Ctrl + V
+[INFO] 08-07-2025 09:56:03 [TestNG-test=User Add Product Test-1] LogUtils - ⏎ Đã nhấn Enter để xác nhận chọn file
+[INFO] 08-07-2025 09:56:05 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: //a[normalize-space()='Select File']
+[INFO] 08-07-2025 09:56:06 [TestNG-test=User Add Product Test-1] LogUtils - Click element with JavaScript: By.xpath: (//div[@title='laptop_asus.webp'])[25]
+[INFO] 08-07-2025 09:56:07 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: //button[normalize-space()='Add Files']
+[INFO] 08-07-2025 09:56:07 [TestNG-test=User Add Product Test-1] LogUtils - ✅ Upload file thành công và đã xác nhận trong UI
+[INFO] 08-07-2025 09:56:08 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: //button[@data-id='colors']/parent::div/parent::div/following-sibling::div/label
+[INFO] 08-07-2025 09:56:08 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: //button[@data-id='colors']
+[INFO] 08-07-2025 09:56:09 [TestNG-test=User Add Product Test-1] LogUtils - Clear text on element By.xpath: //button[@data-id='colors']/following-sibling::div//input
+[INFO] 08-07-2025 09:56:09 [TestNG-test=User Add Product Test-1] LogUtils - Set text [Aqua] on element: By.xpath: //button[@data-id='colors']/following-sibling::div//input
+[INFO] 08-07-2025 09:56:09 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: (//button[@data-id='colors']/following-sibling::div//ul/li)[1]
+[INFO] 08-07-2025 09:56:10 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: //h5[normalize-space()='Product Variation']
+[INFO] 08-07-2025 09:56:11 [TestNG-test=User Add Product Test-1] LogUtils - Clear text on element By.xpath: //input[@name='unit_price']
+[INFO] 08-07-2025 09:56:11 [TestNG-test=User Add Product Test-1] LogUtils - Set text [3000] on element: By.xpath: //input[@name='unit_price']
+[INFO] 08-07-2025 09:56:13 [TestNG-test=User Add Product Test-1] LogUtils - Clear text on element By.xpath: //input[@name='qty_Aqua']
+[INFO] 08-07-2025 09:56:13 [TestNG-test=User Add Product Test-1] LogUtils - Set text [500] on element: By.xpath: //input[@name='qty_Aqua']
+[INFO] 08-07-2025 09:56:13 [TestNG-test=User Add Product Test-1] LogUtils - Clear text on element By.xpath: //input[@name='price_Aqua']
+[INFO] 08-07-2025 09:56:13 [TestNG-test=User Add Product Test-1] LogUtils - Set text [3000] on element: By.xpath: //input[@name='price_Aqua']
+[INFO] 08-07-2025 09:56:16 [TestNG-test=User Add Product Test-1] LogUtils - Set text [Laptop asus vừa mạnh vừa đẹp] on element: By.xpath: //div[@role='textbox']
+[INFO] 08-07-2025 09:56:16 [TestNG-test=User Add Product Test-1] LogUtils - 📝 Product Name: Laptop Asus
+[INFO] 08-07-2025 09:56:16 [TestNG-test=User Add Product Test-1] LogUtils - 📂 Category: Laptop
+[INFO] 08-07-2025 09:56:16 [TestNG-test=User Add Product Test-1] LogUtils - 🏷️ Brand: Asus
+[INFO] 08-07-2025 09:56:16 [TestNG-test=User Add Product Test-1] LogUtils - 📏 Unit: PC
+[INFO] 08-07-2025 09:56:16 [TestNG-test=User Add Product Test-1] LogUtils - ⚖️ Weight: 5
+[INFO] 08-07-2025 09:56:16 [TestNG-test=User Add Product Test-1] LogUtils - 🔖 Tag: laptop asus
+[INFO] 08-07-2025 09:56:16 [TestNG-test=User Add Product Test-1] LogUtils - 💵 Price: 3000
+[INFO] 08-07-2025 09:56:16 [TestNG-test=User Add Product Test-1] LogUtils - 💵 Color: Aqua
+[INFO] 08-07-2025 09:56:16 [TestNG-test=User Add Product Test-1] LogUtils - 📦 Quantity: 500
+[INFO] 08-07-2025 09:56:16 [TestNG-test=User Add Product Test-1] LogUtils - 🧾 Description: Laptop asus vừa mạnh vừa đẹp
+[INFO] 08-07-2025 09:56:16 [TestNG-test=User Add Product Test-1] LogUtils - 🖼️ Image path: laptop_asus.webp
+[INFO] 08-07-2025 09:56:16 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: //button[normalize-space()='Save & Publish']
+[INFO] 08-07-2025 09:56:18 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: //span[normalize-space()='Product has been inserted successfully'] || ==> Text Return: Product has been inserted successfully
+[INFO] 08-07-2025 09:56:18 [TestNG-test=User Add Product Test-1] LogUtils - checkElementExist: true --- By.xpath: //span[normalize-space()='Product has been inserted successfully']
+[INFO] 08-07-2025 09:56:18 [TestNG-test=User Add Product Test-1] LogUtils - Get current url: https://cms.anhtester.com/admin/products/admin
+[INFO] 08-07-2025 09:56:18 [TestNG-test=User Add Product Test-1] LogUtils - 🔍 Tìm kiếm với từ khóa [Laptop Asus] bằng element: By.xpath: //input[@id='search']
+[INFO] 08-07-2025 09:56:19 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: (//tbody/tr)[1]/td[2]//span || ==> Text Return: Laptop Asus
+[INFO] 08-07-2025 09:56:20 [TestNG-test=User Add Product Test-1] LogUtils - checkElementExist: true --- By.xpath: //h5[normalize-space()='All Product']
+[INFO] 08-07-2025 09:56:20 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: //h5[normalize-space()='All Product'] || ==> Text Return: All Product
+[INFO] 08-07-2025 09:56:20 [TestNG-test=User Add Product Test-1] LogUtils - ✅ Verify add new product successfully !
+[INFO] 08-07-2025 09:56:20 [TestNG-test=User Add Product Test-1] LogUtils - Get attribute of element By.xpath: (//a[@title='View'])[1]
+[INFO] 08-07-2025 09:56:20 [TestNG-test=User Add Product Test-1] LogUtils - ==> Attribute value: https://cms.anhtester.com/product/laptop-asus-1
+[INFO] 08-07-2025 09:56:20 [TestNG-test=User Add Product Test-1] LogUtils - Click on element By.xpath: (//a[@title='View'])[1]
+[INFO] 08-07-2025 09:56:21 [TestNG-test=User Add Product Test-1] LogUtils - ✅ Switched to new tab with URL: https://cms.anhtester.com/product/laptop-asus-1
+[INFO] 08-07-2025 09:56:21 [TestNG-test=User Add Product Test-1] LogUtils - start verifyProductDetailPage
+[INFO] 08-07-2025 09:56:21 [TestNG-test=User Add Product Test-1] LogUtils - Get current url: https://cms.anhtester.com/product/laptop-asus-1
+[INFO] 08-07-2025 09:56:21 [TestNG-test=User Add Product Test-1] LogUtils - currentURL verify product detail page: https://cms.anhtester.com/product/laptop-asus-1
+[INFO] 08-07-2025 09:56:21 [TestNG-test=User Add Product Test-1] LogUtils - href expected verify product detail page: https://cms.anhtester.com/product/laptop-asus-1
+[INFO] 08-07-2025 09:56:21 [TestNG-test=User Add Product Test-1] LogUtils - title verify product detail page: Laptop Asus
+[INFO] 08-07-2025 09:56:21 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: //div[@class='text-left']/h1 || ==> Text Return: Laptop Asus
+[INFO] 08-07-2025 09:56:21 [TestNG-test=User Add Product Test-1] LogUtils - href expected verify product detail page: https://cms.anhtester.com/product/laptop-asus-1
+[INFO] 08-07-2025 09:56:21 [TestNG-test=User Add Product Test-1] LogUtils - title verify product detail page: Laptop Asus
+[INFO] 08-07-2025 09:56:21 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: //div[@class='text-left']/h1 || ==> Text Return: Laptop Asus
+[INFO] 08-07-2025 09:56:21 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: (//div[@class='text-left']//strong)[1] || ==> Text Return: $3,000.00
+[INFO] 08-07-2025 09:56:21 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: (//div[@class='text-left']//strong)[1]/following-sibling::span || ==> Text Return: /PC
+[INFO] 08-07-2025 09:56:21 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: //span[@id='available-quantity'] || ==> Text Return: 500
+[INFO] 08-07-2025 09:56:21 [TestNG-test=User Add Product Test-1] LogUtils - Get text of element: By.xpath: //div[@id='tab_default_1']//p || ==> Text Return: Laptop asus vừa mạnh vừa đẹp
+[INFO] 08-07-2025 09:56:21 [TestNG-test=User Add Product Test-1] LogUtils - 🔍 nameProduct UI: Laptop Asus | expected: Laptop Asus
+[INFO] 08-07-2025 09:56:21 [TestNG-test=User Add Product Test-1] LogUtils - 🔍 priceProduct UI: 3000 | expected: 3000
+[INFO] 08-07-2025 09:56:21 [TestNG-test=User Add Product Test-1] LogUtils - 🔍 unitProduct UI: PC | expected: PC
+[INFO] 08-07-2025 09:56:21 [TestNG-test=User Add Product Test-1] LogUtils - 🔍 quantityProduct UI: 500 | expected: 500
+[INFO] 08-07-2025 09:56:21 [TestNG-test=User Add Product Test-1] LogUtils - 🔍 descriptionProduct UI: Laptop asus vừa mạnh vừa đẹp | expected: Laptop asus vừa mạnh vừa đẹp
+[INFO] 08-07-2025 09:56:21 [TestNG-test=User Add Product Test-1] LogUtils - ✅ Verify info product detail with excel data successfully !
+[INFO] 08-07-2025 09:56:24 [TestNG-test=User Add Product Test-1] LogUtils - ✅ Đây là Test case chạy thành công: testAdminCheckDetailProduct
+[INFO] 08-07-2025 09:56:25 [main] LogUtils - ⭐️ Total test: 9
+[INFO] 08-07-2025 09:56:25 [main] LogUtils - ⭐️ Passed: 9
+[INFO] 08-07-2025 09:56:25 [main] LogUtils - ⭐️ Failed: 0
+[INFO] 08-07-2025 09:56:25 [main] LogUtils - ⭐️ Skipped: 0
+[INFO] 08-07-2025 09:56:25 [main] LogUtils - 🟢 Kết thúc toàn bộ suite: User Add Product Test
+[INFO] 08-07-2025 09:56:29 [main] LogUtils - ✅ Email with attachments sent!

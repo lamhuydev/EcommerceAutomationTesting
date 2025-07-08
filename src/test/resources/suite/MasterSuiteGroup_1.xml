@@ -1,8 +1,5 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="MasterSuite" verbose="1" >
-    <listeners>
-        <listener class-name="listener.SuiteListener"/>
-    </listeners>
     <suite-files>
         <suite-file path="user/Suite_Login_Test.xml"/>
         <suite-file path="user/Suite_Update_User_Profile_Test.xml"/>
