@@ -24,7 +24,7 @@ public class UserAddCartTest extends BaseTest {
         userLoginPage = new UserLoginPage();
         userProductListPage = new UserProductListPage();
 
-        String nameProductSearch = "laptop pro game";
+        String nameProductSearch = "laptop asus";
 
         // login
         userLoginPage.loginEcommercePage();
