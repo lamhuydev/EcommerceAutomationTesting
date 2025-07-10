@@ -22,8 +22,6 @@ The project also uses Excel files to manage test data and .properties files for 
 | *Allure*
 | Interactive and visual test reports
 
-| *ExtentReports*
-| HTML-based test reports with detailed logs
 
 | *Apache POI*
 | Read/write Excel files for test data or results
