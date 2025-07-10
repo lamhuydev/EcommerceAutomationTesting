@@ -1,2 +1,83 @@
 = 🛒 EcommerceAutomationTesting
 
+== 📌 Overview
+This is an automation testing project for an e-commerce website, built using the POM. The project
+uses Java, Selenium WebDriver, TestNG, and Maven. It supports parallel execution, integrates Allure
+Reports, records video, takes screenshots on failure, sends test result emails, and writes detailed logs.
+The project also uses Excel files to manage test data and .properties files for configuration.
+
+
+== ⚙️ Dependencies
+[cols="1,3", options="header"]
+|===
+| Library
+| Description
+
+| *Selenium*
+| Automates browser actions for UI testing
+
+| *TestNG*
+| Framework for managing test cases and test suites
+
+| *Allure*
+| Interactive and visual test reports
+
+| *ExtentReports*
+| HTML-based test reports with detailed logs
+
+| *Apache POI*
+| Read/write Excel files for test data or results
+
+| *Log4j*
+| Logging framework for debugging and tracking
+
+| *Monte Recorder*
+| Record screen during test execution
+
+| *Jakarta Mail*
+| Send test result reports via email
+
+| *dotenv-java*
+| Load environment variables from `.env` file for secure and flexible configuration
+
+| *Maven*
+| Project build and dependency management
+|===
+
+
+== ✨ Functionality
+
+* *Login with Customer Account*
+- Validate login with invalid email/password
+- Verify successful login
+
+* *Manage User Profile*
+- Add new name to profile
+- Change part of the username
+- Delete part of the username
+
+* *Product Information Extraction*
+- Retrieve any product's details from User Page
+- Save product info into a separate Excel file
+
+* *Shopping Cart and Checkout Flow*
+- Add 2 arbitrary products to cart
+- Execute the full 5-step checkout process:
+1. My Cart
+2. Shipping Info
+3. Delivery Info
+4. Payment
+5. Confirmation
+
+* *Admin vs User Page Validation*
+- Add new product with Excel data
+- Verify product detail in Admin Page matches data from User Page
+
+
+
+== 🚀 Run Project
+** Run with Maven command
+- mvn clean test
+
+** View Report
+- allure serve target/allure-results
