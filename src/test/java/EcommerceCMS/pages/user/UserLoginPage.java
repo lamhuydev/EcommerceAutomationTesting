@@ -88,6 +88,7 @@ public class UserLoginPage {
     @Step("Action verify login success")
     public void verifyLoginSuccess(){
         String expectedURL = "https://cms.anhtester.com/dashboard"; // URL sau khi đăng nhập thành công
+        WebUI.sleep(1);
         Assert.assertEquals(DriverManager.getDriver().getCurrentUrl(), expectedURL, "Login failed: Incorrect redirect!");
         Assert.assertTrue(WebUI.isDisplayed(menuDashboard), "verifyLoginSuccess: login fail (menuDashboard)");
         LogUtils.info("Verify login success !");

@@ -4,8 +4,8 @@
         <suite-file path="user/Suite_Login_Test.xml"/>
         <suite-file path="user/Suite_Update_User_Profile_Test.xml"/>
         <suite-file path="user/Suite_Save_Data_Product_To_Excel_Test.xml"/>
-        <suite-file path="user/Suite_Add_Product.xml"/>
         <suite-file path="admin/Suite_Check_Detail_Product_Test.xml"/>
+        <suite-file path="user/Suite_Add_Product.xml"/>
     </suite-files>
 
 

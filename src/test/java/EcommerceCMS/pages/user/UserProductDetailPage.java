@@ -9,8 +9,10 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import utils.LogUtils;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
 
 public class UserProductDetailPage {
@@ -136,6 +138,7 @@ public class UserProductDetailPage {
         } else {
             price = "N/A";
         }
+
         List<WebElement> getColorProduct = WebUI.findElements(colorProduct);
         List<String> colors = new ArrayList<>();
         for (WebElement label : getColorProduct) {
@@ -144,8 +147,7 @@ public class UserProductDetailPage {
 
         // Lấy thời gian hiện tại và định dạng
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
-        String currentTime = LocalDateTime.now().format(formatter);
-
+        String currentTime = LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES).format(formatter);
 
         // Tạo dữ liệu mong đợi với Color
         Map<String, String> expectedDataProduct = new HashMap<>();
@@ -157,14 +159,25 @@ public class UserProductDetailPage {
         expectedDataProduct.put("Color ", String.join(", ", colors));
         expectedDataProduct.put("Time", currentTime);
 
+        // Đọc dữ liệu từ file Excel
         ExcelHelper excelHelper = new ExcelHelper();
         Map<String, String> actualData = excelHelper.lastProductEntry("src/test/resources/datatest/GetProductData.xlsx");
 
         LogUtils.info("expectedDataProduct: " + expectedDataProduct.toString());
         LogUtils.info("actualData: " + actualData.toString());
 
+        // So sánh Time cho phép lệch ±1 phút
+        LocalDateTime expectedTime = LocalDateTime.parse(expectedDataProduct.get("Time"), formatter);
+        LocalDateTime actualTime = LocalDateTime.parse(actualData.get("Time"), formatter);
+        Duration duration = Duration.between(expectedTime, actualTime);
+        Assert.assertTrue(Math.abs(duration.toMinutes()) <= 1, "Thời gian trong Excel lệch quá 1 phút");
 
-        Assert.assertEquals(actualData, expectedDataProduct, "Dữ liệu sản phẩm trong Excel không khớp!");
+        // Xóa key Time khỏi map để so sánh các key còn lại
+        expectedDataProduct.remove("Time");
+        actualData.remove("Time");
+
+        Assert.assertEquals(actualData, expectedDataProduct, "Dữ liệu sản phẩm không khớp (ngoại trừ thời gian)");
     }
+
 
 }
